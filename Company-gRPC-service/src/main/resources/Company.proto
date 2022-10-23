@@ -1,0 +1,153 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+/* cette option pour spécifie l'emplacement de notre stub une fois nous compilons */
+option java_package = "grpc.project.companygrpcservice.gRPC.stub";
+
+/* Data structure */
+
+message Company {
+  string name = 1;
+  string id = 2;
+  repeated Department departments = 3;
+  HumanResource humanResource = 4;
+}
+
+message Department {
+  string D_no = 1;
+  string name = 2;
+  string speciality = 3;
+  repeated Employee employees = 4;
+  Employee manager = 5;
+  repeated Department subDepartments = 6;
+  repeated Project projects = 7;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}
+
+message Person {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  Gender gender = 4;
+  google.protobuf.Timestamp Dob = 5;
+}
+
+message Employee {
+  Person employee = 1;
+  repeated Department departments = 2;
+  repeated Project projects = 3;
+  int64 Doj = 4;
+}
+
+message Project {
+  string name = 1;
+  google.protobuf.Timestamp deadLine = 2;
+  bool finished  = 3;
+  repeated Employee employees = 4;
+}
+
+message HumanResource {
+  repeated Employee employees = 1;
+}
+
+
+/* Services */
+
+/* service Company */
+message Status {
+  bool status = 1;
+}
+message setCompanyAndProjectAndDepartment {
+  string companyId = 1;
+  Project project = 2;
+  Department department = 3;
+}
+message setCompanyId {
+  string companyId = 1;
+}
+message setCompanyIdAndDepartment {
+  Department department = 1;
+  string companyId = 2;
+}
+message setCompanyIdAndDepartmentId {
+  string departmentId = 1;
+  string companyId = 2;
+}
+message  setCompanyIdAndEmployeeId {
+  string employeeId = 1;
+  string companyId = 2;
+}
+message allDepartments {
+  repeated Department departments = 1;
+}
+message allProjects {
+  repeated Project projects = 1;
+}
+message allEmployees {
+  repeated Employee employees = 1;
+}
+message setNameCompany {
+  string name = 1;
+}
+message setCompanyIdAndPerson {
+  string companyId = 1;
+  Person person = 2;
+}
+service CompanyService {
+  rpc createCompany(setNameCompany) returns (Company);
+  rpc getCompany(setCompanyId) returns (Company);
+  rpc getHumanResource(setCompanyId) returns (HumanResource);
+  rpc getAllDepartments(setCompanyId) returns (allDepartments);
+  rpc getAllProjectsOfDepartment(setCompanyIdAndDepartmentId) returns (allProjects);
+  rpc getAllEmployeesOfDepartment(setCompanyIdAndDepartmentId) returns (allEmployees);
+  rpc addDepartmentToCompany(setCompanyIdAndDepartment) returns (Company);
+  rpc deleteDepartmentsFromCompany(setCompanyIdAndDepartmentId) returns (Company);
+  rpc hireEmployee(setCompanyIdAndPerson) returns (Employee);
+  rpc addEmployeeToHumanResource(setCompanyIdAndEmployeeId) returns (HumanResource);
+  rpc addEmployeeToDepartment(setCompanyIdAndEmployeeId) returns (Department);
+  rpc dismissFromHumanResource(setCompanyIdAndEmployeeId) returns (Status);
+  rpc dismissFromDepartment(setCompanyIdAndEmployeeId) returns (Status);
+  rpc dismissEmployee(Employee) returns (Status);
+  rpc startProject(setCompanyAndProjectAndDepartment) returns (Status);
+  rpc sellProject(setCompanyAndProjectAndDepartment) returns (Status);
+  rpc finishProject(setCompanyAndProjectAndDepartment) returns (Status);
+}
+
+
+message Vide {}
+service DepartmentService {
+  rpc start(Project) returns (Status);
+  rpc Sell(Project) returns (Status);
+  rpc finish(Project) returns (Status);
+}
+
+message getNameResponse{
+  string name = 1;
+}
+message getBirthDateResponse {
+  google.protobuf.Timestamp date = 1;
+}
+message getRegistryNumberResponse {
+    string getRegistryNumberResponse = 1;
+}
+service PersonService {
+  rpc getName(Vide) returns (getNameResponse);
+  rpc getBirthDate(Vide) returns (getBirthDateResponse);
+  rpc getRegistryNumber(Vide) returns (getRegistryNumberResponse);
+}
+message getDeadLineResponse {
+  google.protobuf.Timestamp date = 1;
+}
+service ProjectService {
+  rpc getName(Vide) returns (getNameResponse);
+  rpc getDeadLine(Vide) returns (getDeadLineResponse);
+  rpc isFinished(Vide) returns (Status);
+}
+
+service HumanResourcesService {
+  rpc hire(Person) returns (Employee);
+  rpc dismiss(Employee) returns (Status);
+}
