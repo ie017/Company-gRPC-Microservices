@@ -28,21 +28,21 @@ public final class CompanyServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getCreateCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getCreateCompanyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createCompany",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getCreateCompanyMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getCreateCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getCreateCompanyMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getCreateCompanyMethod;
     if ((getCreateCompanyMethod = CompanyServiceGrpc.getCreateCompanyMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getCreateCompanyMethod = CompanyServiceGrpc.getCreateCompanyMethod) == null) {
           CompanyServiceGrpc.getCreateCompanyMethod = getCreateCompanyMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "createCompany"))
@@ -50,7 +50,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("createCompany"))
                   .build();
           }
@@ -60,21 +60,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getGetCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getGetCompanyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getCompany",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getGetCompanyMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getGetCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getGetCompanyMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getGetCompanyMethod;
     if ((getGetCompanyMethod = CompanyServiceGrpc.getGetCompanyMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getGetCompanyMethod = CompanyServiceGrpc.getGetCompanyMethod) == null) {
           CompanyServiceGrpc.getGetCompanyMethod = getGetCompanyMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "getCompany"))
@@ -82,7 +82,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("getCompany"))
                   .build();
           }
@@ -92,21 +92,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getGetHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getGetHumanResourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getHumanResource",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getGetHumanResourceMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getGetHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getGetHumanResourceMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getGetHumanResourceMethod;
     if ((getGetHumanResourceMethod = CompanyServiceGrpc.getGetHumanResourceMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getGetHumanResourceMethod = CompanyServiceGrpc.getGetHumanResourceMethod) == null) {
           CompanyServiceGrpc.getGetHumanResourceMethod = getGetHumanResourceMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "getHumanResource"))
@@ -114,7 +114,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("getHumanResource"))
                   .build();
           }
@@ -220,21 +220,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getAddDepartmentToCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddDepartmentToCompanyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "addDepartmentToCompany",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getAddDepartmentToCompanyMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getAddDepartmentToCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddDepartmentToCompanyMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddDepartmentToCompanyMethod;
     if ((getAddDepartmentToCompanyMethod = CompanyServiceGrpc.getAddDepartmentToCompanyMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getAddDepartmentToCompanyMethod = CompanyServiceGrpc.getAddDepartmentToCompanyMethod) == null) {
           CompanyServiceGrpc.getAddDepartmentToCompanyMethod = getAddDepartmentToCompanyMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "addDepartmentToCompany"))
@@ -242,7 +242,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("addDepartmentToCompany"))
                   .build();
           }
@@ -252,21 +252,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getDeleteDepartmentsFromCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDeleteDepartmentsFromCompanyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "deleteDepartmentsFromCompany",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getDeleteDepartmentsFromCompanyMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getDeleteDepartmentsFromCompanyMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDeleteDepartmentsFromCompanyMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDeleteDepartmentsFromCompanyMethod;
     if ((getDeleteDepartmentsFromCompanyMethod = CompanyServiceGrpc.getDeleteDepartmentsFromCompanyMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getDeleteDepartmentsFromCompanyMethod = CompanyServiceGrpc.getDeleteDepartmentsFromCompanyMethod) == null) {
           CompanyServiceGrpc.getDeleteDepartmentsFromCompanyMethod = getDeleteDepartmentsFromCompanyMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "deleteDepartmentsFromCompany"))
@@ -274,7 +274,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("deleteDepartmentsFromCompany"))
                   .build();
           }
@@ -284,21 +284,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> getHireEmployeeMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getHireEmployeeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "hireEmployee",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> getHireEmployeeMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> getHireEmployeeMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getHireEmployeeMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getHireEmployeeMethod;
     if ((getHireEmployeeMethod = CompanyServiceGrpc.getHireEmployeeMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getHireEmployeeMethod = CompanyServiceGrpc.getHireEmployeeMethod) == null) {
           CompanyServiceGrpc.getHireEmployeeMethod = getHireEmployeeMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "hireEmployee"))
@@ -306,7 +306,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("hireEmployee"))
                   .build();
           }
@@ -316,21 +316,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getAddEmployeeToHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getAddEmployeeToHumanResourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "addEmployeeToHumanResource",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getAddEmployeeToHumanResourceMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getAddEmployeeToHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getAddEmployeeToHumanResourceMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getAddEmployeeToHumanResourceMethod;
     if ((getAddEmployeeToHumanResourceMethod = CompanyServiceGrpc.getAddEmployeeToHumanResourceMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getAddEmployeeToHumanResourceMethod = CompanyServiceGrpc.getAddEmployeeToHumanResourceMethod) == null) {
           CompanyServiceGrpc.getAddEmployeeToHumanResourceMethod = getAddEmployeeToHumanResourceMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "addEmployeeToHumanResource"))
@@ -338,7 +338,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("addEmployeeToHumanResource"))
                   .build();
           }
@@ -347,30 +347,30 @@ public final class CompanyServiceGrpc {
      return getAddEmployeeToHumanResourceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> getAddEmployeeToDepartmentMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddEmployeeToDepartmentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "addEmployeeToDepartment",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> getAddEmployeeToDepartmentMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> getAddEmployeeToDepartmentMethod;
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddEmployeeToDepartmentMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getAddEmployeeToDepartmentMethod;
     if ((getAddEmployeeToDepartmentMethod = CompanyServiceGrpc.getAddEmployeeToDepartmentMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getAddEmployeeToDepartmentMethod = CompanyServiceGrpc.getAddEmployeeToDepartmentMethod) == null) {
           CompanyServiceGrpc.getAddEmployeeToDepartmentMethod = getAddEmployeeToDepartmentMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "addEmployeeToDepartment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("addEmployeeToDepartment"))
                   .build();
           }
@@ -380,21 +380,21 @@ public final class CompanyServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getDismissFromHumanResourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "dismissFromHumanResource",
       requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromHumanResourceMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromHumanResourceMethod;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getDismissFromHumanResourceMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getDismissFromHumanResourceMethod;
     if ((getDismissFromHumanResourceMethod = CompanyServiceGrpc.getDismissFromHumanResourceMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getDismissFromHumanResourceMethod = CompanyServiceGrpc.getDismissFromHumanResourceMethod) == null) {
           CompanyServiceGrpc.getDismissFromHumanResourceMethod = getDismissFromHumanResourceMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "dismissFromHumanResource"))
@@ -402,7 +402,7 @@ public final class CompanyServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("dismissFromHumanResource"))
                   .build();
           }
@@ -411,30 +411,30 @@ public final class CompanyServiceGrpc {
      return getDismissFromHumanResourceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromDepartmentMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDismissFromDepartmentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "dismissFromDepartment",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromDepartmentMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissFromDepartmentMethod;
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDismissFromDepartmentMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDismissFromDepartmentMethod;
     if ((getDismissFromDepartmentMethod = CompanyServiceGrpc.getDismissFromDepartmentMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getDismissFromDepartmentMethod = CompanyServiceGrpc.getDismissFromDepartmentMethod) == null) {
           CompanyServiceGrpc.getDismissFromDepartmentMethod = getDismissFromDepartmentMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "dismissFromDepartment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("dismissFromDepartment"))
                   .build();
           }
@@ -443,28 +443,28 @@ public final class CompanyServiceGrpc {
      return getDismissFromDepartmentMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee,
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
       grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissEmployeeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "dismissEmployee",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.class,
       responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee,
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
       grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissEmployeeMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissEmployeeMethod;
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getDismissEmployeeMethod;
     if ((getDismissEmployeeMethod = CompanyServiceGrpc.getDismissEmployeeMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getDismissEmployeeMethod = CompanyServiceGrpc.getDismissEmployeeMethod) == null) {
           CompanyServiceGrpc.getDismissEmployeeMethod = getDismissEmployeeMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "dismissEmployee"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("dismissEmployee"))
@@ -475,30 +475,30 @@ public final class CompanyServiceGrpc {
      return getDismissEmployeeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getStartProjectMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getStartProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "startProject",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getStartProjectMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getStartProjectMethod;
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getStartProjectMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getStartProjectMethod;
     if ((getStartProjectMethod = CompanyServiceGrpc.getStartProjectMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getStartProjectMethod = CompanyServiceGrpc.getStartProjectMethod) == null) {
           CompanyServiceGrpc.getStartProjectMethod = getStartProjectMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "startProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("startProject"))
                   .build();
           }
@@ -507,30 +507,30 @@ public final class CompanyServiceGrpc {
      return getStartProjectMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getSellProjectMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getSellProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "sellProject",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getSellProjectMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getSellProjectMethod;
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getSellProjectMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getSellProjectMethod;
     if ((getSellProjectMethod = CompanyServiceGrpc.getSellProjectMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getSellProjectMethod = CompanyServiceGrpc.getSellProjectMethod) == null) {
           CompanyServiceGrpc.getSellProjectMethod = getSellProjectMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "sellProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("sellProject"))
                   .build();
           }
@@ -539,30 +539,30 @@ public final class CompanyServiceGrpc {
      return getSellProjectMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getFinishProjectMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getFinishProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "finishProject",
-      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.class,
-      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.class,
+      requestType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.class,
+      responseType = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getFinishProjectMethod() {
-    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> getFinishProjectMethod;
+  public static io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getFinishProjectMethod() {
+    io.grpc.MethodDescriptor<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getFinishProjectMethod;
     if ((getFinishProjectMethod = CompanyServiceGrpc.getFinishProjectMethod) == null) {
       synchronized (CompanyServiceGrpc.class) {
         if ((getFinishProjectMethod = CompanyServiceGrpc.getFinishProjectMethod) == null) {
           CompanyServiceGrpc.getFinishProjectMethod = getFinishProjectMethod = 
-              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "CompanyService", "finishProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status.getDefaultInstance()))
+                  grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()))
                   .setSchemaDescriptor(new CompanyServiceMethodDescriptorSupplier("finishProject"))
                   .build();
           }
@@ -601,21 +601,21 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void createCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateCompanyMethod(), responseObserver);
     }
 
     /**
      */
     public void getCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> responseObserver) {
       asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
     }
 
     /**
      */
     public void getHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnimplementedUnaryCall(getGetHumanResourceMethod(), responseObserver);
     }
 
@@ -643,77 +643,77 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void addDepartmentToCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getAddDepartmentToCompanyMethod(), responseObserver);
     }
 
     /**
      */
     public void deleteDepartmentsFromCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteDepartmentsFromCompanyMethod(), responseObserver);
     }
 
     /**
      */
     public void hireEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> responseObserver) {
       asyncUnimplementedUnaryCall(getHireEmployeeMethod(), responseObserver);
     }
 
     /**
      */
     public void addEmployeeToHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnimplementedUnaryCall(getAddEmployeeToHumanResourceMethod(), responseObserver);
     }
 
     /**
      */
-    public void addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> responseObserver) {
+    public void addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getAddEmployeeToDepartmentMethod(), responseObserver);
     }
 
     /**
      */
     public void dismissFromHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnimplementedUnaryCall(getDismissFromHumanResourceMethod(), responseObserver);
     }
 
     /**
      */
-    public void dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getDismissFromDepartmentMethod(), responseObserver);
     }
 
     /**
      */
-    public void dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee request,
+    public void dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
         io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
       asyncUnimplementedUnaryCall(getDismissEmployeeMethod(), responseObserver);
     }
 
     /**
      */
-    public void startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getStartProjectMethod(), responseObserver);
     }
 
     /**
      */
-    public void sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getSellProjectMethod(), responseObserver);
     }
 
     /**
      */
-    public void finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnimplementedUnaryCall(getFinishProjectMethod(), responseObserver);
     }
 
@@ -724,21 +724,21 @@ public final class CompanyServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>(
                   this, METHODID_CREATE_COMPANY)))
           .addMethod(
             getGetCompanyMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>(
                   this, METHODID_GET_COMPANY)))
           .addMethod(
             getGetHumanResourceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>(
                   this, METHODID_GET_HUMAN_RESOURCE)))
           .addMethod(
             getGetAllDepartmentsMethod(),
@@ -766,77 +766,77 @@ public final class CompanyServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_ADD_DEPARTMENT_TO_COMPANY)))
           .addMethod(
             getDeleteDepartmentsFromCompanyMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
                   this, METHODID_DELETE_DEPARTMENTS_FROM_COMPANY)))
           .addMethod(
             getHireEmployeeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>(
                   this, METHODID_HIRE_EMPLOYEE)))
           .addMethod(
             getAddEmployeeToHumanResourceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>(
                   this, METHODID_ADD_EMPLOYEE_TO_HUMAN_RESOURCE)))
           .addMethod(
             getAddEmployeeToDepartmentMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_ADD_EMPLOYEE_TO_DEPARTMENT)))
           .addMethod(
             getDismissFromHumanResourceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>(
                   this, METHODID_DISMISS_FROM_HUMAN_RESOURCE)))
           .addMethod(
             getDismissFromDepartmentMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_DISMISS_FROM_DEPARTMENT)))
           .addMethod(
             getDismissEmployeeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId,
                 grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
                   this, METHODID_DISMISS_EMPLOYEE)))
           .addMethod(
             getStartProjectMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_START_PROJECT)))
           .addMethod(
             getSellProjectMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_SELL_PROJECT)))
           .addMethod(
             getFinishProjectMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment,
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId,
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(
                   this, METHODID_FINISH_PROJECT)))
           .build();
     }
@@ -863,7 +863,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void createCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateCompanyMethod(), getCallOptions()), request, responseObserver);
     }
@@ -871,7 +871,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void getCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request, responseObserver);
     }
@@ -879,7 +879,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void getHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetHumanResourceMethod(), getCallOptions()), request, responseObserver);
     }
@@ -911,7 +911,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void addDepartmentToCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getAddDepartmentToCompanyMethod(), getCallOptions()), request, responseObserver);
     }
@@ -919,7 +919,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void deleteDepartmentsFromCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteDepartmentsFromCompanyMethod(), getCallOptions()), request, responseObserver);
     }
@@ -927,7 +927,7 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void hireEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getHireEmployeeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -935,15 +935,15 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void addEmployeeToHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getAddEmployeeToHumanResourceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> responseObserver) {
+    public void addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getAddEmployeeToDepartmentMethod(), getCallOptions()), request, responseObserver);
     }
@@ -951,22 +951,22 @@ public final class CompanyServiceGrpc {
     /**
      */
     public void dismissFromHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDismissFromHumanResourceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDismissFromDepartmentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee request,
+    public void dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request,
         io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDismissEmployeeMethod(), getCallOptions()), request, responseObserver);
@@ -974,24 +974,24 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public void startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStartProjectMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSellProjectMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request,
-        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> responseObserver) {
+    public void finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request,
+        io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getFinishProjectMethod(), getCallOptions()), request, responseObserver);
     }
@@ -1017,21 +1017,21 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company createCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany createCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany request) {
       return blockingUnaryCall(
           getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company getCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany getCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
       return blockingUnaryCall(
           getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource getHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
       return blockingUnaryCall(
           getChannel(), getGetHumanResourceMethod(), getCallOptions(), request);
     }
@@ -1059,77 +1059,77 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company addDepartmentToCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment addDepartmentToCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment request) {
       return blockingUnaryCall(
           getChannel(), getAddDepartmentToCompanyMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company deleteDepartmentsFromCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status deleteDepartmentsFromCompany(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId request) {
       return blockingUnaryCall(
           getChannel(), getDeleteDepartmentsFromCompanyMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee hireEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee hireEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson request) {
       return blockingUnaryCall(
           getChannel(), getHireEmployeeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource addEmployeeToHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees addEmployeeToHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return blockingUnaryCall(
           getChannel(), getAddEmployeeToHumanResourceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment addEmployeeToDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request) {
       return blockingUnaryCall(
           getChannel(), getAddEmployeeToDepartmentMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status dismissFromHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees dismissFromHumanResource(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return blockingUnaryCall(
           getChannel(), getDismissFromHumanResourceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment dismissFromDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request) {
       return blockingUnaryCall(
           getChannel(), getDismissFromDepartmentMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status dismissEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return blockingUnaryCall(
           getChannel(), getDismissEmployeeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment startProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees request) {
       return blockingUnaryCall(
           getChannel(), getStartProjectMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment sellProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request) {
       return blockingUnaryCall(
           getChannel(), getSellProjectMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment finishProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request) {
       return blockingUnaryCall(
           getChannel(), getFinishProjectMethod(), getCallOptions(), request);
     }
@@ -1155,7 +1155,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> createCompany(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> createCompany(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateCompanyMethod(), getCallOptions()), request);
@@ -1163,7 +1163,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> getCompany(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany> getCompany(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
       return futureUnaryCall(
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request);
@@ -1171,7 +1171,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> getHumanResource(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> getHumanResource(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId request) {
       return futureUnaryCall(
           getChannel().newCall(getGetHumanResourceMethod(), getCallOptions()), request);
@@ -1203,7 +1203,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> addDepartmentToCompany(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> addDepartmentToCompany(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment request) {
       return futureUnaryCall(
           getChannel().newCall(getAddDepartmentToCompanyMethod(), getCallOptions()), request);
@@ -1211,7 +1211,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company> deleteDepartmentsFromCompany(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> deleteDepartmentsFromCompany(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteDepartmentsFromCompanyMethod(), getCallOptions()), request);
@@ -1219,7 +1219,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> hireEmployee(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> hireEmployee(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson request) {
       return futureUnaryCall(
           getChannel().newCall(getHireEmployeeMethod(), getCallOptions()), request);
@@ -1227,7 +1227,7 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource> addEmployeeToHumanResource(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> addEmployeeToHumanResource(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return futureUnaryCall(
           getChannel().newCall(getAddEmployeeToHumanResourceMethod(), getCallOptions()), request);
@@ -1235,15 +1235,15 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> addEmployeeToDepartment(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> addEmployeeToDepartment(
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request) {
       return futureUnaryCall(
           getChannel().newCall(getAddEmployeeToDepartmentMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> dismissFromHumanResource(
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees> dismissFromHumanResource(
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return futureUnaryCall(
           getChannel().newCall(getDismissFromHumanResourceMethod(), getCallOptions()), request);
@@ -1251,8 +1251,8 @@ public final class CompanyServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> dismissFromDepartment(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> dismissFromDepartment(
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId request) {
       return futureUnaryCall(
           getChannel().newCall(getDismissFromDepartmentMethod(), getCallOptions()), request);
     }
@@ -1260,31 +1260,31 @@ public final class CompanyServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> dismissEmployee(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee request) {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId request) {
       return futureUnaryCall(
           getChannel().newCall(getDismissEmployeeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> startProject(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> startProject(
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees request) {
       return futureUnaryCall(
           getChannel().newCall(getStartProjectMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> sellProject(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> sellProject(
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request) {
       return futureUnaryCall(
           getChannel().newCall(getSellProjectMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status> finishProject(
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment request) {
+    public com.google.common.util.concurrent.ListenableFuture<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> finishProject(
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId request) {
       return futureUnaryCall(
           getChannel().newCall(getFinishProjectMethod(), getCallOptions()), request);
     }
@@ -1327,15 +1327,15 @@ public final class CompanyServiceGrpc {
       switch (methodId) {
         case METHODID_CREATE_COMPANY:
           serviceImpl.createCompany((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setNameCompany) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>) responseObserver);
           break;
         case METHODID_GET_COMPANY:
           serviceImpl.getCompany((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany>) responseObserver);
           break;
         case METHODID_GET_HUMAN_RESOURCE:
           serviceImpl.getHumanResource((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>) responseObserver);
           break;
         case METHODID_GET_ALL_DEPARTMENTS:
           serviceImpl.getAllDepartments((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyId) request,
@@ -1351,47 +1351,47 @@ public final class CompanyServiceGrpc {
           break;
         case METHODID_ADD_DEPARTMENT_TO_COMPANY:
           serviceImpl.addDepartmentToCompany((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         case METHODID_DELETE_DEPARTMENTS_FROM_COMPANY:
           serviceImpl.deleteDepartmentsFromCompany((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Company>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
           break;
         case METHODID_HIRE_EMPLOYEE:
           serviceImpl.hireEmployee((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>) responseObserver);
           break;
         case METHODID_ADD_EMPLOYEE_TO_HUMAN_RESOURCE:
           serviceImpl.addEmployeeToHumanResource((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.HumanResource>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>) responseObserver);
           break;
         case METHODID_ADD_EMPLOYEE_TO_DEPARTMENT:
-          serviceImpl.addEmployeeToDepartment((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department>) responseObserver);
+          serviceImpl.addEmployeeToDepartment((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId) request,
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         case METHODID_DISMISS_FROM_HUMAN_RESOURCE:
           serviceImpl.dismissFromHumanResource((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees>) responseObserver);
           break;
         case METHODID_DISMISS_FROM_DEPARTMENT:
-          serviceImpl.dismissFromDepartment((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
+          serviceImpl.dismissFromDepartment((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId) request,
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         case METHODID_DISMISS_EMPLOYEE:
-          serviceImpl.dismissEmployee((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee) request,
+          serviceImpl.dismissEmployee((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndEmployeeId) request,
               (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
           break;
         case METHODID_START_PROJECT:
-          serviceImpl.startProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
+          serviceImpl.startProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees) request,
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         case METHODID_SELL_PROJECT:
-          serviceImpl.sellProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
+          serviceImpl.sellProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId) request,
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         case METHODID_FINISH_PROJECT:
-          serviceImpl.finishProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) request,
-              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Status>) responseObserver);
+          serviceImpl.finishProject((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId) request,
+              (io.grpc.stub.StreamObserver<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>) responseObserver);
           break;
         default:
           throw new AssertionError();

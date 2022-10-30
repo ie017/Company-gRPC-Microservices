@@ -118,6 +118,119 @@ public final class CompanyOuterClass {
     // @@protoc_insertion_point(enum_scope:Gender)
   }
 
+  /**
+   * Protobuf enum {@code StatusProject}
+   */
+  public enum StatusProject
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>START = 0;</code>
+     */
+    START(0),
+    /**
+     * <code>SELL = 1;</code>
+     */
+    SELL(1),
+    /**
+     * <code>FINISH = 2;</code>
+     */
+    FINISH(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>START = 0;</code>
+     */
+    public static final int START_VALUE = 0;
+    /**
+     * <code>SELL = 1;</code>
+     */
+    public static final int SELL_VALUE = 1;
+    /**
+     * <code>FINISH = 2;</code>
+     */
+    public static final int FINISH_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StatusProject valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StatusProject forNumber(int value) {
+      switch (value) {
+        case 0: return START;
+        case 1: return SELL;
+        case 2: return FINISH;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StatusProject>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        StatusProject> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<StatusProject>() {
+            public StatusProject findValueByNumber(int number) {
+              return StatusProject.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final StatusProject[] VALUES = values();
+
+    public static StatusProject valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StatusProject(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:StatusProject)
+  }
+
   public interface CompanyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Company)
       com.google.protobuf.MessageOrBuilder {
@@ -3568,6 +3681,628 @@ public final class CompanyOuterClass {
 
   }
 
+  public interface DateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Date)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 day = 1;</code>
+     * @return The day.
+     */
+    int getDay();
+
+    /**
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    int getMonth();
+
+    /**
+     * <code>int32 year = 3;</code>
+     * @return The year.
+     */
+    int getYear();
+  }
+  /**
+   * Protobuf type {@code Date}
+   */
+  public  static final class Date extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Date)
+      DateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Date.newBuilder() to construct.
+    private Date(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Date() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Date();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Date(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              day_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              month_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              year_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_Date_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_Date_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder.class);
+    }
+
+    public static final int DAY_FIELD_NUMBER = 1;
+    private int day_;
+    /**
+     * <code>int32 day = 1;</code>
+     * @return The day.
+     */
+    public int getDay() {
+      return day_;
+    }
+
+    public static final int MONTH_FIELD_NUMBER = 2;
+    private int month_;
+    /**
+     * <code>int32 month = 2;</code>
+     * @return The month.
+     */
+    public int getMonth() {
+      return month_;
+    }
+
+    public static final int YEAR_FIELD_NUMBER = 3;
+    private int year_;
+    /**
+     * <code>int32 year = 3;</code>
+     * @return The year.
+     */
+    public int getYear() {
+      return year_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (day_ != 0) {
+        output.writeInt32(1, day_);
+      }
+      if (month_ != 0) {
+        output.writeInt32(2, month_);
+      }
+      if (year_ != 0) {
+        output.writeInt32(3, year_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (day_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, day_);
+      }
+      if (month_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, month_);
+      }
+      if (year_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, year_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date) obj;
+
+      if (getDay()
+          != other.getDay()) return false;
+      if (getMonth()
+          != other.getMonth()) return false;
+      if (getYear()
+          != other.getYear()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDay();
+      hash = (37 * hash) + MONTH_FIELD_NUMBER;
+      hash = (53 * hash) + getMonth();
+      hash = (37 * hash) + YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getYear();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Date}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Date)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_Date_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_Date_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        day_ = 0;
+
+        month_ = 0;
+
+        year_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_Date_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date(this);
+        result.day_ = day_;
+        result.month_ = month_;
+        result.year_ = year_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance()) return this;
+        if (other.getDay() != 0) {
+          setDay(other.getDay());
+        }
+        if (other.getMonth() != 0) {
+          setMonth(other.getMonth());
+        }
+        if (other.getYear() != 0) {
+          setYear(other.getYear());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int day_ ;
+      /**
+       * <code>int32 day = 1;</code>
+       * @return The day.
+       */
+      public int getDay() {
+        return day_;
+      }
+      /**
+       * <code>int32 day = 1;</code>
+       * @param value The day to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDay(int value) {
+        
+        day_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 day = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDay() {
+        
+        day_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int month_ ;
+      /**
+       * <code>int32 month = 2;</code>
+       * @return The month.
+       */
+      public int getMonth() {
+        return month_;
+      }
+      /**
+       * <code>int32 month = 2;</code>
+       * @param value The month to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonth(int value) {
+        
+        month_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 month = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonth() {
+        
+        month_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int year_ ;
+      /**
+       * <code>int32 year = 3;</code>
+       * @return The year.
+       */
+      public int getYear() {
+        return year_;
+      }
+      /**
+       * <code>int32 year = 3;</code>
+       * @param value The year to set.
+       * @return This builder for chaining.
+       */
+      public Builder setYear(int value) {
+        
+        year_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 year = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearYear() {
+        
+        year_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Date)
+    }
+
+    // @@protoc_insertion_point(class_scope:Date)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Date>
+        PARSER = new com.google.protobuf.AbstractParser<Date>() {
+      @java.lang.Override
+      public Date parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Date(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Date> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Date> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PersonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Person)
       com.google.protobuf.MessageOrBuilder {
@@ -3620,19 +4355,19 @@ public final class CompanyOuterClass {
     grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender getGender();
 
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      * @return Whether the dob field is set.
      */
     boolean hasDob();
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      * @return The dob.
      */
-    com.google.protobuf.Timestamp getDob();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob();
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getDobOrBuilder();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder();
   }
   /**
    * Protobuf type {@code Person}
@@ -3708,11 +4443,11 @@ public final class CompanyOuterClass {
               break;
             }
             case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
               if (dob_ != null) {
                 subBuilder = dob_.toBuilder();
               }
-              dob_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              dob_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(dob_);
                 dob_ = subBuilder.buildPartial();
@@ -3880,25 +4615,25 @@ public final class CompanyOuterClass {
     }
 
     public static final int DOB_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp dob_;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date dob_;
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      * @return Whether the dob field is set.
      */
     public boolean hasDob() {
       return dob_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      * @return The dob.
      */
-    public com.google.protobuf.Timestamp getDob() {
-      return dob_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dob_;
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob() {
+      return dob_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
     }
     /**
-     * <code>.google.protobuf.Timestamp Dob = 5;</code>
+     * <code>.Date Dob = 5;</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDobOrBuilder() {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder() {
       return getDob();
     }
 
@@ -4564,31 +5299,31 @@ public final class CompanyOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp dob_;
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date dob_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dobBuilder_;
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> dobBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        * @return Whether the dob field is set.
        */
       public boolean hasDob() {
         return dobBuilder_ != null || dob_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        * @return The dob.
        */
-      public com.google.protobuf.Timestamp getDob() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob() {
         if (dobBuilder_ == null) {
-          return dob_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dob_;
+          return dob_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
         } else {
           return dobBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public Builder setDob(com.google.protobuf.Timestamp value) {
+      public Builder setDob(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
         if (dobBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4602,10 +5337,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
       public Builder setDob(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
         if (dobBuilder_ == null) {
           dob_ = builderForValue.build();
           onChanged();
@@ -4616,13 +5351,13 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public Builder mergeDob(com.google.protobuf.Timestamp value) {
+      public Builder mergeDob(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
         if (dobBuilder_ == null) {
           if (dob_ != null) {
             dob_ =
-              com.google.protobuf.Timestamp.newBuilder(dob_).mergeFrom(value).buildPartial();
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(dob_).mergeFrom(value).buildPartial();
           } else {
             dob_ = value;
           }
@@ -4634,7 +5369,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
       public Builder clearDob() {
         if (dobBuilder_ == null) {
@@ -4648,33 +5383,33 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getDobBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDobBuilder() {
         
         onChanged();
         return getDobFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getDobOrBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder() {
         if (dobBuilder_ != null) {
           return dobBuilder_.getMessageOrBuilder();
         } else {
           return dob_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : dob_;
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp Dob = 5;</code>
+       * <code>.Date Dob = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
           getDobFieldBuilder() {
         if (dobBuilder_ == null) {
           dobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
                   getDob(),
                   getParentForChildren(),
                   isClean());
@@ -4803,10 +5538,19 @@ public final class CompanyOuterClass {
         int index);
 
     /**
-     * <code>int64 Doj = 4;</code>
+     * <code>.Date Doj = 4;</code>
+     * @return Whether the doj field is set.
+     */
+    boolean hasDoj();
+    /**
+     * <code>.Date Doj = 4;</code>
      * @return The doj.
      */
-    long getDoj();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj();
+    /**
+     * <code>.Date Doj = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder();
   }
   /**
    * Protobuf type {@code Employee}
@@ -4887,9 +5631,17 @@ public final class CompanyOuterClass {
                   input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.parser(), extensionRegistry));
               break;
             }
-            case 32: {
+            case 34: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
+              if (doj_ != null) {
+                subBuilder = doj_.toBuilder();
+              }
+              doj_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(doj_);
+                doj_ = subBuilder.buildPartial();
+              }
 
-              doj_ = input.readInt64();
               break;
             }
             default: {
@@ -5024,13 +5776,26 @@ public final class CompanyOuterClass {
     }
 
     public static final int DOJ_FIELD_NUMBER = 4;
-    private long doj_;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date doj_;
     /**
-     * <code>int64 Doj = 4;</code>
+     * <code>.Date Doj = 4;</code>
+     * @return Whether the doj field is set.
+     */
+    public boolean hasDoj() {
+      return doj_ != null;
+    }
+    /**
+     * <code>.Date Doj = 4;</code>
      * @return The doj.
      */
-    public long getDoj() {
-      return doj_;
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj() {
+      return doj_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+    }
+    /**
+     * <code>.Date Doj = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder() {
+      return getDoj();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5056,8 +5821,8 @@ public final class CompanyOuterClass {
       for (int i = 0; i < projects_.size(); i++) {
         output.writeMessage(3, projects_.get(i));
       }
-      if (doj_ != 0L) {
-        output.writeInt64(4, doj_);
+      if (doj_ != null) {
+        output.writeMessage(4, getDoj());
       }
       unknownFields.writeTo(output);
     }
@@ -5080,9 +5845,9 @@ public final class CompanyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, projects_.get(i));
       }
-      if (doj_ != 0L) {
+      if (doj_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, doj_);
+          .computeMessageSize(4, getDoj());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5108,8 +5873,11 @@ public final class CompanyOuterClass {
           .equals(other.getDepartmentsList())) return false;
       if (!getProjectsList()
           .equals(other.getProjectsList())) return false;
-      if (getDoj()
-          != other.getDoj()) return false;
+      if (hasDoj() != other.hasDoj()) return false;
+      if (hasDoj()) {
+        if (!getDoj()
+            .equals(other.getDoj())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5133,9 +5901,10 @@ public final class CompanyOuterClass {
         hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
         hash = (53 * hash) + getProjectsList().hashCode();
       }
-      hash = (37 * hash) + DOJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDoj());
+      if (hasDoj()) {
+        hash = (37 * hash) + DOJ_FIELD_NUMBER;
+        hash = (53 * hash) + getDoj().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5289,8 +6058,12 @@ public final class CompanyOuterClass {
         } else {
           projectsBuilder_.clear();
         }
-        doj_ = 0L;
-
+        if (dojBuilder_ == null) {
+          doj_ = null;
+        } else {
+          doj_ = null;
+          dojBuilder_ = null;
+        }
         return this;
       }
 
@@ -5341,7 +6114,11 @@ public final class CompanyOuterClass {
         } else {
           result.projects_ = projectsBuilder_.build();
         }
-        result.doj_ = doj_;
+        if (dojBuilder_ == null) {
+          result.doj_ = doj_;
+        } else {
+          result.doj_ = dojBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5445,8 +6222,8 @@ public final class CompanyOuterClass {
             }
           }
         }
-        if (other.getDoj() != 0L) {
-          setDoj(other.getDoj());
+        if (other.hasDoj()) {
+          mergeDoj(other.getDoj());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6077,34 +6854,123 @@ public final class CompanyOuterClass {
         return projectsBuilder_;
       }
 
-      private long doj_ ;
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date doj_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> dojBuilder_;
       /**
-       * <code>int64 Doj = 4;</code>
+       * <code>.Date Doj = 4;</code>
+       * @return Whether the doj field is set.
+       */
+      public boolean hasDoj() {
+        return dojBuilder_ != null || doj_ != null;
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
        * @return The doj.
        */
-      public long getDoj() {
-        return doj_;
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj() {
+        if (dojBuilder_ == null) {
+          return doj_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+        } else {
+          return dojBuilder_.getMessage();
+        }
       }
       /**
-       * <code>int64 Doj = 4;</code>
-       * @param value The doj to set.
-       * @return This builder for chaining.
+       * <code>.Date Doj = 4;</code>
        */
-      public Builder setDoj(long value) {
-        
-        doj_ = value;
-        onChanged();
+      public Builder setDoj(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dojBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          doj_ = value;
+          onChanged();
+        } else {
+          dojBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>int64 Doj = 4;</code>
-       * @return This builder for chaining.
+       * <code>.Date Doj = 4;</code>
+       */
+      public Builder setDoj(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
+        if (dojBuilder_ == null) {
+          doj_ = builderForValue.build();
+          onChanged();
+        } else {
+          dojBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
+       */
+      public Builder mergeDoj(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dojBuilder_ == null) {
+          if (doj_ != null) {
+            doj_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(doj_).mergeFrom(value).buildPartial();
+          } else {
+            doj_ = value;
+          }
+          onChanged();
+        } else {
+          dojBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
        */
       public Builder clearDoj() {
-        
-        doj_ = 0L;
-        onChanged();
+        if (dojBuilder_ == null) {
+          doj_ = null;
+          onChanged();
+        } else {
+          doj_ = null;
+          dojBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDojBuilder() {
+        
+        onChanged();
+        return getDojFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder() {
+        if (dojBuilder_ != null) {
+          return dojBuilder_.getMessageOrBuilder();
+        } else {
+          return doj_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+        }
+      }
+      /**
+       * <code>.Date Doj = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
+          getDojFieldBuilder() {
+        if (dojBuilder_ == null) {
+          dojBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
+                  getDoj(),
+                  getParentForChildren(),
+                  isClean());
+          doj_ = null;
+        }
+        return dojBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6176,19 +7042,19 @@ public final class CompanyOuterClass {
         getNameBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      * @return Whether the deadLine field is set.
      */
     boolean hasDeadLine();
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      * @return The deadLine.
      */
-    com.google.protobuf.Timestamp getDeadLine();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine();
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getDeadLineOrBuilder();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder();
 
     /**
      * <code>bool finished = 3;</code>
@@ -6219,6 +7085,29 @@ public final class CompanyOuterClass {
      */
     grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder getEmployeesOrBuilder(
         int index);
+
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The status.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus();
+
+    /**
+     * <code>string Id = 6;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string Id = 6;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
   }
   /**
    * Protobuf type {@code Project}
@@ -6235,6 +7124,8 @@ public final class CompanyOuterClass {
     private Project() {
       name_ = "";
       employees_ = java.util.Collections.emptyList();
+      status_ = 0;
+      id_ = "";
     }
 
     @java.lang.Override
@@ -6275,11 +7166,11 @@ public final class CompanyOuterClass {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
               if (deadLine_ != null) {
                 subBuilder = deadLine_.toBuilder();
               }
-              deadLine_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              deadLine_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(deadLine_);
                 deadLine_ = subBuilder.buildPartial();
@@ -6299,6 +7190,18 @@ public final class CompanyOuterClass {
               }
               employees_.add(
                   input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
               break;
             }
             default: {
@@ -6373,25 +7276,25 @@ public final class CompanyOuterClass {
     }
 
     public static final int DEADLINE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp deadLine_;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date deadLine_;
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      * @return Whether the deadLine field is set.
      */
     public boolean hasDeadLine() {
       return deadLine_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      * @return The deadLine.
      */
-    public com.google.protobuf.Timestamp getDeadLine() {
-      return deadLine_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deadLine_;
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine() {
+      return deadLine_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
     }
     /**
-     * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+     * <code>.Date deadLine = 2;</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDeadLineOrBuilder() {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder() {
       return getDeadLine();
     }
 
@@ -6440,6 +7343,61 @@ public final class CompanyOuterClass {
       return employees_.get(index);
     }
 
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private int status_;
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The status.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+      @SuppressWarnings("deprecation")
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+      return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
+    }
+
+    public static final int ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string Id = 6;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Id = 6;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6466,6 +7424,12 @@ public final class CompanyOuterClass {
       for (int i = 0; i < employees_.size(); i++) {
         output.writeMessage(4, employees_.get(i));
       }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        output.writeEnum(5, status_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, id_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6489,6 +7453,13 @@ public final class CompanyOuterClass {
       for (int i = 0; i < employees_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, employees_.get(i));
+      }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, status_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6516,6 +7487,9 @@ public final class CompanyOuterClass {
           != other.getFinished()) return false;
       if (!getEmployeesList()
           .equals(other.getEmployeesList())) return false;
+      if (status_ != other.status_) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6540,6 +7514,10 @@ public final class CompanyOuterClass {
         hash = (37 * hash) + EMPLOYEES_FIELD_NUMBER;
         hash = (53 * hash) + getEmployeesList().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6690,6 +7668,10 @@ public final class CompanyOuterClass {
         } else {
           employeesBuilder_.clear();
         }
+        status_ = 0;
+
+        id_ = "";
+
         return this;
       }
 
@@ -6733,6 +7715,8 @@ public final class CompanyOuterClass {
         } else {
           result.employees_ = employeesBuilder_.build();
         }
+        result.status_ = status_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -6816,6 +7800,13 @@ public final class CompanyOuterClass {
               employeesBuilder_.addAllMessages(other.employees_);
             }
           }
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6923,31 +7914,31 @@ public final class CompanyOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp deadLine_;
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date deadLine_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deadLineBuilder_;
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> deadLineBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        * @return Whether the deadLine field is set.
        */
       public boolean hasDeadLine() {
         return deadLineBuilder_ != null || deadLine_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        * @return The deadLine.
        */
-      public com.google.protobuf.Timestamp getDeadLine() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine() {
         if (deadLineBuilder_ == null) {
-          return deadLine_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deadLine_;
+          return deadLine_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
         } else {
           return deadLineBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
-      public Builder setDeadLine(com.google.protobuf.Timestamp value) {
+      public Builder setDeadLine(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
         if (deadLineBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6961,10 +7952,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
       public Builder setDeadLine(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
         if (deadLineBuilder_ == null) {
           deadLine_ = builderForValue.build();
           onChanged();
@@ -6975,13 +7966,13 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
-      public Builder mergeDeadLine(com.google.protobuf.Timestamp value) {
+      public Builder mergeDeadLine(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
         if (deadLineBuilder_ == null) {
           if (deadLine_ != null) {
             deadLine_ =
-              com.google.protobuf.Timestamp.newBuilder(deadLine_).mergeFrom(value).buildPartial();
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(deadLine_).mergeFrom(value).buildPartial();
           } else {
             deadLine_ = value;
           }
@@ -6993,7 +7984,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
       public Builder clearDeadLine() {
         if (deadLineBuilder_ == null) {
@@ -7007,33 +7998,33 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getDeadLineBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDeadLineBuilder() {
         
         onChanged();
         return getDeadLineFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getDeadLineOrBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder() {
         if (deadLineBuilder_ != null) {
           return deadLineBuilder_.getMessageOrBuilder();
         } else {
           return deadLine_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : deadLine_;
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp deadLine = 2;</code>
+       * <code>.Date deadLine = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
           getDeadLineFieldBuilder() {
         if (deadLineBuilder_ == null) {
           deadLineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
                   getDeadLine(),
                   getParentForChildren(),
                   isClean());
@@ -7310,6 +8301,134 @@ public final class CompanyOuterClass {
           employees_ = null;
         }
         return employeesBuilder_;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return The status.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+        @SuppressWarnings("deprecation")
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+        return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string Id = 6;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Id = 6;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Id = 6;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Id = 6;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8647,8 +9766,1614 @@ public final class CompanyOuterClass {
 
   }
 
-  public interface setCompanyAndProjectAndDepartmentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:setCompanyAndProjectAndDepartment)
+  public interface getEmployeeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:getEmployee)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.Person person = 1;</code>
+     * @return Whether the person field is set.
+     */
+    boolean hasPerson();
+    /**
+     * <code>.Person person = 1;</code>
+     * @return The person.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson();
+    /**
+     * <code>.Person person = 1;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder();
+
+    /**
+     * <code>.Date Doj = 2;</code>
+     * @return Whether the doj field is set.
+     */
+    boolean hasDoj();
+    /**
+     * <code>.Date Doj = 2;</code>
+     * @return The doj.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj();
+    /**
+     * <code>.Date Doj = 2;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder();
+  }
+  /**
+   * Protobuf type {@code getEmployee}
+   */
+  public  static final class getEmployee extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:getEmployee)
+      getEmployeeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getEmployee.newBuilder() to construct.
+    private getEmployee(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getEmployee() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getEmployee();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getEmployee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder subBuilder = null;
+              if (person_ != null) {
+                subBuilder = person_.toBuilder();
+              }
+              person_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(person_);
+                person_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
+              if (doj_ != null) {
+                subBuilder = doj_.toBuilder();
+              }
+              doj_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(doj_);
+                doj_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getEmployee_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getEmployee_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder.class);
+    }
+
+    public static final int PERSON_FIELD_NUMBER = 1;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person person_;
+    /**
+     * <code>.Person person = 1;</code>
+     * @return Whether the person field is set.
+     */
+    public boolean hasPerson() {
+      return person_ != null;
+    }
+    /**
+     * <code>.Person person = 1;</code>
+     * @return The person.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson() {
+      return person_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+    }
+    /**
+     * <code>.Person person = 1;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder() {
+      return getPerson();
+    }
+
+    public static final int DOJ_FIELD_NUMBER = 2;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date doj_;
+    /**
+     * <code>.Date Doj = 2;</code>
+     * @return Whether the doj field is set.
+     */
+    public boolean hasDoj() {
+      return doj_ != null;
+    }
+    /**
+     * <code>.Date Doj = 2;</code>
+     * @return The doj.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj() {
+      return doj_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+    }
+    /**
+     * <code>.Date Doj = 2;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder() {
+      return getDoj();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (person_ != null) {
+        output.writeMessage(1, getPerson());
+      }
+      if (doj_ != null) {
+        output.writeMessage(2, getDoj());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (person_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getPerson());
+      }
+      if (doj_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getDoj());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee) obj;
+
+      if (hasPerson() != other.hasPerson()) return false;
+      if (hasPerson()) {
+        if (!getPerson()
+            .equals(other.getPerson())) return false;
+      }
+      if (hasDoj() != other.hasDoj()) return false;
+      if (hasDoj()) {
+        if (!getDoj()
+            .equals(other.getDoj())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPerson()) {
+        hash = (37 * hash) + PERSON_FIELD_NUMBER;
+        hash = (53 * hash) + getPerson().hashCode();
+      }
+      if (hasDoj()) {
+        hash = (37 * hash) + DOJ_FIELD_NUMBER;
+        hash = (53 * hash) + getDoj().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code getEmployee}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:getEmployee)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getEmployee_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getEmployee_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (personBuilder_ == null) {
+          person_ = null;
+        } else {
+          person_ = null;
+          personBuilder_ = null;
+        }
+        if (dojBuilder_ == null) {
+          doj_ = null;
+        } else {
+          doj_ = null;
+          dojBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getEmployee_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee(this);
+        if (personBuilder_ == null) {
+          result.person_ = person_;
+        } else {
+          result.person_ = personBuilder_.build();
+        }
+        if (dojBuilder_ == null) {
+          result.doj_ = doj_;
+        } else {
+          result.doj_ = dojBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance()) return this;
+        if (other.hasPerson()) {
+          mergePerson(other.getPerson());
+        }
+        if (other.hasDoj()) {
+          mergeDoj(other.getDoj());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person person_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder> personBuilder_;
+      /**
+       * <code>.Person person = 1;</code>
+       * @return Whether the person field is set.
+       */
+      public boolean hasPerson() {
+        return personBuilder_ != null || person_ != null;
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       * @return The person.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson() {
+        if (personBuilder_ == null) {
+          return person_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+        } else {
+          return personBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public Builder setPerson(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person value) {
+        if (personBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          person_ = value;
+          onChanged();
+        } else {
+          personBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public Builder setPerson(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder builderForValue) {
+        if (personBuilder_ == null) {
+          person_ = builderForValue.build();
+          onChanged();
+        } else {
+          personBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public Builder mergePerson(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person value) {
+        if (personBuilder_ == null) {
+          if (person_ != null) {
+            person_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.newBuilder(person_).mergeFrom(value).buildPartial();
+          } else {
+            person_ = value;
+          }
+          onChanged();
+        } else {
+          personBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public Builder clearPerson() {
+        if (personBuilder_ == null) {
+          person_ = null;
+          onChanged();
+        } else {
+          person_ = null;
+          personBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder getPersonBuilder() {
+        
+        onChanged();
+        return getPersonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder() {
+        if (personBuilder_ != null) {
+          return personBuilder_.getMessageOrBuilder();
+        } else {
+          return person_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+        }
+      }
+      /**
+       * <code>.Person person = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder> 
+          getPersonFieldBuilder() {
+        if (personBuilder_ == null) {
+          personBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder>(
+                  getPerson(),
+                  getParentForChildren(),
+                  isClean());
+          person_ = null;
+        }
+        return personBuilder_;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date doj_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> dojBuilder_;
+      /**
+       * <code>.Date Doj = 2;</code>
+       * @return Whether the doj field is set.
+       */
+      public boolean hasDoj() {
+        return dojBuilder_ != null || doj_ != null;
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       * @return The doj.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDoj() {
+        if (dojBuilder_ == null) {
+          return doj_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+        } else {
+          return dojBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public Builder setDoj(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dojBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          doj_ = value;
+          onChanged();
+        } else {
+          dojBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public Builder setDoj(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
+        if (dojBuilder_ == null) {
+          doj_ = builderForValue.build();
+          onChanged();
+        } else {
+          dojBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public Builder mergeDoj(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dojBuilder_ == null) {
+          if (doj_ != null) {
+            doj_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(doj_).mergeFrom(value).buildPartial();
+          } else {
+            doj_ = value;
+          }
+          onChanged();
+        } else {
+          dojBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public Builder clearDoj() {
+        if (dojBuilder_ == null) {
+          doj_ = null;
+          onChanged();
+        } else {
+          doj_ = null;
+          dojBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDojBuilder() {
+        
+        onChanged();
+        return getDojFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDojOrBuilder() {
+        if (dojBuilder_ != null) {
+          return dojBuilder_.getMessageOrBuilder();
+        } else {
+          return doj_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : doj_;
+        }
+      }
+      /**
+       * <code>.Date Doj = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
+          getDojFieldBuilder() {
+        if (dojBuilder_ == null) {
+          dojBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
+                  getDoj(),
+                  getParentForChildren(),
+                  isClean());
+          doj_ = null;
+        }
+        return dojBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:getEmployee)
+    }
+
+    // @@protoc_insertion_point(class_scope:getEmployee)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getEmployee>
+        PARSER = new com.google.protobuf.AbstractParser<getEmployee>() {
+      @java.lang.Override
+      public getEmployee parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getEmployee(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getEmployee> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getEmployee> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface allEmployeesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:allEmployees)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> 
+        getEmployeeList();
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployee(int index);
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    int getEmployeeCount();
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeeOrBuilderList();
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeeOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code allEmployees}
+   */
+  public  static final class allEmployees extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:allEmployees)
+      allEmployeesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use allEmployees.newBuilder() to construct.
+    private allEmployees(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private allEmployees() {
+      employee_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new allEmployees();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private allEmployees(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                employee_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              employee_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          employee_ = java.util.Collections.unmodifiableList(employee_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.Builder.class);
+    }
+
+    public static final int EMPLOYEE_FIELD_NUMBER = 1;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employee_;
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeeList() {
+      return employee_;
+    }
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeeOrBuilderList() {
+      return employee_;
+    }
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    public int getEmployeeCount() {
+      return employee_.size();
+    }
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployee(int index) {
+      return employee_.get(index);
+    }
+    /**
+     * <code>repeated .getEmployee employee = 1;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeeOrBuilder(
+        int index) {
+      return employee_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < employee_.size(); i++) {
+        output.writeMessage(1, employee_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < employee_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, employee_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) obj;
+
+      if (!getEmployeeList()
+          .equals(other.getEmployeeList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEmployeeCount() > 0) {
+        hash = (37 * hash) + EMPLOYEE_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeeList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code allEmployees}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:allEmployees)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployeesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEmployeeFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (employeeBuilder_ == null) {
+          employee_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          employeeBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees(this);
+        int from_bitField0_ = bitField0_;
+        if (employeeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            employee_ = java.util.Collections.unmodifiableList(employee_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.employee_ = employee_;
+        } else {
+          result.employee_ = employeeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance()) return this;
+        if (employeeBuilder_ == null) {
+          if (!other.employee_.isEmpty()) {
+            if (employee_.isEmpty()) {
+              employee_ = other.employee_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEmployeeIsMutable();
+              employee_.addAll(other.employee_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.employee_.isEmpty()) {
+            if (employeeBuilder_.isEmpty()) {
+              employeeBuilder_.dispose();
+              employeeBuilder_ = null;
+              employee_ = other.employee_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              employeeBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEmployeeFieldBuilder() : null;
+            } else {
+              employeeBuilder_.addAllMessages(other.employee_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employee_ =
+        java.util.Collections.emptyList();
+      private void ensureEmployeeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          employee_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>(employee_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> employeeBuilder_;
+
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeeList() {
+        if (employeeBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(employee_);
+        } else {
+          return employeeBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public int getEmployeeCount() {
+        if (employeeBuilder_ == null) {
+          return employee_.size();
+        } else {
+          return employeeBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployee(int index) {
+        if (employeeBuilder_ == null) {
+          return employee_.get(index);
+        } else {
+          return employeeBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder setEmployee(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.set(index, value);
+          onChanged();
+        } else {
+          employeeBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder setEmployee(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder addEmployee(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.add(value);
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.add(index, value);
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.add(builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder addAllEmployee(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> values) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, employee_);
+          onChanged();
+        } else {
+          employeeBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder clearEmployee() {
+        if (employeeBuilder_ == null) {
+          employee_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          employeeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public Builder removeEmployee(int index) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.remove(index);
+          onChanged();
+        } else {
+          employeeBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder getEmployeeBuilder(
+          int index) {
+        return getEmployeeFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeeOrBuilder(
+          int index) {
+        if (employeeBuilder_ == null) {
+          return employee_.get(index);  } else {
+          return employeeBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+           getEmployeeOrBuilderList() {
+        if (employeeBuilder_ != null) {
+          return employeeBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(employee_);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeeBuilder() {
+        return getEmployeeFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeeBuilder(
+          int index) {
+        return getEmployeeFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employee = 1;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder> 
+           getEmployeeBuilderList() {
+        return getEmployeeFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+          getEmployeeFieldBuilder() {
+        if (employeeBuilder_ == null) {
+          employeeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder>(
+                  employee_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          employee_ = null;
+        }
+        return employeeBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:allEmployees)
+    }
+
+    // @@protoc_insertion_point(class_scope:allEmployees)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<allEmployees>
+        PARSER = new com.google.protobuf.AbstractParser<allEmployees>() {
+      @java.lang.Override
+      public allEmployees parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new allEmployees(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<allEmployees> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<allEmployees> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface setCompanyIdAndProjectAndDepartmentIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:setCompanyIdAndProjectAndDepartmentId)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8679,41 +11404,39 @@ public final class CompanyOuterClass {
     grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder();
 
     /**
-     * <code>.Department department = 3;</code>
-     * @return Whether the department field is set.
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
      */
-    boolean hasDepartment();
+    java.lang.String getDepartmentId();
     /**
-     * <code>.Department department = 3;</code>
-     * @return The department.
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment();
-    /**
-     * <code>.Department department = 3;</code>
-     */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder();
+    com.google.protobuf.ByteString
+        getDepartmentIdBytes();
   }
   /**
-   * Protobuf type {@code setCompanyAndProjectAndDepartment}
+   * Protobuf type {@code setCompanyIdAndProjectAndDepartmentId}
    */
-  public  static final class setCompanyAndProjectAndDepartment extends
+  public  static final class setCompanyIdAndProjectAndDepartmentId extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:setCompanyAndProjectAndDepartment)
-      setCompanyAndProjectAndDepartmentOrBuilder {
+      // @@protoc_insertion_point(message_implements:setCompanyIdAndProjectAndDepartmentId)
+      setCompanyIdAndProjectAndDepartmentIdOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use setCompanyAndProjectAndDepartment.newBuilder() to construct.
-    private setCompanyAndProjectAndDepartment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use setCompanyIdAndProjectAndDepartmentId.newBuilder() to construct.
+    private setCompanyIdAndProjectAndDepartmentId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private setCompanyAndProjectAndDepartment() {
+    private setCompanyIdAndProjectAndDepartmentId() {
       companyId_ = "";
+      departmentId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new setCompanyAndProjectAndDepartment();
+      return new setCompanyIdAndProjectAndDepartmentId();
     }
 
     @java.lang.Override
@@ -8721,7 +11444,7 @@ public final class CompanyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private setCompanyAndProjectAndDepartment(
+    private setCompanyIdAndProjectAndDepartmentId(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8759,16 +11482,9 @@ public final class CompanyOuterClass {
               break;
             }
             case 26: {
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder subBuilder = null;
-              if (department_ != null) {
-                subBuilder = department_.toBuilder();
-              }
-              department_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(department_);
-                department_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              departmentId_ = s;
               break;
             }
             default: {
@@ -8792,15 +11508,15 @@ public final class CompanyOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyAndProjectAndDepartment_descriptor;
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyAndProjectAndDepartment_fieldAccessorTable
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentId_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.Builder.class);
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.Builder.class);
     }
 
     public static final int COMPANYID_FIELD_NUMBER = 1;
@@ -8862,27 +11578,40 @@ public final class CompanyOuterClass {
       return getProject();
     }
 
-    public static final int DEPARTMENT_FIELD_NUMBER = 3;
-    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department department_;
+    public static final int DEPARTMENTID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object departmentId_;
     /**
-     * <code>.Department department = 3;</code>
-     * @return Whether the department field is set.
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
      */
-    public boolean hasDepartment() {
-      return department_ != null;
+    public java.lang.String getDepartmentId() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        departmentId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Department department = 3;</code>
-     * @return The department.
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment() {
-      return department_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
-    }
-    /**
-     * <code>.Department department = 3;</code>
-     */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder() {
-      return getDepartment();
+    public com.google.protobuf.ByteString
+        getDepartmentIdBytes() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        departmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8905,8 +11634,8 @@ public final class CompanyOuterClass {
       if (project_ != null) {
         output.writeMessage(2, getProject());
       }
-      if (department_ != null) {
-        output.writeMessage(3, getDepartment());
+      if (!getDepartmentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, departmentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -8924,9 +11653,8 @@ public final class CompanyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getProject());
       }
-      if (department_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getDepartment());
+      if (!getDepartmentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, departmentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8938,10 +11666,10 @@ public final class CompanyOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment)) {
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId)) {
         return super.equals(obj);
       }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) obj;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId) obj;
 
       if (!getCompanyId()
           .equals(other.getCompanyId())) return false;
@@ -8950,11 +11678,8 @@ public final class CompanyOuterClass {
         if (!getProject()
             .equals(other.getProject())) return false;
       }
-      if (hasDepartment() != other.hasDepartment()) return false;
-      if (hasDepartment()) {
-        if (!getDepartment()
-            .equals(other.getDepartment())) return false;
-      }
+      if (!getDepartmentId()
+          .equals(other.getDepartmentId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8972,78 +11697,76 @@ public final class CompanyOuterClass {
         hash = (37 * hash) + PROJECT_FIELD_NUMBER;
         hash = (53 * hash) + getProject().hashCode();
       }
-      if (hasDepartment()) {
-        hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getDepartment().hashCode();
-      }
+      hash = (37 * hash) + DEPARTMENTID_FIELD_NUMBER;
+      hash = (53 * hash) + getDepartmentId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(byte[] data)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(java.io.InputStream input)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseDelimitedFrom(java.io.InputStream input)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseDelimitedFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9056,7 +11779,7 @@ public final class CompanyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment prototype) {
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9072,26 +11795,26 @@ public final class CompanyOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code setCompanyAndProjectAndDepartment}
+     * Protobuf type {@code setCompanyIdAndProjectAndDepartmentId}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:setCompanyAndProjectAndDepartment)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartmentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:setCompanyIdAndProjectAndDepartmentId)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyAndProjectAndDepartment_descriptor;
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyAndProjectAndDepartment_fieldAccessorTable
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentId_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.Builder.class);
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.Builder.class);
       }
 
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.newBuilder()
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9117,29 +11840,25 @@ public final class CompanyOuterClass {
           project_ = null;
           projectBuilder_ = null;
         }
-        if (departmentBuilder_ == null) {
-          department_ = null;
-        } else {
-          department_ = null;
-          departmentBuilder_ = null;
-        }
+        departmentId_ = "";
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyAndProjectAndDepartment_descriptor;
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor;
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.getDefaultInstance();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.getDefaultInstance();
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment result = buildPartial();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9147,19 +11866,15 @@ public final class CompanyOuterClass {
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment(this);
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId(this);
         result.companyId_ = companyId_;
         if (projectBuilder_ == null) {
           result.project_ = project_;
         } else {
           result.project_ = projectBuilder_.build();
         }
-        if (departmentBuilder_ == null) {
-          result.department_ = department_;
-        } else {
-          result.department_ = departmentBuilder_.build();
-        }
+        result.departmentId_ = departmentId_;
         onBuilt();
         return result;
       }
@@ -9198,16 +11913,16 @@ public final class CompanyOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment)other);
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment.getDefaultInstance()) return this;
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId.getDefaultInstance()) return this;
         if (!other.getCompanyId().isEmpty()) {
           companyId_ = other.companyId_;
           onChanged();
@@ -9215,8 +11930,9 @@ public final class CompanyOuterClass {
         if (other.hasProject()) {
           mergeProject(other.getProject());
         }
-        if (other.hasDepartment()) {
-          mergeDepartment(other.getDepartment());
+        if (!other.getDepartmentId().isEmpty()) {
+          departmentId_ = other.departmentId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9233,11 +11949,11 @@ public final class CompanyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment parsedMessage = null;
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment) e.getUnfinishedMessage();
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9442,123 +12158,80 @@ public final class CompanyOuterClass {
         return projectBuilder_;
       }
 
-      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department department_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> departmentBuilder_;
+      private java.lang.Object departmentId_ = "";
       /**
-       * <code>.Department department = 3;</code>
-       * @return Whether the department field is set.
+       * <code>string departmentId = 3;</code>
+       * @return The departmentId.
        */
-      public boolean hasDepartment() {
-        return departmentBuilder_ != null || department_ != null;
-      }
-      /**
-       * <code>.Department department = 3;</code>
-       * @return The department.
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment() {
-        if (departmentBuilder_ == null) {
-          return department_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
+      public java.lang.String getDepartmentId() {
+        java.lang.Object ref = departmentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          departmentId_ = s;
+          return s;
         } else {
-          return departmentBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.Department department = 3;</code>
+       * <code>string departmentId = 3;</code>
+       * @return The bytes for departmentId.
        */
-      public Builder setDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
-        if (departmentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          department_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getDepartmentIdBytes() {
+        java.lang.Object ref = departmentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          departmentId_ = b;
+          return b;
         } else {
-          departmentBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.Department department = 3;</code>
+       * <code>string departmentId = 3;</code>
+       * @param value The departmentId to set.
+       * @return This builder for chaining.
        */
-      public Builder setDepartment(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder builderForValue) {
-        if (departmentBuilder_ == null) {
-          department_ = builderForValue.build();
-          onChanged();
-        } else {
-          departmentBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 3;</code>
-       */
-      public Builder mergeDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
-        if (departmentBuilder_ == null) {
-          if (department_ != null) {
-            department_ =
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.newBuilder(department_).mergeFrom(value).buildPartial();
-          } else {
-            department_ = value;
-          }
-          onChanged();
-        } else {
-          departmentBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 3;</code>
-       */
-      public Builder clearDepartment() {
-        if (departmentBuilder_ == null) {
-          department_ = null;
-          onChanged();
-        } else {
-          department_ = null;
-          departmentBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 3;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder getDepartmentBuilder() {
-        
+      public Builder setDepartmentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        departmentId_ = value;
         onChanged();
-        return getDepartmentFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.Department department = 3;</code>
+       * <code>string departmentId = 3;</code>
+       * @return This builder for chaining.
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder() {
-        if (departmentBuilder_ != null) {
-          return departmentBuilder_.getMessageOrBuilder();
-        } else {
-          return department_ == null ?
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
-        }
+      public Builder clearDepartmentId() {
+        
+        departmentId_ = getDefaultInstance().getDepartmentId();
+        onChanged();
+        return this;
       }
       /**
-       * <code>.Department department = 3;</code>
+       * <code>string departmentId = 3;</code>
+       * @param value The bytes for departmentId to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
-          getDepartmentFieldBuilder() {
-        if (departmentBuilder_ == null) {
-          departmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder>(
-                  getDepartment(),
-                  getParentForChildren(),
-                  isClean());
-          department_ = null;
-        }
-        return departmentBuilder_;
+      public Builder setDepartmentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        departmentId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9573,41 +12246,1175 @@ public final class CompanyOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:setCompanyAndProjectAndDepartment)
+      // @@protoc_insertion_point(builder_scope:setCompanyIdAndProjectAndDepartmentId)
     }
 
-    // @@protoc_insertion_point(class_scope:setCompanyAndProjectAndDepartment)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:setCompanyIdAndProjectAndDepartmentId)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment();
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId();
     }
 
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment getDefaultInstance() {
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<setCompanyAndProjectAndDepartment>
-        PARSER = new com.google.protobuf.AbstractParser<setCompanyAndProjectAndDepartment>() {
+    private static final com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentId>
+        PARSER = new com.google.protobuf.AbstractParser<setCompanyIdAndProjectAndDepartmentId>() {
       @java.lang.Override
-      public setCompanyAndProjectAndDepartment parsePartialFrom(
+      public setCompanyIdAndProjectAndDepartmentId parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new setCompanyAndProjectAndDepartment(input, extensionRegistry);
+        return new setCompanyIdAndProjectAndDepartmentId(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<setCompanyAndProjectAndDepartment> parser() {
+    public static com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentId> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<setCompanyAndProjectAndDepartment> getParserForType() {
+    public com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentId> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyAndProjectAndDepartment getDefaultInstanceForType() {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface setCompanyIdAndProjectAndDepartmentIdAndEmployeesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:setCompanyIdAndProjectAndDepartmentIdAndEmployees)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string companyId = 1;</code>
+     * @return The companyId.
+     */
+    java.lang.String getCompanyId();
+    /**
+     * <code>string companyId = 1;</code>
+     * @return The bytes for companyId.
+     */
+    com.google.protobuf.ByteString
+        getCompanyIdBytes();
+
+    /**
+     * <code>.Project project = 2;</code>
+     * @return Whether the project field is set.
+     */
+    boolean hasProject();
+    /**
+     * <code>.Project project = 2;</code>
+     * @return The project.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject();
+    /**
+     * <code>.Project project = 2;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder();
+
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
+     */
+    java.lang.String getDepartmentId();
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
+     */
+    com.google.protobuf.ByteString
+        getDepartmentIdBytes();
+
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @return A list containing the employeesIds.
+     */
+    java.util.List<java.lang.String>
+        getEmployeesIdsList();
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @return The count of employeesIds.
+     */
+    int getEmployeesIdsCount();
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @param index The index of the element to return.
+     * @return The employeesIds at the given index.
+     */
+    java.lang.String getEmployeesIds(int index);
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the employeesIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getEmployeesIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code setCompanyIdAndProjectAndDepartmentIdAndEmployees}
+   */
+  public  static final class setCompanyIdAndProjectAndDepartmentIdAndEmployees extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:setCompanyIdAndProjectAndDepartmentIdAndEmployees)
+      setCompanyIdAndProjectAndDepartmentIdAndEmployeesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use setCompanyIdAndProjectAndDepartmentIdAndEmployees.newBuilder() to construct.
+    private setCompanyIdAndProjectAndDepartmentIdAndEmployees(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private setCompanyIdAndProjectAndDepartmentIdAndEmployees() {
+      companyId_ = "";
+      departmentId_ = "";
+      employeesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new setCompanyIdAndProjectAndDepartmentIdAndEmployees();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private setCompanyIdAndProjectAndDepartmentIdAndEmployees(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              companyId_ = s;
+              break;
+            }
+            case 18: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
+              }
+              project_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              departmentId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                employeesIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              employeesIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          employeesIds_ = employeesIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.Builder.class);
+    }
+
+    public static final int COMPANYID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object companyId_;
+    /**
+     * <code>string companyId = 1;</code>
+     * @return The companyId.
+     */
+    public java.lang.String getCompanyId() {
+      java.lang.Object ref = companyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string companyId = 1;</code>
+     * @return The bytes for companyId.
+     */
+    public com.google.protobuf.ByteString
+        getCompanyIdBytes() {
+      java.lang.Object ref = companyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        companyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 2;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project project_;
+    /**
+     * <code>.Project project = 2;</code>
+     * @return Whether the project field is set.
+     */
+    public boolean hasProject() {
+      return project_ != null;
+    }
+    /**
+     * <code>.Project project = 2;</code>
+     * @return The project.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject() {
+      return project_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
+    }
+    /**
+     * <code>.Project project = 2;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
+    public static final int DEPARTMENTID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object departmentId_;
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
+     */
+    public java.lang.String getDepartmentId() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        departmentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
+     */
+    public com.google.protobuf.ByteString
+        getDepartmentIdBytes() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        departmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMPLOYEESIDS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList employeesIds_;
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @return A list containing the employeesIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEmployeesIdsList() {
+      return employeesIds_;
+    }
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @return The count of employeesIds.
+     */
+    public int getEmployeesIdsCount() {
+      return employeesIds_.size();
+    }
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @param index The index of the element to return.
+     * @return The employeesIds at the given index.
+     */
+    public java.lang.String getEmployeesIds(int index) {
+      return employeesIds_.get(index);
+    }
+    /**
+     * <code>repeated string employeesIds = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the employeesIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEmployeesIdsBytes(int index) {
+      return employeesIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCompanyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, companyId_);
+      }
+      if (project_ != null) {
+        output.writeMessage(2, getProject());
+      }
+      if (!getDepartmentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, departmentId_);
+      }
+      for (int i = 0; i < employeesIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, employeesIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCompanyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, companyId_);
+      }
+      if (project_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getProject());
+      }
+      if (!getDepartmentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, departmentId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < employeesIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(employeesIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getEmployeesIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees) obj;
+
+      if (!getCompanyId()
+          .equals(other.getCompanyId())) return false;
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
+      }
+      if (!getDepartmentId()
+          .equals(other.getDepartmentId())) return false;
+      if (!getEmployeesIdsList()
+          .equals(other.getEmployeesIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyId().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
+      }
+      hash = (37 * hash) + DEPARTMENTID_FIELD_NUMBER;
+      hash = (53 * hash) + getDepartmentId().hashCode();
+      if (getEmployeesIdsCount() > 0) {
+        hash = (37 * hash) + EMPLOYEESIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeesIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code setCompanyIdAndProjectAndDepartmentIdAndEmployees}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:setCompanyIdAndProjectAndDepartmentIdAndEmployees)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployeesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        companyId_ = "";
+
+        if (projectBuilder_ == null) {
+          project_ = null;
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+        departmentId_ = "";
+
+        employeesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees(this);
+        int from_bitField0_ = bitField0_;
+        result.companyId_ = companyId_;
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
+        result.departmentId_ = departmentId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          employeesIds_ = employeesIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.employeesIds_ = employeesIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees.getDefaultInstance()) return this;
+        if (!other.getCompanyId().isEmpty()) {
+          companyId_ = other.companyId_;
+          onChanged();
+        }
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
+        }
+        if (!other.getDepartmentId().isEmpty()) {
+          departmentId_ = other.departmentId_;
+          onChanged();
+        }
+        if (!other.employeesIds_.isEmpty()) {
+          if (employeesIds_.isEmpty()) {
+            employeesIds_ = other.employeesIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureEmployeesIdsIsMutable();
+            employeesIds_.addAll(other.employeesIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object companyId_ = "";
+      /**
+       * <code>string companyId = 1;</code>
+       * @return The companyId.
+       */
+      public java.lang.String getCompanyId() {
+        java.lang.Object ref = companyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string companyId = 1;</code>
+       * @return The bytes for companyId.
+       */
+      public com.google.protobuf.ByteString
+          getCompanyIdBytes() {
+        java.lang.Object ref = companyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          companyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string companyId = 1;</code>
+       * @param value The companyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        companyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string companyId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanyId() {
+        
+        companyId_ = getDefaultInstance().getCompanyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string companyId = 1;</code>
+       * @param value The bytes for companyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        companyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project project_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> projectBuilder_;
+      /**
+       * <code>.Project project = 2;</code>
+       * @return Whether the project field is set.
+       */
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       * @return The project.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
+        } else {
+          return projectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public Builder setProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          project_ = value;
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public Builder setProject(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public Builder mergeProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
+          } else {
+            project_ = value;
+          }
+          onChanged();
+        } else {
+          projectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
+          onChanged();
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder getProjectBuilder() {
+        
+        onChanged();
+        return getProjectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
+        } else {
+          return project_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
+        }
+      }
+      /**
+       * <code>.Project project = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder>(
+                  getProject(),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
+      }
+
+      private java.lang.Object departmentId_ = "";
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return The departmentId.
+       */
+      public java.lang.String getDepartmentId() {
+        java.lang.Object ref = departmentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          departmentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return The bytes for departmentId.
+       */
+      public com.google.protobuf.ByteString
+          getDepartmentIdBytes() {
+        java.lang.Object ref = departmentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          departmentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @param value The departmentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartmentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        departmentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDepartmentId() {
+        
+        departmentId_ = getDefaultInstance().getDepartmentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @param value The bytes for departmentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartmentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        departmentId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList employeesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureEmployeesIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          employeesIds_ = new com.google.protobuf.LazyStringArrayList(employeesIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @return A list containing the employeesIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getEmployeesIdsList() {
+        return employeesIds_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @return The count of employeesIds.
+       */
+      public int getEmployeesIdsCount() {
+        return employeesIds_.size();
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param index The index of the element to return.
+       * @return The employeesIds at the given index.
+       */
+      public java.lang.String getEmployeesIds(int index) {
+        return employeesIds_.get(index);
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the employeesIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getEmployeesIdsBytes(int index) {
+        return employeesIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The employeesIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmployeesIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEmployeesIdsIsMutable();
+        employeesIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param value The employeesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addEmployeesIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEmployeesIdsIsMutable();
+        employeesIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param values The employeesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllEmployeesIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureEmployeesIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, employeesIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmployeesIds() {
+        employeesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string employeesIds = 4;</code>
+       * @param value The bytes of the employeesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addEmployeesIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureEmployeesIdsIsMutable();
+        employeesIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:setCompanyIdAndProjectAndDepartmentIdAndEmployees)
+    }
+
+    // @@protoc_insertion_point(class_scope:setCompanyIdAndProjectAndDepartmentIdAndEmployees)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentIdAndEmployees>
+        PARSER = new com.google.protobuf.AbstractParser<setCompanyIdAndProjectAndDepartmentIdAndEmployees>() {
+      @java.lang.Override
+      public setCompanyIdAndProjectAndDepartmentIdAndEmployees parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new setCompanyIdAndProjectAndDepartmentIdAndEmployees(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentIdAndEmployees> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<setCompanyIdAndProjectAndDepartmentIdAndEmployees> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndProjectAndDepartmentIdAndEmployees getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10179,32 +13986,607 @@ public final class CompanyOuterClass {
 
   }
 
+  public interface setEmployeeIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:setEmployeeId)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string EmployeeId = 1;</code>
+     * @return The employeeId.
+     */
+    java.lang.String getEmployeeId();
+    /**
+     * <code>string EmployeeId = 1;</code>
+     * @return The bytes for employeeId.
+     */
+    com.google.protobuf.ByteString
+        getEmployeeIdBytes();
+  }
+  /**
+   * Protobuf type {@code setEmployeeId}
+   */
+  public  static final class setEmployeeId extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:setEmployeeId)
+      setEmployeeIdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use setEmployeeId.newBuilder() to construct.
+    private setEmployeeId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private setEmployeeId() {
+      employeeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new setEmployeeId();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private setEmployeeId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              employeeId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setEmployeeId_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setEmployeeId_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.Builder.class);
+    }
+
+    public static final int EMPLOYEEID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object employeeId_;
+    /**
+     * <code>string EmployeeId = 1;</code>
+     * @return The employeeId.
+     */
+    public java.lang.String getEmployeeId() {
+      java.lang.Object ref = employeeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        employeeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string EmployeeId = 1;</code>
+     * @return The bytes for employeeId.
+     */
+    public com.google.protobuf.ByteString
+        getEmployeeIdBytes() {
+      java.lang.Object ref = employeeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        employeeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getEmployeeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, employeeId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getEmployeeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, employeeId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId) obj;
+
+      if (!getEmployeeId()
+          .equals(other.getEmployeeId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMPLOYEEID_FIELD_NUMBER;
+      hash = (53 * hash) + getEmployeeId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code setEmployeeId}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:setEmployeeId)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeIdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setEmployeeId_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setEmployeeId_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        employeeId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setEmployeeId_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId(this);
+        result.employeeId_ = employeeId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId.getDefaultInstance()) return this;
+        if (!other.getEmployeeId().isEmpty()) {
+          employeeId_ = other.employeeId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object employeeId_ = "";
+      /**
+       * <code>string EmployeeId = 1;</code>
+       * @return The employeeId.
+       */
+      public java.lang.String getEmployeeId() {
+        java.lang.Object ref = employeeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          employeeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string EmployeeId = 1;</code>
+       * @return The bytes for employeeId.
+       */
+      public com.google.protobuf.ByteString
+          getEmployeeIdBytes() {
+        java.lang.Object ref = employeeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          employeeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string EmployeeId = 1;</code>
+       * @param value The employeeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmployeeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        employeeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EmployeeId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmployeeId() {
+        
+        employeeId_ = getDefaultInstance().getEmployeeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EmployeeId = 1;</code>
+       * @param value The bytes for employeeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmployeeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        employeeId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:setEmployeeId)
+    }
+
+    // @@protoc_insertion_point(class_scope:setEmployeeId)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<setEmployeeId>
+        PARSER = new com.google.protobuf.AbstractParser<setEmployeeId>() {
+      @java.lang.Override
+      public setEmployeeId parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new setEmployeeId(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<setEmployeeId> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<setEmployeeId> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setEmployeeId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface setCompanyIdAndDepartmentOrBuilder extends
       // @@protoc_insertion_point(interface_extends:setCompanyIdAndDepartment)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Department department = 1;</code>
-     * @return Whether the department field is set.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    boolean hasDepartment();
+    java.lang.String getName();
     /**
-     * <code>.Department department = 1;</code>
-     * @return The department.
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment();
-    /**
-     * <code>.Department department = 1;</code>
-     */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder();
+    com.google.protobuf.ByteString
+        getNameBytes();
 
     /**
-     * <code>string companyId = 2;</code>
+     * <code>string speciality = 2;</code>
+     * @return The speciality.
+     */
+    java.lang.String getSpeciality();
+    /**
+     * <code>string speciality = 2;</code>
+     * @return The bytes for speciality.
+     */
+    com.google.protobuf.ByteString
+        getSpecialityBytes();
+
+    /**
+     * <code>string companyId = 3;</code>
      * @return The companyId.
      */
     java.lang.String getCompanyId();
     /**
-     * <code>string companyId = 2;</code>
+     * <code>string companyId = 3;</code>
      * @return The bytes for companyId.
      */
     com.google.protobuf.ByteString
@@ -10223,6 +14605,8 @@ public final class CompanyOuterClass {
       super(builder);
     }
     private setCompanyIdAndDepartment() {
+      name_ = "";
+      speciality_ = "";
       companyId_ = "";
     }
 
@@ -10257,19 +14641,18 @@ public final class CompanyOuterClass {
               done = true;
               break;
             case 10: {
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder subBuilder = null;
-              if (department_ != null) {
-                subBuilder = department_.toBuilder();
-              }
-              department_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(department_);
-                department_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              name_ = s;
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              speciality_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               companyId_ = s;
@@ -10307,33 +14690,82 @@ public final class CompanyOuterClass {
               grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment.Builder.class);
     }
 
-    public static final int DEPARTMENT_FIELD_NUMBER = 1;
-    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department department_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
     /**
-     * <code>.Department department = 1;</code>
-     * @return Whether the department field is set.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    public boolean hasDepartment() {
-      return department_ != null;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Department department = 1;</code>
-     * @return The department.
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment() {
-      return department_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
-    }
-    /**
-     * <code>.Department department = 1;</code>
-     */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder() {
-      return getDepartment();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int COMPANYID_FIELD_NUMBER = 2;
+    public static final int SPECIALITY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object speciality_;
+    /**
+     * <code>string speciality = 2;</code>
+     * @return The speciality.
+     */
+    public java.lang.String getSpeciality() {
+      java.lang.Object ref = speciality_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        speciality_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string speciality = 2;</code>
+     * @return The bytes for speciality.
+     */
+    public com.google.protobuf.ByteString
+        getSpecialityBytes() {
+      java.lang.Object ref = speciality_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        speciality_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANYID_FIELD_NUMBER = 3;
     private volatile java.lang.Object companyId_;
     /**
-     * <code>string companyId = 2;</code>
+     * <code>string companyId = 3;</code>
      * @return The companyId.
      */
     public java.lang.String getCompanyId() {
@@ -10349,7 +14781,7 @@ public final class CompanyOuterClass {
       }
     }
     /**
-     * <code>string companyId = 2;</code>
+     * <code>string companyId = 3;</code>
      * @return The bytes for companyId.
      */
     public com.google.protobuf.ByteString
@@ -10380,11 +14812,14 @@ public final class CompanyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (department_ != null) {
-        output.writeMessage(1, getDepartment());
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getSpecialityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, speciality_);
       }
       if (!getCompanyIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, companyId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, companyId_);
       }
       unknownFields.writeTo(output);
     }
@@ -10395,12 +14830,14 @@ public final class CompanyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (department_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDepartment());
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getSpecialityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, speciality_);
       }
       if (!getCompanyIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, companyId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, companyId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10417,11 +14854,10 @@ public final class CompanyOuterClass {
       }
       grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment) obj;
 
-      if (hasDepartment() != other.hasDepartment()) return false;
-      if (hasDepartment()) {
-        if (!getDepartment()
-            .equals(other.getDepartment())) return false;
-      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSpeciality()
+          .equals(other.getSpeciality())) return false;
       if (!getCompanyId()
           .equals(other.getCompanyId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -10435,10 +14871,10 @@ public final class CompanyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDepartment()) {
-        hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getDepartment().hashCode();
-      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SPECIALITY_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeciality().hashCode();
       hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
       hash = (53 * hash) + getCompanyId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -10574,12 +15010,10 @@ public final class CompanyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (departmentBuilder_ == null) {
-          department_ = null;
-        } else {
-          department_ = null;
-          departmentBuilder_ = null;
-        }
+        name_ = "";
+
+        speciality_ = "";
+
         companyId_ = "";
 
         return this;
@@ -10608,11 +15042,8 @@ public final class CompanyOuterClass {
       @java.lang.Override
       public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment buildPartial() {
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment(this);
-        if (departmentBuilder_ == null) {
-          result.department_ = department_;
-        } else {
-          result.department_ = departmentBuilder_.build();
-        }
+        result.name_ = name_;
+        result.speciality_ = speciality_;
         result.companyId_ = companyId_;
         onBuilt();
         return result;
@@ -10662,8 +15093,13 @@ public final class CompanyOuterClass {
 
       public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment other) {
         if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartment.getDefaultInstance()) return this;
-        if (other.hasDepartment()) {
-          mergeDepartment(other.getDepartment());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getSpeciality().isEmpty()) {
+          speciality_ = other.speciality_;
+          onChanged();
         }
         if (!other.getCompanyId().isEmpty()) {
           companyId_ = other.companyId_;
@@ -10698,128 +15134,161 @@ public final class CompanyOuterClass {
         return this;
       }
 
-      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department department_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> departmentBuilder_;
+      private java.lang.Object name_ = "";
       /**
-       * <code>.Department department = 1;</code>
-       * @return Whether the department field is set.
+       * <code>string name = 1;</code>
+       * @return The name.
        */
-      public boolean hasDepartment() {
-        return departmentBuilder_ != null || department_ != null;
-      }
-      /**
-       * <code>.Department department = 1;</code>
-       * @return The department.
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartment() {
-        if (departmentBuilder_ == null) {
-          return department_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
         } else {
-          return departmentBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.Department department = 1;</code>
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
-      public Builder setDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
-        if (departmentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          department_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
         } else {
-          departmentBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.Department department = 1;</code>
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
-      public Builder setDepartment(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder builderForValue) {
-        if (departmentBuilder_ == null) {
-          department_ = builderForValue.build();
-          onChanged();
-        } else {
-          departmentBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 1;</code>
-       */
-      public Builder mergeDepartment(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
-        if (departmentBuilder_ == null) {
-          if (department_ != null) {
-            department_ =
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.newBuilder(department_).mergeFrom(value).buildPartial();
-          } else {
-            department_ = value;
-          }
-          onChanged();
-        } else {
-          departmentBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 1;</code>
-       */
-      public Builder clearDepartment() {
-        if (departmentBuilder_ == null) {
-          department_ = null;
-          onChanged();
-        } else {
-          department_ = null;
-          departmentBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Department department = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder getDepartmentBuilder() {
-        
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
         onChanged();
-        return getDepartmentFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.Department department = 1;</code>
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentOrBuilder() {
-        if (departmentBuilder_ != null) {
-          return departmentBuilder_.getMessageOrBuilder();
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object speciality_ = "";
+      /**
+       * <code>string speciality = 2;</code>
+       * @return The speciality.
+       */
+      public java.lang.String getSpeciality() {
+        java.lang.Object ref = speciality_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          speciality_ = s;
+          return s;
         } else {
-          return department_ == null ?
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance() : department_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.Department department = 1;</code>
+       * <code>string speciality = 2;</code>
+       * @return The bytes for speciality.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
-          getDepartmentFieldBuilder() {
-        if (departmentBuilder_ == null) {
-          departmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder>(
-                  getDepartment(),
-                  getParentForChildren(),
-                  isClean());
-          department_ = null;
+      public com.google.protobuf.ByteString
+          getSpecialityBytes() {
+        java.lang.Object ref = speciality_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          speciality_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return departmentBuilder_;
+      }
+      /**
+       * <code>string speciality = 2;</code>
+       * @param value The speciality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpeciality(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        speciality_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string speciality = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpeciality() {
+        
+        speciality_ = getDefaultInstance().getSpeciality();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string speciality = 2;</code>
+       * @param value The bytes for speciality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpecialityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        speciality_ = value;
+        onChanged();
+        return this;
       }
 
       private java.lang.Object companyId_ = "";
       /**
-       * <code>string companyId = 2;</code>
+       * <code>string companyId = 3;</code>
        * @return The companyId.
        */
       public java.lang.String getCompanyId() {
@@ -10835,7 +15304,7 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>string companyId = 2;</code>
+       * <code>string companyId = 3;</code>
        * @return The bytes for companyId.
        */
       public com.google.protobuf.ByteString
@@ -10852,7 +15321,7 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>string companyId = 2;</code>
+       * <code>string companyId = 3;</code>
        * @param value The companyId to set.
        * @return This builder for chaining.
        */
@@ -10867,7 +15336,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>string companyId = 2;</code>
+       * <code>string companyId = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompanyId() {
@@ -10877,7 +15346,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>string companyId = 2;</code>
+       * <code>string companyId = 3;</code>
        * @param value The bytes for companyId to set.
        * @return This builder for chaining.
        */
@@ -12373,32 +16842,4370 @@ public final class CompanyOuterClass {
 
   }
 
+  public interface setCompanyIdAndDepartmentIdAndEmployeeIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:setCompanyIdAndDepartmentIdAndEmployeeId)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string employeeId = 1;</code>
+     * @return The employeeId.
+     */
+    java.lang.String getEmployeeId();
+    /**
+     * <code>string employeeId = 1;</code>
+     * @return The bytes for employeeId.
+     */
+    com.google.protobuf.ByteString
+        getEmployeeIdBytes();
+
+    /**
+     * <code>string companyId = 2;</code>
+     * @return The companyId.
+     */
+    java.lang.String getCompanyId();
+    /**
+     * <code>string companyId = 2;</code>
+     * @return The bytes for companyId.
+     */
+    com.google.protobuf.ByteString
+        getCompanyIdBytes();
+
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
+     */
+    java.lang.String getDepartmentId();
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
+     */
+    com.google.protobuf.ByteString
+        getDepartmentIdBytes();
+  }
+  /**
+   * Protobuf type {@code setCompanyIdAndDepartmentIdAndEmployeeId}
+   */
+  public  static final class setCompanyIdAndDepartmentIdAndEmployeeId extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:setCompanyIdAndDepartmentIdAndEmployeeId)
+      setCompanyIdAndDepartmentIdAndEmployeeIdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use setCompanyIdAndDepartmentIdAndEmployeeId.newBuilder() to construct.
+    private setCompanyIdAndDepartmentIdAndEmployeeId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private setCompanyIdAndDepartmentIdAndEmployeeId() {
+      employeeId_ = "";
+      companyId_ = "";
+      departmentId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new setCompanyIdAndDepartmentIdAndEmployeeId();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private setCompanyIdAndDepartmentIdAndEmployeeId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              employeeId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              companyId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              departmentId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.Builder.class);
+    }
+
+    public static final int EMPLOYEEID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object employeeId_;
+    /**
+     * <code>string employeeId = 1;</code>
+     * @return The employeeId.
+     */
+    public java.lang.String getEmployeeId() {
+      java.lang.Object ref = employeeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        employeeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string employeeId = 1;</code>
+     * @return The bytes for employeeId.
+     */
+    public com.google.protobuf.ByteString
+        getEmployeeIdBytes() {
+      java.lang.Object ref = employeeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        employeeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANYID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object companyId_;
+    /**
+     * <code>string companyId = 2;</code>
+     * @return The companyId.
+     */
+    public java.lang.String getCompanyId() {
+      java.lang.Object ref = companyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string companyId = 2;</code>
+     * @return The bytes for companyId.
+     */
+    public com.google.protobuf.ByteString
+        getCompanyIdBytes() {
+      java.lang.Object ref = companyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        companyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEPARTMENTID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object departmentId_;
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The departmentId.
+     */
+    public java.lang.String getDepartmentId() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        departmentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string departmentId = 3;</code>
+     * @return The bytes for departmentId.
+     */
+    public com.google.protobuf.ByteString
+        getDepartmentIdBytes() {
+      java.lang.Object ref = departmentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        departmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getEmployeeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, employeeId_);
+      }
+      if (!getCompanyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, companyId_);
+      }
+      if (!getDepartmentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, departmentId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getEmployeeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, employeeId_);
+      }
+      if (!getCompanyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, companyId_);
+      }
+      if (!getDepartmentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, departmentId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId) obj;
+
+      if (!getEmployeeId()
+          .equals(other.getEmployeeId())) return false;
+      if (!getCompanyId()
+          .equals(other.getCompanyId())) return false;
+      if (!getDepartmentId()
+          .equals(other.getDepartmentId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMPLOYEEID_FIELD_NUMBER;
+      hash = (53 * hash) + getEmployeeId().hashCode();
+      hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyId().hashCode();
+      hash = (37 * hash) + DEPARTMENTID_FIELD_NUMBER;
+      hash = (53 * hash) + getDepartmentId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code setCompanyIdAndDepartmentIdAndEmployeeId}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:setCompanyIdAndDepartmentIdAndEmployeeId)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeIdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        employeeId_ = "";
+
+        companyId_ = "";
+
+        departmentId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId(this);
+        result.employeeId_ = employeeId_;
+        result.companyId_ = companyId_;
+        result.departmentId_ = departmentId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId.getDefaultInstance()) return this;
+        if (!other.getEmployeeId().isEmpty()) {
+          employeeId_ = other.employeeId_;
+          onChanged();
+        }
+        if (!other.getCompanyId().isEmpty()) {
+          companyId_ = other.companyId_;
+          onChanged();
+        }
+        if (!other.getDepartmentId().isEmpty()) {
+          departmentId_ = other.departmentId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object employeeId_ = "";
+      /**
+       * <code>string employeeId = 1;</code>
+       * @return The employeeId.
+       */
+      public java.lang.String getEmployeeId() {
+        java.lang.Object ref = employeeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          employeeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string employeeId = 1;</code>
+       * @return The bytes for employeeId.
+       */
+      public com.google.protobuf.ByteString
+          getEmployeeIdBytes() {
+        java.lang.Object ref = employeeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          employeeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string employeeId = 1;</code>
+       * @param value The employeeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmployeeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        employeeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string employeeId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmployeeId() {
+        
+        employeeId_ = getDefaultInstance().getEmployeeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string employeeId = 1;</code>
+       * @param value The bytes for employeeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmployeeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        employeeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object companyId_ = "";
+      /**
+       * <code>string companyId = 2;</code>
+       * @return The companyId.
+       */
+      public java.lang.String getCompanyId() {
+        java.lang.Object ref = companyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string companyId = 2;</code>
+       * @return The bytes for companyId.
+       */
+      public com.google.protobuf.ByteString
+          getCompanyIdBytes() {
+        java.lang.Object ref = companyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          companyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string companyId = 2;</code>
+       * @param value The companyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        companyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string companyId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanyId() {
+        
+        companyId_ = getDefaultInstance().getCompanyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string companyId = 2;</code>
+       * @param value The bytes for companyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        companyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object departmentId_ = "";
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return The departmentId.
+       */
+      public java.lang.String getDepartmentId() {
+        java.lang.Object ref = departmentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          departmentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return The bytes for departmentId.
+       */
+      public com.google.protobuf.ByteString
+          getDepartmentIdBytes() {
+        java.lang.Object ref = departmentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          departmentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @param value The departmentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartmentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        departmentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDepartmentId() {
+        
+        departmentId_ = getDefaultInstance().getDepartmentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string departmentId = 3;</code>
+       * @param value The bytes for departmentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartmentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        departmentId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:setCompanyIdAndDepartmentIdAndEmployeeId)
+    }
+
+    // @@protoc_insertion_point(class_scope:setCompanyIdAndDepartmentIdAndEmployeeId)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<setCompanyIdAndDepartmentIdAndEmployeeId>
+        PARSER = new com.google.protobuf.AbstractParser<setCompanyIdAndDepartmentIdAndEmployeeId>() {
+      @java.lang.Override
+      public setCompanyIdAndDepartmentIdAndEmployeeId parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new setCompanyIdAndDepartmentIdAndEmployeeId(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<setCompanyIdAndDepartmentIdAndEmployeeId> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<setCompanyIdAndDepartmentIdAndEmployeeId> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndDepartmentIdAndEmployeeId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface getProjectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:getProject)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>.Date deadLine = 2;</code>
+     * @return Whether the deadLine field is set.
+     */
+    boolean hasDeadLine();
+    /**
+     * <code>.Date deadLine = 2;</code>
+     * @return The deadLine.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine();
+    /**
+     * <code>.Date deadLine = 2;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder();
+
+    /**
+     * <code>bool finished = 3;</code>
+     * @return The finished.
+     */
+    boolean getFinished();
+
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> 
+        getEmployeesList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index);
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    int getEmployeesCount();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index);
+
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The status.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus();
+  }
+  /**
+   * Protobuf type {@code getProject}
+   */
+  public  static final class getProject extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:getProject)
+      getProjectOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getProject.newBuilder() to construct.
+    private getProject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getProject() {
+      name_ = "";
+      employees_ = java.util.Collections.emptyList();
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getProject();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getProject(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
+              if (deadLine_ != null) {
+                subBuilder = deadLine_.toBuilder();
+              }
+              deadLine_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deadLine_);
+                deadLine_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              finished_ = input.readBool();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              employees_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          employees_ = java.util.Collections.unmodifiableList(employees_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getProject_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getProject_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEADLINE_FIELD_NUMBER = 2;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date deadLine_;
+    /**
+     * <code>.Date deadLine = 2;</code>
+     * @return Whether the deadLine field is set.
+     */
+    public boolean hasDeadLine() {
+      return deadLine_ != null;
+    }
+    /**
+     * <code>.Date deadLine = 2;</code>
+     * @return The deadLine.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine() {
+      return deadLine_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
+    }
+    /**
+     * <code>.Date deadLine = 2;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder() {
+      return getDeadLine();
+    }
+
+    public static final int FINISHED_FIELD_NUMBER = 3;
+    private boolean finished_;
+    /**
+     * <code>bool finished = 3;</code>
+     * @return The finished.
+     */
+    public boolean getFinished() {
+      return finished_;
+    }
+
+    public static final int EMPLOYEES_FIELD_NUMBER = 4;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_;
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public int getEmployeesCount() {
+      return employees_.size();
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+      return employees_.get(index);
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index) {
+      return employees_.get(index);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private int status_;
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.StatusProject status = 5;</code>
+     * @return The status.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+      @SuppressWarnings("deprecation")
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+      return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (deadLine_ != null) {
+        output.writeMessage(2, getDeadLine());
+      }
+      if (finished_ != false) {
+        output.writeBool(3, finished_);
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        output.writeMessage(4, employees_.get(i));
+      }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        output.writeEnum(5, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (deadLine_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getDeadLine());
+      }
+      if (finished_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, finished_);
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, employees_.get(i));
+      }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (hasDeadLine() != other.hasDeadLine()) return false;
+      if (hasDeadLine()) {
+        if (!getDeadLine()
+            .equals(other.getDeadLine())) return false;
+      }
+      if (getFinished()
+          != other.getFinished()) return false;
+      if (!getEmployeesList()
+          .equals(other.getEmployeesList())) return false;
+      if (status_ != other.status_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (hasDeadLine()) {
+        hash = (37 * hash) + DEADLINE_FIELD_NUMBER;
+        hash = (53 * hash) + getDeadLine().hashCode();
+      }
+      hash = (37 * hash) + FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFinished());
+      if (getEmployeesCount() > 0) {
+        hash = (37 * hash) + EMPLOYEES_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeesList().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code getProject}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:getProject)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getProject_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getProject_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEmployeesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        if (deadLineBuilder_ == null) {
+          deadLine_ = null;
+        } else {
+          deadLine_ = null;
+          deadLineBuilder_ = null;
+        }
+        finished_ = false;
+
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          employeesBuilder_.clear();
+        }
+        status_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getProject_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject(this);
+        int from_bitField0_ = bitField0_;
+        result.name_ = name_;
+        if (deadLineBuilder_ == null) {
+          result.deadLine_ = deadLine_;
+        } else {
+          result.deadLine_ = deadLineBuilder_.build();
+        }
+        result.finished_ = finished_;
+        if (employeesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            employees_ = java.util.Collections.unmodifiableList(employees_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.employees_ = employees_;
+        } else {
+          result.employees_ = employeesBuilder_.build();
+        }
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasDeadLine()) {
+          mergeDeadLine(other.getDeadLine());
+        }
+        if (other.getFinished() != false) {
+          setFinished(other.getFinished());
+        }
+        if (employeesBuilder_ == null) {
+          if (!other.employees_.isEmpty()) {
+            if (employees_.isEmpty()) {
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEmployeesIsMutable();
+              employees_.addAll(other.employees_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.employees_.isEmpty()) {
+            if (employeesBuilder_.isEmpty()) {
+              employeesBuilder_.dispose();
+              employeesBuilder_ = null;
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              employeesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEmployeesFieldBuilder() : null;
+            } else {
+              employeesBuilder_.addAllMessages(other.employees_);
+            }
+          }
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date deadLine_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> deadLineBuilder_;
+      /**
+       * <code>.Date deadLine = 2;</code>
+       * @return Whether the deadLine field is set.
+       */
+      public boolean hasDeadLine() {
+        return deadLineBuilder_ != null || deadLine_ != null;
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       * @return The deadLine.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDeadLine() {
+        if (deadLineBuilder_ == null) {
+          return deadLine_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
+        } else {
+          return deadLineBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public Builder setDeadLine(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (deadLineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deadLine_ = value;
+          onChanged();
+        } else {
+          deadLineBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public Builder setDeadLine(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
+        if (deadLineBuilder_ == null) {
+          deadLine_ = builderForValue.build();
+          onChanged();
+        } else {
+          deadLineBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public Builder mergeDeadLine(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (deadLineBuilder_ == null) {
+          if (deadLine_ != null) {
+            deadLine_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(deadLine_).mergeFrom(value).buildPartial();
+          } else {
+            deadLine_ = value;
+          }
+          onChanged();
+        } else {
+          deadLineBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public Builder clearDeadLine() {
+        if (deadLineBuilder_ == null) {
+          deadLine_ = null;
+          onChanged();
+        } else {
+          deadLine_ = null;
+          deadLineBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDeadLineBuilder() {
+        
+        onChanged();
+        return getDeadLineFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDeadLineOrBuilder() {
+        if (deadLineBuilder_ != null) {
+          return deadLineBuilder_.getMessageOrBuilder();
+        } else {
+          return deadLine_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : deadLine_;
+        }
+      }
+      /**
+       * <code>.Date deadLine = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
+          getDeadLineFieldBuilder() {
+        if (deadLineBuilder_ == null) {
+          deadLineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
+                  getDeadLine(),
+                  getParentForChildren(),
+                  isClean());
+          deadLine_ = null;
+        }
+        return deadLineBuilder_;
+      }
+
+      private boolean finished_ ;
+      /**
+       * <code>bool finished = 3;</code>
+       * @return The finished.
+       */
+      public boolean getFinished() {
+        return finished_;
+      }
+      /**
+       * <code>bool finished = 3;</code>
+       * @param value The finished to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinished(boolean value) {
+        
+        finished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool finished = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinished() {
+        
+        finished_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_ =
+        java.util.Collections.emptyList();
+      private void ensureEmployeesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>(employees_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> employeesBuilder_;
+
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+        if (employeesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(employees_);
+        } else {
+          return employeesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public int getEmployeesCount() {
+        if (employeesBuilder_ == null) {
+          return employees_.size();
+        } else {
+          return employeesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);
+        } else {
+          return employeesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.set(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addAllEmployees(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> values) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, employees_);
+          onChanged();
+        } else {
+          employeesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder clearEmployees() {
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          employeesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder removeEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.remove(index);
+          onChanged();
+        } else {
+          employeesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder getEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+          int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);  } else {
+          return employeesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+           getEmployeesOrBuilderList() {
+        if (employeesBuilder_ != null) {
+          return employeesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(employees_);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder() {
+        return getEmployeesFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder> 
+           getEmployeesBuilderList() {
+        return getEmployeesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+          getEmployeesFieldBuilder() {
+        if (employeesBuilder_ == null) {
+          employeesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder>(
+                  employees_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          employees_ = null;
+        }
+        return employeesBuilder_;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return The status.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+        @SuppressWarnings("deprecation")
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+        return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.StatusProject status = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:getProject)
+    }
+
+    // @@protoc_insertion_point(class_scope:getProject)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getProject>
+        PARSER = new com.google.protobuf.AbstractParser<getProject>() {
+      @java.lang.Override
+      public getProject parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getProject(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getProject> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getProject> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface getDepartmentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:getDepartment)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string D_no = 1;</code>
+     * @return The dNo.
+     */
+    java.lang.String getDNo();
+    /**
+     * <code>string D_no = 1;</code>
+     * @return The bytes for dNo.
+     */
+    com.google.protobuf.ByteString
+        getDNoBytes();
+
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string speciality = 3;</code>
+     * @return The speciality.
+     */
+    java.lang.String getSpeciality();
+    /**
+     * <code>string speciality = 3;</code>
+     * @return The bytes for speciality.
+     */
+    com.google.protobuf.ByteString
+        getSpecialityBytes();
+
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> 
+        getEmployeesList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index);
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    int getEmployeesCount();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index);
+
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     * @return Whether the manager field is set.
+     */
+    boolean hasManager();
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     * @return The manager.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getManager();
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getManagerOrBuilder();
+
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> 
+        getSubDepartmentsList();
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getSubDepartments(int index);
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    int getSubDepartmentsCount();
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+        getSubDepartmentsOrBuilderList();
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getSubDepartmentsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> 
+        getProjectsList();
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index);
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    int getProjectsCount();
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code getDepartment}
+   */
+  public  static final class getDepartment extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:getDepartment)
+      getDepartmentOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getDepartment.newBuilder() to construct.
+    private getDepartment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getDepartment() {
+      dNo_ = "";
+      name_ = "";
+      speciality_ = "";
+      employees_ = java.util.Collections.emptyList();
+      subDepartments_ = java.util.Collections.emptyList();
+      projects_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getDepartment();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getDepartment(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dNo_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              speciality_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              employees_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder subBuilder = null;
+              if (manager_ != null) {
+                subBuilder = manager_.toBuilder();
+              }
+              manager_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(manager_);
+                manager_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                subDepartments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              subDepartments_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              projects_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          employees_ = java.util.Collections.unmodifiableList(employees_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          subDepartments_ = java.util.Collections.unmodifiableList(subDepartments_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDepartment_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDepartment_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder.class);
+    }
+
+    public static final int D_NO_FIELD_NUMBER = 1;
+    private volatile java.lang.Object dNo_;
+    /**
+     * <code>string D_no = 1;</code>
+     * @return The dNo.
+     */
+    public java.lang.String getDNo() {
+      java.lang.Object ref = dNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dNo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string D_no = 1;</code>
+     * @return The bytes for dNo.
+     */
+    public com.google.protobuf.ByteString
+        getDNoBytes() {
+      java.lang.Object ref = dNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPECIALITY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object speciality_;
+    /**
+     * <code>string speciality = 3;</code>
+     * @return The speciality.
+     */
+    public java.lang.String getSpeciality() {
+      java.lang.Object ref = speciality_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        speciality_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string speciality = 3;</code>
+     * @return The bytes for speciality.
+     */
+    public com.google.protobuf.ByteString
+        getSpecialityBytes() {
+      java.lang.Object ref = speciality_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        speciality_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMPLOYEES_FIELD_NUMBER = 4;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_;
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public int getEmployeesCount() {
+      return employees_.size();
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+      return employees_.get(index);
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index) {
+      return employees_.get(index);
+    }
+
+    public static final int MANAGER_FIELD_NUMBER = 5;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee manager_;
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     * @return Whether the manager field is set.
+     */
+    public boolean hasManager() {
+      return manager_ != null;
+    }
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     * @return The manager.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getManager() {
+      return manager_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance() : manager_;
+    }
+    /**
+     * <code>.getEmployee manager = 5;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getManagerOrBuilder() {
+      return getManager();
+    }
+
+    public static final int SUBDEPARTMENTS_FIELD_NUMBER = 6;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> subDepartments_;
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getSubDepartmentsList() {
+      return subDepartments_;
+    }
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+        getSubDepartmentsOrBuilderList() {
+      return subDepartments_;
+    }
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    public int getSubDepartmentsCount() {
+      return subDepartments_.size();
+    }
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getSubDepartments(int index) {
+      return subDepartments_.get(index);
+    }
+    /**
+     * <code>repeated .getDepartment subDepartments = 6;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getSubDepartmentsOrBuilder(
+        int index) {
+      return subDepartments_.get(index);
+    }
+
+    public static final int PROJECTS_FIELD_NUMBER = 7;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> projects_;
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> getProjectsList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .getProject projects = 7;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDNoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dNo_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (!getSpecialityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, speciality_);
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        output.writeMessage(4, employees_.get(i));
+      }
+      if (manager_ != null) {
+        output.writeMessage(5, getManager());
+      }
+      for (int i = 0; i < subDepartments_.size(); i++) {
+        output.writeMessage(6, subDepartments_.get(i));
+      }
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(7, projects_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDNoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dNo_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!getSpecialityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, speciality_);
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, employees_.get(i));
+      }
+      if (manager_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getManager());
+      }
+      for (int i = 0; i < subDepartments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, subDepartments_.get(i));
+      }
+      for (int i = 0; i < projects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, projects_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment) obj;
+
+      if (!getDNo()
+          .equals(other.getDNo())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSpeciality()
+          .equals(other.getSpeciality())) return false;
+      if (!getEmployeesList()
+          .equals(other.getEmployeesList())) return false;
+      if (hasManager() != other.hasManager()) return false;
+      if (hasManager()) {
+        if (!getManager()
+            .equals(other.getManager())) return false;
+      }
+      if (!getSubDepartmentsList()
+          .equals(other.getSubDepartmentsList())) return false;
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + D_NO_FIELD_NUMBER;
+      hash = (53 * hash) + getDNo().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SPECIALITY_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeciality().hashCode();
+      if (getEmployeesCount() > 0) {
+        hash = (37 * hash) + EMPLOYEES_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeesList().hashCode();
+      }
+      if (hasManager()) {
+        hash = (37 * hash) + MANAGER_FIELD_NUMBER;
+        hash = (53 * hash) + getManager().hashCode();
+      }
+      if (getSubDepartmentsCount() > 0) {
+        hash = (37 * hash) + SUBDEPARTMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSubDepartmentsList().hashCode();
+      }
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code getDepartment}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:getDepartment)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDepartment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDepartment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEmployeesFieldBuilder();
+          getSubDepartmentsFieldBuilder();
+          getProjectsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dNo_ = "";
+
+        name_ = "";
+
+        speciality_ = "";
+
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          employeesBuilder_.clear();
+        }
+        if (managerBuilder_ == null) {
+          manager_ = null;
+        } else {
+          manager_ = null;
+          managerBuilder_ = null;
+        }
+        if (subDepartmentsBuilder_ == null) {
+          subDepartments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          subDepartmentsBuilder_.clear();
+        }
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDepartment_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment(this);
+        int from_bitField0_ = bitField0_;
+        result.dNo_ = dNo_;
+        result.name_ = name_;
+        result.speciality_ = speciality_;
+        if (employeesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            employees_ = java.util.Collections.unmodifiableList(employees_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.employees_ = employees_;
+        } else {
+          result.employees_ = employeesBuilder_.build();
+        }
+        if (managerBuilder_ == null) {
+          result.manager_ = manager_;
+        } else {
+          result.manager_ = managerBuilder_.build();
+        }
+        if (subDepartmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            subDepartments_ = java.util.Collections.unmodifiableList(subDepartments_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.subDepartments_ = subDepartments_;
+        } else {
+          result.subDepartments_ = subDepartmentsBuilder_.build();
+        }
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.projects_ = projects_;
+        } else {
+          result.projects_ = projectsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance()) return this;
+        if (!other.getDNo().isEmpty()) {
+          dNo_ = other.dNo_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getSpeciality().isEmpty()) {
+          speciality_ = other.speciality_;
+          onChanged();
+        }
+        if (employeesBuilder_ == null) {
+          if (!other.employees_.isEmpty()) {
+            if (employees_.isEmpty()) {
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEmployeesIsMutable();
+              employees_.addAll(other.employees_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.employees_.isEmpty()) {
+            if (employeesBuilder_.isEmpty()) {
+              employeesBuilder_.dispose();
+              employeesBuilder_ = null;
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              employeesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEmployeesFieldBuilder() : null;
+            } else {
+              employeesBuilder_.addAllMessages(other.employees_);
+            }
+          }
+        }
+        if (other.hasManager()) {
+          mergeManager(other.getManager());
+        }
+        if (subDepartmentsBuilder_ == null) {
+          if (!other.subDepartments_.isEmpty()) {
+            if (subDepartments_.isEmpty()) {
+              subDepartments_ = other.subDepartments_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSubDepartmentsIsMutable();
+              subDepartments_.addAll(other.subDepartments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.subDepartments_.isEmpty()) {
+            if (subDepartmentsBuilder_.isEmpty()) {
+              subDepartmentsBuilder_.dispose();
+              subDepartmentsBuilder_ = null;
+              subDepartments_ = other.subDepartments_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              subDepartmentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSubDepartmentsFieldBuilder() : null;
+            } else {
+              subDepartmentsBuilder_.addAllMessages(other.subDepartments_);
+            }
+          }
+        }
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object dNo_ = "";
+      /**
+       * <code>string D_no = 1;</code>
+       * @return The dNo.
+       */
+      public java.lang.String getDNo() {
+        java.lang.Object ref = dNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dNo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string D_no = 1;</code>
+       * @return The bytes for dNo.
+       */
+      public com.google.protobuf.ByteString
+          getDNoBytes() {
+        java.lang.Object ref = dNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string D_no = 1;</code>
+       * @param value The dNo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string D_no = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDNo() {
+        
+        dNo_ = getDefaultInstance().getDNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string D_no = 1;</code>
+       * @param value The bytes for dNo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object speciality_ = "";
+      /**
+       * <code>string speciality = 3;</code>
+       * @return The speciality.
+       */
+      public java.lang.String getSpeciality() {
+        java.lang.Object ref = speciality_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          speciality_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string speciality = 3;</code>
+       * @return The bytes for speciality.
+       */
+      public com.google.protobuf.ByteString
+          getSpecialityBytes() {
+        java.lang.Object ref = speciality_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          speciality_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string speciality = 3;</code>
+       * @param value The speciality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpeciality(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        speciality_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string speciality = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpeciality() {
+        
+        speciality_ = getDefaultInstance().getSpeciality();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string speciality = 3;</code>
+       * @param value The bytes for speciality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpecialityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        speciality_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_ =
+        java.util.Collections.emptyList();
+      private void ensureEmployeesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>(employees_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> employeesBuilder_;
+
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+        if (employeesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(employees_);
+        } else {
+          return employeesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public int getEmployeesCount() {
+        if (employeesBuilder_ == null) {
+          return employees_.size();
+        } else {
+          return employeesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);
+        } else {
+          return employeesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.set(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addAllEmployees(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> values) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, employees_);
+          onChanged();
+        } else {
+          employeesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder clearEmployees() {
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          employeesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder removeEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.remove(index);
+          onChanged();
+        } else {
+          employeesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder getEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+          int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);  } else {
+          return employeesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+           getEmployeesOrBuilderList() {
+        if (employeesBuilder_ != null) {
+          return employeesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(employees_);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder() {
+        return getEmployeesFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder> 
+           getEmployeesBuilderList() {
+        return getEmployeesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+          getEmployeesFieldBuilder() {
+        if (employeesBuilder_ == null) {
+          employeesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder>(
+                  employees_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          employees_ = null;
+        }
+        return employeesBuilder_;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee manager_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> managerBuilder_;
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       * @return Whether the manager field is set.
+       */
+      public boolean hasManager() {
+        return managerBuilder_ != null || manager_ != null;
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       * @return The manager.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getManager() {
+        if (managerBuilder_ == null) {
+          return manager_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance() : manager_;
+        } else {
+          return managerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public Builder setManager(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (managerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          manager_ = value;
+          onChanged();
+        } else {
+          managerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public Builder setManager(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (managerBuilder_ == null) {
+          manager_ = builderForValue.build();
+          onChanged();
+        } else {
+          managerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public Builder mergeManager(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (managerBuilder_ == null) {
+          if (manager_ != null) {
+            manager_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.newBuilder(manager_).mergeFrom(value).buildPartial();
+          } else {
+            manager_ = value;
+          }
+          onChanged();
+        } else {
+          managerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public Builder clearManager() {
+        if (managerBuilder_ == null) {
+          manager_ = null;
+          onChanged();
+        } else {
+          manager_ = null;
+          managerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder getManagerBuilder() {
+        
+        onChanged();
+        return getManagerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getManagerOrBuilder() {
+        if (managerBuilder_ != null) {
+          return managerBuilder_.getMessageOrBuilder();
+        } else {
+          return manager_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance() : manager_;
+        }
+      }
+      /**
+       * <code>.getEmployee manager = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+          getManagerFieldBuilder() {
+        if (managerBuilder_ == null) {
+          managerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder>(
+                  getManager(),
+                  getParentForChildren(),
+                  isClean());
+          manager_ = null;
+        }
+        return managerBuilder_;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> subDepartments_ =
+        java.util.Collections.emptyList();
+      private void ensureSubDepartmentsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          subDepartments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(subDepartments_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> subDepartmentsBuilder_;
+
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getSubDepartmentsList() {
+        if (subDepartmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(subDepartments_);
+        } else {
+          return subDepartmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public int getSubDepartmentsCount() {
+        if (subDepartmentsBuilder_ == null) {
+          return subDepartments_.size();
+        } else {
+          return subDepartmentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getSubDepartments(int index) {
+        if (subDepartmentsBuilder_ == null) {
+          return subDepartments_.get(index);
+        } else {
+          return subDepartmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder setSubDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (subDepartmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.set(index, value);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder setSubDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (subDepartmentsBuilder_ == null) {
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder addSubDepartments(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (subDepartmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.add(value);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder addSubDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (subDepartmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.add(index, value);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder addSubDepartments(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (subDepartmentsBuilder_ == null) {
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder addSubDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (subDepartmentsBuilder_ == null) {
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder addAllSubDepartments(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> values) {
+        if (subDepartmentsBuilder_ == null) {
+          ensureSubDepartmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, subDepartments_);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder clearSubDepartments() {
+        if (subDepartmentsBuilder_ == null) {
+          subDepartments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public Builder removeSubDepartments(int index) {
+        if (subDepartmentsBuilder_ == null) {
+          ensureSubDepartmentsIsMutable();
+          subDepartments_.remove(index);
+          onChanged();
+        } else {
+          subDepartmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder getSubDepartmentsBuilder(
+          int index) {
+        return getSubDepartmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getSubDepartmentsOrBuilder(
+          int index) {
+        if (subDepartmentsBuilder_ == null) {
+          return subDepartments_.get(index);  } else {
+          return subDepartmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+           getSubDepartmentsOrBuilderList() {
+        if (subDepartmentsBuilder_ != null) {
+          return subDepartmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(subDepartments_);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addSubDepartmentsBuilder() {
+        return getSubDepartmentsFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addSubDepartmentsBuilder(
+          int index) {
+        return getSubDepartmentsFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getDepartment subDepartments = 6;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder> 
+           getSubDepartmentsBuilderList() {
+        return getSubDepartmentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+          getSubDepartmentsFieldBuilder() {
+        if (subDepartmentsBuilder_ == null) {
+          subDepartmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder>(
+                  subDepartments_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          subDepartments_ = null;
+        }
+        return subDepartmentsBuilder_;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject>(projects_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> projectsBuilder_;
+
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
+        } else {
+          return projectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder setProjects(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder setProjects(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder addProjects(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder addProjects(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder addProjects(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder addProjects(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getProject projects = 7;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          projects_ = null;
+        }
+        return projectsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:getDepartment)
+    }
+
+    // @@protoc_insertion_point(class_scope:getDepartment)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getDepartment>
+        PARSER = new com.google.protobuf.AbstractParser<getDepartment>() {
+      @java.lang.Override
+      public getDepartment parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getDepartment(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getDepartment> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getDepartment> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface allDepartmentsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:allDepartments)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> 
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> 
         getDepartmentsList();
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartments(int index);
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index);
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
     int getDepartmentsCount();
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
         getDepartmentsOrBuilderList();
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentsOrBuilder(
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
         int index);
   }
   /**
@@ -12450,11 +21257,11 @@ public final class CompanyOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department>();
+                departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>();
                 mutable_bitField0_ |= 0x00000001;
               }
               departments_.add(
-                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.parser(), extensionRegistry));
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -12493,36 +21300,36 @@ public final class CompanyOuterClass {
     }
 
     public static final int DEPARTMENTS_FIELD_NUMBER = 1;
-    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> departments_;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> departments_;
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> getDepartmentsList() {
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDepartmentsList() {
       return departments_;
     }
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
         getDepartmentsOrBuilderList() {
       return departments_;
     }
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
     public int getDepartmentsCount() {
       return departments_.size();
     }
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartments(int index) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index) {
       return departments_.get(index);
     }
     /**
-     * <code>repeated .Department departments = 1;</code>
+     * <code>repeated .getDepartment departments = 1;</code>
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentsOrBuilder(
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
         int index) {
       return departments_.get(index);
     }
@@ -12869,22 +21676,22 @@ public final class CompanyOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> departments_ =
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> departments_ =
         java.util.Collections.emptyList();
       private void ensureDepartmentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department>(departments_);
+          departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(departments_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> departmentsBuilder_;
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> departmentsBuilder_;
 
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> getDepartmentsList() {
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDepartmentsList() {
         if (departmentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(departments_);
         } else {
@@ -12892,7 +21699,7 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public int getDepartmentsCount() {
         if (departmentsBuilder_ == null) {
@@ -12902,9 +21709,9 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department getDepartments(int index) {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index) {
         if (departmentsBuilder_ == null) {
           return departments_.get(index);
         } else {
@@ -12912,10 +21719,10 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder setDepartments(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
         if (departmentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12929,10 +21736,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder setDepartments(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder builderForValue) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
         if (departmentsBuilder_ == null) {
           ensureDepartmentsIsMutable();
           departments_.set(index, builderForValue.build());
@@ -12943,9 +21750,9 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public Builder addDepartments(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
+      public Builder addDepartments(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
         if (departmentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12959,10 +21766,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder addDepartments(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department value) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
         if (departmentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12976,10 +21783,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder addDepartments(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder builderForValue) {
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
         if (departmentsBuilder_ == null) {
           ensureDepartmentsIsMutable();
           departments_.add(builderForValue.build());
@@ -12990,10 +21797,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder addDepartments(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder builderForValue) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
         if (departmentsBuilder_ == null) {
           ensureDepartmentsIsMutable();
           departments_.add(index, builderForValue.build());
@@ -13004,10 +21811,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder addAllDepartments(
-          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department> values) {
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> values) {
         if (departmentsBuilder_ == null) {
           ensureDepartmentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -13019,7 +21826,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder clearDepartments() {
         if (departmentsBuilder_ == null) {
@@ -13032,7 +21839,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
       public Builder removeDepartments(int index) {
         if (departmentsBuilder_ == null) {
@@ -13045,16 +21852,16 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder getDepartmentsBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder getDepartmentsBuilder(
           int index) {
         return getDepartmentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder getDepartmentsOrBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
           int index) {
         if (departmentsBuilder_ == null) {
           return departments_.get(index);  } else {
@@ -13062,9 +21869,9 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
            getDepartmentsOrBuilderList() {
         if (departmentsBuilder_ != null) {
           return departmentsBuilder_.getMessageOrBuilderList();
@@ -13073,33 +21880,33 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder addDepartmentsBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addDepartmentsBuilder() {
         return getDepartmentsFieldBuilder().addBuilder(
-            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance());
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder addDepartmentsBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addDepartmentsBuilder(
           int index) {
         return getDepartmentsFieldBuilder().addBuilder(
-            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.getDefaultInstance());
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
       }
       /**
-       * <code>repeated .Department departments = 1;</code>
+       * <code>repeated .getDepartment departments = 1;</code>
        */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder> 
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder> 
            getDepartmentsBuilderList() {
         return getDepartmentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder> 
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
           getDepartmentsFieldBuilder() {
         if (departmentsBuilder_ == null) {
           departmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Department.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DepartmentOrBuilder>(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder>(
                   departments_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -13166,27 +21973,27 @@ public final class CompanyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> 
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> 
         getProjectsList();
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProjects(int index);
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index);
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
     int getProjectsCount();
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
         getProjectsOrBuilderList();
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
         int index);
   }
   /**
@@ -13238,11 +22045,11 @@ public final class CompanyOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project>();
+                projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject>();
                 mutable_bitField0_ |= 0x00000001;
               }
               projects_.add(
-                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.parser(), extensionRegistry));
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -13281,36 +22088,36 @@ public final class CompanyOuterClass {
     }
 
     public static final int PROJECTS_FIELD_NUMBER = 1;
-    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> projects_;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> projects_;
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> getProjectsList() {
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> getProjectsList() {
       return projects_;
     }
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
         getProjectsOrBuilderList() {
       return projects_;
     }
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
     public int getProjectsCount() {
       return projects_.size();
     }
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProjects(int index) {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index) {
       return projects_.get(index);
     }
     /**
-     * <code>repeated .Project projects = 1;</code>
+     * <code>repeated .getProject projects = 1;</code>
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
         int index) {
       return projects_.get(index);
     }
@@ -13657,22 +22464,22 @@ public final class CompanyOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> projects_ =
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> projects_ =
         java.util.Collections.emptyList();
       private void ensureProjectsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project>(projects_);
+          projects_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject>(projects_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> projectsBuilder_;
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> projectsBuilder_;
 
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> getProjectsList() {
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> getProjectsList() {
         if (projectsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(projects_);
         } else {
@@ -13680,7 +22487,7 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public int getProjectsCount() {
         if (projectsBuilder_ == null) {
@@ -13690,9 +22497,9 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProjects(int index) {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject getProjects(int index) {
         if (projectsBuilder_ == null) {
           return projects_.get(index);
         } else {
@@ -13700,10 +22507,10 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder setProjects(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
         if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13717,10 +22524,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder setProjects(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder builderForValue) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
         if (projectsBuilder_ == null) {
           ensureProjectsIsMutable();
           projects_.set(index, builderForValue.build());
@@ -13731,9 +22538,9 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public Builder addProjects(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+      public Builder addProjects(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
         if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13747,10 +22554,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder addProjects(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject value) {
         if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13764,10 +22571,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder addProjects(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder builderForValue) {
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
         if (projectsBuilder_ == null) {
           ensureProjectsIsMutable();
           projects_.add(builderForValue.build());
@@ -13778,10 +22585,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder addProjects(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder builderForValue) {
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder builderForValue) {
         if (projectsBuilder_ == null) {
           ensureProjectsIsMutable();
           projects_.add(index, builderForValue.build());
@@ -13792,10 +22599,10 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder addAllProjects(
-          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project> values) {
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject> values) {
         if (projectsBuilder_ == null) {
           ensureProjectsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -13807,7 +22614,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder clearProjects() {
         if (projectsBuilder_ == null) {
@@ -13820,7 +22627,7 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
       public Builder removeProjects(int index) {
         if (projectsBuilder_ == null) {
@@ -13833,16 +22640,16 @@ public final class CompanyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder getProjectsBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder getProjectsBuilder(
           int index) {
         return getProjectsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder getProjectsOrBuilder(
           int index) {
         if (projectsBuilder_ == null) {
           return projects_.get(index);  } else {
@@ -13850,9 +22657,9 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
            getProjectsOrBuilderList() {
         if (projectsBuilder_ != null) {
           return projectsBuilder_.getMessageOrBuilderList();
@@ -13861,33 +22668,33 @@ public final class CompanyOuterClass {
         }
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder addProjectsBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder addProjectsBuilder() {
         return getProjectsFieldBuilder().addBuilder(
-            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance());
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance());
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder addProjectsBuilder(
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder addProjectsBuilder(
           int index) {
         return getProjectsFieldBuilder().addBuilder(
-            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance());
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.getDefaultInstance());
       }
       /**
-       * <code>repeated .Project projects = 1;</code>
+       * <code>repeated .getProject projects = 1;</code>
        */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder> 
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder> 
            getProjectsBuilderList() {
         return getProjectsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder> 
           getProjectsFieldBuilder() {
         if (projectsBuilder_ == null) {
           projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder>(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProject.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getProjectOrBuilder>(
                   projects_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -13944,794 +22751,6 @@ public final class CompanyOuterClass {
 
     @java.lang.Override
     public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allProjects getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface allEmployeesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:allEmployees)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> 
-        getEmployeesList();
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee getEmployees(int index);
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    int getEmployeesCount();
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder> 
-        getEmployeesOrBuilderList();
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder getEmployeesOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code allEmployees}
-   */
-  public  static final class allEmployees extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:allEmployees)
-      allEmployeesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use allEmployees.newBuilder() to construct.
-    private allEmployees(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private allEmployees() {
-      employees_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new allEmployees();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private allEmployees(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              employees_.add(
-                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          employees_ = java.util.Collections.unmodifiableList(employees_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.Builder.class);
-    }
-
-    public static final int EMPLOYEES_FIELD_NUMBER = 1;
-    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> employees_;
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> getEmployeesList() {
-      return employees_;
-    }
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder> 
-        getEmployeesOrBuilderList() {
-      return employees_;
-    }
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    public int getEmployeesCount() {
-      return employees_.size();
-    }
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee getEmployees(int index) {
-      return employees_.get(index);
-    }
-    /**
-     * <code>repeated .Employee employees = 1;</code>
-     */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder getEmployeesOrBuilder(
-        int index) {
-      return employees_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < employees_.size(); i++) {
-        output.writeMessage(1, employees_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < employees_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, employees_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees)) {
-        return super.equals(obj);
-      }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) obj;
-
-      if (!getEmployeesList()
-          .equals(other.getEmployeesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getEmployeesCount() > 0) {
-        hash = (37 * hash) + EMPLOYEES_FIELD_NUMBER;
-        hash = (53 * hash) + getEmployeesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code allEmployees}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:allEmployees)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployeesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.Builder.class);
-      }
-
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getEmployeesFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (employeesBuilder_ == null) {
-          employees_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          employeesBuilder_.clear();
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_allEmployees_descriptor;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees(this);
-        int from_bitField0_ = bitField0_;
-        if (employeesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            employees_ = java.util.Collections.unmodifiableList(employees_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.employees_ = employees_;
-        } else {
-          result.employees_ = employeesBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees.getDefaultInstance()) return this;
-        if (employeesBuilder_ == null) {
-          if (!other.employees_.isEmpty()) {
-            if (employees_.isEmpty()) {
-              employees_ = other.employees_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureEmployeesIsMutable();
-              employees_.addAll(other.employees_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.employees_.isEmpty()) {
-            if (employeesBuilder_.isEmpty()) {
-              employeesBuilder_.dispose();
-              employeesBuilder_ = null;
-              employees_ = other.employees_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              employeesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getEmployeesFieldBuilder() : null;
-            } else {
-              employeesBuilder_.addAllMessages(other.employees_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> employees_ =
-        java.util.Collections.emptyList();
-      private void ensureEmployeesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee>(employees_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder> employeesBuilder_;
-
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> getEmployeesList() {
-        if (employeesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(employees_);
-        } else {
-          return employeesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public int getEmployeesCount() {
-        if (employeesBuilder_ == null) {
-          return employees_.size();
-        } else {
-          return employeesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee getEmployees(int index) {
-        if (employeesBuilder_ == null) {
-          return employees_.get(index);
-        } else {
-          return employeesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder setEmployees(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee value) {
-        if (employeesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEmployeesIsMutable();
-          employees_.set(index, value);
-          onChanged();
-        } else {
-          employeesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder setEmployees(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder builderForValue) {
-        if (employeesBuilder_ == null) {
-          ensureEmployeesIsMutable();
-          employees_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          employeesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder addEmployees(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee value) {
-        if (employeesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEmployeesIsMutable();
-          employees_.add(value);
-          onChanged();
-        } else {
-          employeesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder addEmployees(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee value) {
-        if (employeesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEmployeesIsMutable();
-          employees_.add(index, value);
-          onChanged();
-        } else {
-          employeesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder addEmployees(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder builderForValue) {
-        if (employeesBuilder_ == null) {
-          ensureEmployeesIsMutable();
-          employees_.add(builderForValue.build());
-          onChanged();
-        } else {
-          employeesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder addEmployees(
-          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder builderForValue) {
-        if (employeesBuilder_ == null) {
-          ensureEmployeesIsMutable();
-          employees_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          employeesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder addAllEmployees(
-          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee> values) {
-        if (employeesBuilder_ == null) {
-          ensureEmployeesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, employees_);
-          onChanged();
-        } else {
-          employeesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder clearEmployees() {
-        if (employeesBuilder_ == null) {
-          employees_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          employeesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public Builder removeEmployees(int index) {
-        if (employeesBuilder_ == null) {
-          ensureEmployeesIsMutable();
-          employees_.remove(index);
-          onChanged();
-        } else {
-          employeesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder getEmployeesBuilder(
-          int index) {
-        return getEmployeesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder getEmployeesOrBuilder(
-          int index) {
-        if (employeesBuilder_ == null) {
-          return employees_.get(index);  } else {
-          return employeesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder> 
-           getEmployeesOrBuilderList() {
-        if (employeesBuilder_ != null) {
-          return employeesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(employees_);
-        }
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder addEmployeesBuilder() {
-        return getEmployeesFieldBuilder().addBuilder(
-            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder addEmployeesBuilder(
-          int index) {
-        return getEmployeesFieldBuilder().addBuilder(
-            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Employee employees = 1;</code>
-       */
-      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder> 
-           getEmployeesBuilderList() {
-        return getEmployeesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder> 
-          getEmployeesFieldBuilder() {
-        if (employeesBuilder_ == null) {
-          employeesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Employee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.EmployeeOrBuilder>(
-                  employees_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          employees_ = null;
-        }
-        return employeesBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:allEmployees)
-    }
-
-    // @@protoc_insertion_point(class_scope:allEmployees)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees();
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<allEmployees>
-        PARSER = new com.google.protobuf.AbstractParser<allEmployees>() {
-      @java.lang.Override
-      public allEmployees parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new allEmployees(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<allEmployees> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<allEmployees> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.allEmployees getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15320,19 +23339,54 @@ public final class CompanyOuterClass {
         getCompanyIdBytes();
 
     /**
-     * <code>.Person person = 2;</code>
-     * @return Whether the person field is set.
+     * <code>string name = 2;</code>
+     * @return The name.
      */
-    boolean hasPerson();
+    java.lang.String getName();
     /**
-     * <code>.Person person = 2;</code>
-     * @return The person.
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson();
+    com.google.protobuf.ByteString
+        getNameBytes();
+
     /**
-     * <code>.Person person = 2;</code>
+     * <code>string address = 3;</code>
+     * @return The address.
      */
-    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder();
+    java.lang.String getAddress();
+    /**
+     * <code>string address = 3;</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
+    /**
+     * <code>.Gender gender = 4;</code>
+     * @return The enum numeric value on the wire for gender.
+     */
+    int getGenderValue();
+    /**
+     * <code>.Gender gender = 4;</code>
+     * @return The gender.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender getGender();
+
+    /**
+     * <code>.Date Dob = 5;</code>
+     * @return Whether the dob field is set.
+     */
+    boolean hasDob();
+    /**
+     * <code>.Date Dob = 5;</code>
+     * @return The dob.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob();
+    /**
+     * <code>.Date Dob = 5;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder();
   }
   /**
    * Protobuf type {@code setCompanyIdAndPerson}
@@ -15348,6 +23402,9 @@ public final class CompanyOuterClass {
     }
     private setCompanyIdAndPerson() {
       companyId_ = "";
+      name_ = "";
+      address_ = "";
+      gender_ = 0;
     }
 
     @java.lang.Override
@@ -15387,14 +23444,32 @@ public final class CompanyOuterClass {
               break;
             }
             case 18: {
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder subBuilder = null;
-              if (person_ != null) {
-                subBuilder = person_.toBuilder();
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              gender_ = rawValue;
+              break;
+            }
+            case 42: {
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder subBuilder = null;
+              if (dob_ != null) {
+                subBuilder = dob_.toBuilder();
               }
-              person_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.parser(), extensionRegistry);
+              dob_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(person_);
-                person_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dob_);
+                dob_ = subBuilder.buildPartial();
               }
 
               break;
@@ -15467,27 +23542,118 @@ public final class CompanyOuterClass {
       }
     }
 
-    public static final int PERSON_FIELD_NUMBER = 2;
-    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person person_;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
     /**
-     * <code>.Person person = 2;</code>
-     * @return Whether the person field is set.
+     * <code>string name = 2;</code>
+     * @return The name.
      */
-    public boolean hasPerson() {
-      return person_ != null;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Person person = 2;</code>
-     * @return The person.
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson() {
-      return person_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object address_;
+    /**
+     * <code>string address = 3;</code>
+     * @return The address.
+     */
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Person person = 2;</code>
+     * <code>string address = 3;</code>
+     * @return The bytes for address.
      */
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder() {
-      return getPerson();
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GENDER_FIELD_NUMBER = 4;
+    private int gender_;
+    /**
+     * <code>.Gender gender = 4;</code>
+     * @return The enum numeric value on the wire for gender.
+     */
+    public int getGenderValue() {
+      return gender_;
+    }
+    /**
+     * <code>.Gender gender = 4;</code>
+     * @return The gender.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender getGender() {
+      @SuppressWarnings("deprecation")
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.valueOf(gender_);
+      return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.UNRECOGNIZED : result;
+    }
+
+    public static final int DOB_FIELD_NUMBER = 5;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date dob_;
+    /**
+     * <code>.Date Dob = 5;</code>
+     * @return Whether the dob field is set.
+     */
+    public boolean hasDob() {
+      return dob_ != null;
+    }
+    /**
+     * <code>.Date Dob = 5;</code>
+     * @return The dob.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob() {
+      return dob_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
+    }
+    /**
+     * <code>.Date Dob = 5;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder() {
+      return getDob();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -15507,8 +23673,17 @@ public final class CompanyOuterClass {
       if (!getCompanyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, companyId_);
       }
-      if (person_ != null) {
-        output.writeMessage(2, getPerson());
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
+      }
+      if (gender_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.MALE.getNumber()) {
+        output.writeEnum(4, gender_);
+      }
+      if (dob_ != null) {
+        output.writeMessage(5, getDob());
       }
       unknownFields.writeTo(output);
     }
@@ -15522,9 +23697,19 @@ public final class CompanyOuterClass {
       if (!getCompanyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, companyId_);
       }
-      if (person_ != null) {
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
+      }
+      if (gender_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.MALE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPerson());
+          .computeEnumSize(4, gender_);
+      }
+      if (dob_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getDob());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15543,10 +23728,15 @@ public final class CompanyOuterClass {
 
       if (!getCompanyId()
           .equals(other.getCompanyId())) return false;
-      if (hasPerson() != other.hasPerson()) return false;
-      if (hasPerson()) {
-        if (!getPerson()
-            .equals(other.getPerson())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (gender_ != other.gender_) return false;
+      if (hasDob() != other.hasDob()) return false;
+      if (hasDob()) {
+        if (!getDob()
+            .equals(other.getDob())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -15561,9 +23751,15 @@ public final class CompanyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
       hash = (53 * hash) + getCompanyId().hashCode();
-      if (hasPerson()) {
-        hash = (37 * hash) + PERSON_FIELD_NUMBER;
-        hash = (53 * hash) + getPerson().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + GENDER_FIELD_NUMBER;
+      hash = (53 * hash) + gender_;
+      if (hasDob()) {
+        hash = (37 * hash) + DOB_FIELD_NUMBER;
+        hash = (53 * hash) + getDob().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15700,11 +23896,17 @@ public final class CompanyOuterClass {
         super.clear();
         companyId_ = "";
 
-        if (personBuilder_ == null) {
-          person_ = null;
+        name_ = "";
+
+        address_ = "";
+
+        gender_ = 0;
+
+        if (dobBuilder_ == null) {
+          dob_ = null;
         } else {
-          person_ = null;
-          personBuilder_ = null;
+          dob_ = null;
+          dobBuilder_ = null;
         }
         return this;
       }
@@ -15733,10 +23935,13 @@ public final class CompanyOuterClass {
       public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson buildPartial() {
         grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson(this);
         result.companyId_ = companyId_;
-        if (personBuilder_ == null) {
-          result.person_ = person_;
+        result.name_ = name_;
+        result.address_ = address_;
+        result.gender_ = gender_;
+        if (dobBuilder_ == null) {
+          result.dob_ = dob_;
         } else {
-          result.person_ = personBuilder_.build();
+          result.dob_ = dobBuilder_.build();
         }
         onBuilt();
         return result;
@@ -15790,8 +23995,19 @@ public final class CompanyOuterClass {
           companyId_ = other.companyId_;
           onChanged();
         }
-        if (other.hasPerson()) {
-          mergePerson(other.getPerson());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        if (other.gender_ != 0) {
+          setGenderValue(other.getGenderValue());
+        }
+        if (other.hasDob()) {
+          mergeDob(other.getDob());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -15898,123 +24114,327 @@ public final class CompanyOuterClass {
         return this;
       }
 
-      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person person_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder> personBuilder_;
+      private java.lang.Object name_ = "";
       /**
-       * <code>.Person person = 2;</code>
-       * @return Whether the person field is set.
+       * <code>string name = 2;</code>
+       * @return The name.
        */
-      public boolean hasPerson() {
-        return personBuilder_ != null || person_ != null;
-      }
-      /**
-       * <code>.Person person = 2;</code>
-       * @return The person.
-       */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person getPerson() {
-        if (personBuilder_ == null) {
-          return person_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
         } else {
-          return personBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
-      public Builder setPerson(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person value) {
-        if (personBuilder_ == null) {
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>string address = 3;</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address = 3;</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address = 3;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 3;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int gender_ = 0;
+      /**
+       * <code>.Gender gender = 4;</code>
+       * @return The enum numeric value on the wire for gender.
+       */
+      public int getGenderValue() {
+        return gender_;
+      }
+      /**
+       * <code>.Gender gender = 4;</code>
+       * @param value The enum numeric value on the wire for gender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGenderValue(int value) {
+        gender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.Gender gender = 4;</code>
+       * @return The gender.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender getGender() {
+        @SuppressWarnings("deprecation")
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.valueOf(gender_);
+        return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.Gender gender = 4;</code>
+       * @param value The gender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGender(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Gender value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        gender_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.Gender gender = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGender() {
+        
+        gender_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date dob_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> dobBuilder_;
+      /**
+       * <code>.Date Dob = 5;</code>
+       * @return Whether the dob field is set.
+       */
+      public boolean hasDob() {
+        return dobBuilder_ != null || dob_ != null;
+      }
+      /**
+       * <code>.Date Dob = 5;</code>
+       * @return The dob.
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date getDob() {
+        if (dobBuilder_ == null) {
+          return dob_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
+        } else {
+          return dobBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Date Dob = 5;</code>
+       */
+      public Builder setDob(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dobBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          person_ = value;
+          dob_ = value;
           onChanged();
         } else {
-          personBuilder_.setMessage(value);
+          dobBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public Builder setPerson(
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder builderForValue) {
-        if (personBuilder_ == null) {
-          person_ = builderForValue.build();
+      public Builder setDob(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder builderForValue) {
+        if (dobBuilder_ == null) {
+          dob_ = builderForValue.build();
           onChanged();
         } else {
-          personBuilder_.setMessage(builderForValue.build());
+          dobBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public Builder mergePerson(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person value) {
-        if (personBuilder_ == null) {
-          if (person_ != null) {
-            person_ =
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.newBuilder(person_).mergeFrom(value).buildPartial();
+      public Builder mergeDob(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date value) {
+        if (dobBuilder_ == null) {
+          if (dob_ != null) {
+            dob_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.newBuilder(dob_).mergeFrom(value).buildPartial();
           } else {
-            person_ = value;
+            dob_ = value;
           }
           onChanged();
         } else {
-          personBuilder_.mergeFrom(value);
+          dobBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public Builder clearPerson() {
-        if (personBuilder_ == null) {
-          person_ = null;
+      public Builder clearDob() {
+        if (dobBuilder_ == null) {
+          dob_ = null;
           onChanged();
         } else {
-          person_ = null;
-          personBuilder_ = null;
+          dob_ = null;
+          dobBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder getPersonBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder getDobBuilder() {
         
         onChanged();
-        return getPersonFieldBuilder().getBuilder();
+        return getDobFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder getPersonOrBuilder() {
-        if (personBuilder_ != null) {
-          return personBuilder_.getMessageOrBuilder();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder getDobOrBuilder() {
+        if (dobBuilder_ != null) {
+          return dobBuilder_.getMessageOrBuilder();
         } else {
-          return person_ == null ?
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.getDefaultInstance() : person_;
+          return dob_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.getDefaultInstance() : dob_;
         }
       }
       /**
-       * <code>.Person person = 2;</code>
+       * <code>.Date Dob = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder> 
-          getPersonFieldBuilder() {
-        if (personBuilder_ == null) {
-          personBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Person.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.PersonOrBuilder>(
-                  getPerson(),
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder> 
+          getDobFieldBuilder() {
+        if (dobBuilder_ == null) {
+          dobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Date.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.DateOrBuilder>(
+                  getDob(),
                   getParentForChildren(),
                   isClean());
-          person_ = null;
+          dob_ = null;
         }
-        return personBuilder_;
+        return dobBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -16064,6 +24484,1457 @@ public final class CompanyOuterClass {
 
     @java.lang.Override
     public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setCompanyIdAndPerson getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface returnCompanyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:returnCompany)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string id = 2;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 2;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> 
+        getDepartmentsList();
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index);
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    int getDepartmentsCount();
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+        getDepartmentsOrBuilderList();
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> 
+        getEmployeesList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index);
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    int getEmployeesCount();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList();
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code returnCompany}
+   */
+  public  static final class returnCompany extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:returnCompany)
+      returnCompanyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use returnCompany.newBuilder() to construct.
+    private returnCompany(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private returnCompany() {
+      name_ = "";
+      id_ = "";
+      departments_ = java.util.Collections.emptyList();
+      employees_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new returnCompany();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private returnCompany(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              departments_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              employees_.add(
+                  input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          departments_ = java.util.Collections.unmodifiableList(departments_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          employees_ = java.util.Collections.unmodifiableList(employees_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_returnCompany_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_returnCompany_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 2;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 2;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEPARTMENTS_FIELD_NUMBER = 3;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> departments_;
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDepartmentsList() {
+      return departments_;
+    }
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+        getDepartmentsOrBuilderList() {
+      return departments_;
+    }
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    public int getDepartmentsCount() {
+      return departments_.size();
+    }
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index) {
+      return departments_.get(index);
+    }
+    /**
+     * <code>repeated .getDepartment departments = 3;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
+        int index) {
+      return departments_.get(index);
+    }
+
+    public static final int EMPLOYEES_FIELD_NUMBER = 4;
+    private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_;
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+        getEmployeesOrBuilderList() {
+      return employees_;
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public int getEmployeesCount() {
+      return employees_.size();
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+      return employees_.get(index);
+    }
+    /**
+     * <code>repeated .getEmployee employees = 4;</code>
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+        int index) {
+      return employees_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      for (int i = 0; i < departments_.size(); i++) {
+        output.writeMessage(3, departments_.get(i));
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        output.writeMessage(4, employees_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      for (int i = 0; i < departments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, departments_.get(i));
+      }
+      for (int i = 0; i < employees_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, employees_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany)) {
+        return super.equals(obj);
+      }
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getDepartmentsList()
+          .equals(other.getDepartmentsList())) return false;
+      if (!getEmployeesList()
+          .equals(other.getEmployeesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      if (getDepartmentsCount() > 0) {
+        hash = (37 * hash) + DEPARTMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getDepartmentsList().hashCode();
+      }
+      if (getEmployeesCount() > 0) {
+        hash = (37 * hash) + EMPLOYEES_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code returnCompany}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:returnCompany)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompanyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_returnCompany_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_returnCompany_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.Builder.class);
+      }
+
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDepartmentsFieldBuilder();
+          getEmployeesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        id_ = "";
+
+        if (departmentsBuilder_ == null) {
+          departments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          departmentsBuilder_.clear();
+        }
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          employeesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_returnCompany_descriptor;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany(this);
+        int from_bitField0_ = bitField0_;
+        result.name_ = name_;
+        result.id_ = id_;
+        if (departmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            departments_ = java.util.Collections.unmodifiableList(departments_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.departments_ = departments_;
+        } else {
+          result.departments_ = departmentsBuilder_.build();
+        }
+        if (employeesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            employees_ = java.util.Collections.unmodifiableList(employees_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.employees_ = employees_;
+        } else {
+          result.employees_ = employeesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (departmentsBuilder_ == null) {
+          if (!other.departments_.isEmpty()) {
+            if (departments_.isEmpty()) {
+              departments_ = other.departments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDepartmentsIsMutable();
+              departments_.addAll(other.departments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.departments_.isEmpty()) {
+            if (departmentsBuilder_.isEmpty()) {
+              departmentsBuilder_.dispose();
+              departmentsBuilder_ = null;
+              departments_ = other.departments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              departmentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDepartmentsFieldBuilder() : null;
+            } else {
+              departmentsBuilder_.addAllMessages(other.departments_);
+            }
+          }
+        }
+        if (employeesBuilder_ == null) {
+          if (!other.employees_.isEmpty()) {
+            if (employees_.isEmpty()) {
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureEmployeesIsMutable();
+              employees_.addAll(other.employees_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.employees_.isEmpty()) {
+            if (employeesBuilder_.isEmpty()) {
+              employeesBuilder_.dispose();
+              employeesBuilder_ = null;
+              employees_ = other.employees_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              employeesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEmployeesFieldBuilder() : null;
+            } else {
+              employeesBuilder_.addAllMessages(other.employees_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 2;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 2;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 2;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 2;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> departments_ =
+        java.util.Collections.emptyList();
+      private void ensureDepartmentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          departments_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment>(departments_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> departmentsBuilder_;
+
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> getDepartmentsList() {
+        if (departmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(departments_);
+        } else {
+          return departmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public int getDepartmentsCount() {
+        if (departmentsBuilder_ == null) {
+          return departments_.size();
+        } else {
+          return departmentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment getDepartments(int index) {
+        if (departmentsBuilder_ == null) {
+          return departments_.get(index);
+        } else {
+          return departmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder setDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (departmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentsIsMutable();
+          departments_.set(index, value);
+          onChanged();
+        } else {
+          departmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder setDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (departmentsBuilder_ == null) {
+          ensureDepartmentsIsMutable();
+          departments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          departmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder addDepartments(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (departmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentsIsMutable();
+          departments_.add(value);
+          onChanged();
+        } else {
+          departmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder addDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment value) {
+        if (departmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentsIsMutable();
+          departments_.add(index, value);
+          onChanged();
+        } else {
+          departmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder addDepartments(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (departmentsBuilder_ == null) {
+          ensureDepartmentsIsMutable();
+          departments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          departmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder addDepartments(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder builderForValue) {
+        if (departmentsBuilder_ == null) {
+          ensureDepartmentsIsMutable();
+          departments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          departmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder addAllDepartments(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment> values) {
+        if (departmentsBuilder_ == null) {
+          ensureDepartmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, departments_);
+          onChanged();
+        } else {
+          departmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder clearDepartments() {
+        if (departmentsBuilder_ == null) {
+          departments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          departmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public Builder removeDepartments(int index) {
+        if (departmentsBuilder_ == null) {
+          ensureDepartmentsIsMutable();
+          departments_.remove(index);
+          onChanged();
+        } else {
+          departmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder getDepartmentsBuilder(
+          int index) {
+        return getDepartmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder getDepartmentsOrBuilder(
+          int index) {
+        if (departmentsBuilder_ == null) {
+          return departments_.get(index);  } else {
+          return departmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+           getDepartmentsOrBuilderList() {
+        if (departmentsBuilder_ != null) {
+          return departmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(departments_);
+        }
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addDepartmentsBuilder() {
+        return getDepartmentsFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder addDepartmentsBuilder(
+          int index) {
+        return getDepartmentsFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getDepartment departments = 3;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder> 
+           getDepartmentsBuilderList() {
+        return getDepartmentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder> 
+          getDepartmentsFieldBuilder() {
+        if (departmentsBuilder_ == null) {
+          departmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartment.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDepartmentOrBuilder>(
+                  departments_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          departments_ = null;
+        }
+        return departmentsBuilder_;
+      }
+
+      private java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> employees_ =
+        java.util.Collections.emptyList();
+      private void ensureEmployeesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          employees_ = new java.util.ArrayList<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee>(employees_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> employeesBuilder_;
+
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> getEmployeesList() {
+        if (employeesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(employees_);
+        } else {
+          return employeesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public int getEmployeesCount() {
+        if (employeesBuilder_ == null) {
+          return employees_.size();
+        } else {
+          return employeesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee getEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);
+        } else {
+          return employeesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.set(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder setEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee value) {
+        if (employeesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeesIsMutable();
+          employees_.add(index, value);
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addEmployees(
+          int index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder builderForValue) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder addAllEmployees(
+          java.lang.Iterable<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee> values) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, employees_);
+          onChanged();
+        } else {
+          employeesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder clearEmployees() {
+        if (employeesBuilder_ == null) {
+          employees_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          employeesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public Builder removeEmployees(int index) {
+        if (employeesBuilder_ == null) {
+          ensureEmployeesIsMutable();
+          employees_.remove(index);
+          onChanged();
+        } else {
+          employeesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder getEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder getEmployeesOrBuilder(
+          int index) {
+        if (employeesBuilder_ == null) {
+          return employees_.get(index);  } else {
+          return employeesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<? extends grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+           getEmployeesOrBuilderList() {
+        if (employeesBuilder_ != null) {
+          return employeesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(employees_);
+        }
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder() {
+        return getEmployeesFieldBuilder().addBuilder(
+            grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder addEmployeesBuilder(
+          int index) {
+        return getEmployeesFieldBuilder().addBuilder(
+            index, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .getEmployee employees = 4;</code>
+       */
+      public java.util.List<grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder> 
+           getEmployeesBuilderList() {
+        return getEmployeesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder> 
+          getEmployeesFieldBuilder() {
+        if (employeesBuilder_ == null) {
+          employeesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployee.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getEmployeeOrBuilder>(
+                  employees_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          employees_ = null;
+        }
+        return employeesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:returnCompany)
+    }
+
+    // @@protoc_insertion_point(class_scope:returnCompany)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany();
+    }
+
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<returnCompany>
+        PARSER = new com.google.protobuf.AbstractParser<returnCompany>() {
+      @java.lang.Override
+      public returnCompany parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new returnCompany(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<returnCompany> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<returnCompany> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.returnCompany getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16487,43 +26358,87 @@ public final class CompanyOuterClass {
 
   }
 
-  public interface getNameResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:getNameResponse)
+  public interface setStatusProjectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:setStatusProject)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>.Project project = 1;</code>
+     * @return Whether the project field is set.
      */
-    java.lang.String getName();
+    boolean hasProject();
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>.Project project = 1;</code>
+     * @return The project.
      */
-    com.google.protobuf.ByteString
-        getNameBytes();
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject();
+    /**
+     * <code>.Project project = 1;</code>
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder();
+
+    /**
+     * <code>.StatusProject status = 2;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.StatusProject status = 2;</code>
+     * @return The status.
+     */
+    grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus();
   }
   /**
-   * Protobuf type {@code getNameResponse}
+   * <pre>
+   *service DepartmentService {
+   *rpc start(Project) returns (Status);
+   *rpc Sell(Project) returns (Status);
+   *rpc finish(Project) returns (Status);
+   *}
+   *message getNameResponse{
+   *string name = 1;
+   *}
+   *message getBirthDateResponse {
+   *google.protobuf.Timestamp date = 1;
+   *}
+   *message getRegistryNumberResponse {
+   *string getRegistryNumberResponse = 1;
+   *}
+   *service EmployeeService {
+   *rpc getName(Vide) returns (getNameResponse);
+   *rpc getBirthDate(Vide) returns (getBirthDateResponse);
+   *rpc getRegistryNumber(Vide) returns (getRegistryNumberResponse);
+   *}
+   *message getDeadLineResponse {
+   *google.protobuf.Timestamp date = 1;
+   *}
+   *service ProjectService {
+   *rpc getName(Vide) returns (getNameResponse);
+   *rpc getDeadLine(Vide) returns (getDeadLineResponse);
+   *rpc isFinished(Vide) returns (Status);
+   *}
+   * </pre>
+   *
+   * Protobuf type {@code setStatusProject}
    */
-  public  static final class getNameResponse extends
+  public  static final class setStatusProject extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:getNameResponse)
-      getNameResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:setStatusProject)
+      setStatusProjectOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use getNameResponse.newBuilder() to construct.
-    private getNameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use setStatusProject.newBuilder() to construct.
+    private setStatusProject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private getNameResponse() {
-      name_ = "";
+    private setStatusProject() {
+      status_ = 0;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new getNameResponse();
+      return new setStatusProject();
     }
 
     @java.lang.Override
@@ -16531,7 +26446,7 @@ public final class CompanyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private getNameResponse(
+    private setStatusProject(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16550,584 +26465,22 @@ public final class CompanyOuterClass {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
               }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getNameResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getNameResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.Builder.class);
-    }
-
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse)) {
-        return super.equals(obj);
-      }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse) obj;
-
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code getNameResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:getNameResponse)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getNameResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getNameResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.Builder.class);
-      }
-
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getNameResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse(this);
-        result.name_ = name_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:getNameResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:getNameResponse)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse();
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<getNameResponse>
-        PARSER = new com.google.protobuf.AbstractParser<getNameResponse>() {
-      @java.lang.Override
-      public getNameResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getNameResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<getNameResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<getNameResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getNameResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface getBirthDateResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:getBirthDateResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return Whether the date field is set.
-     */
-    boolean hasDate();
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return The date.
-     */
-    com.google.protobuf.Timestamp getDate();
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getDateOrBuilder();
-  }
-  /**
-   * Protobuf type {@code getBirthDateResponse}
-   */
-  public  static final class getBirthDateResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:getBirthDateResponse)
-      getBirthDateResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use getBirthDateResponse.newBuilder() to construct.
-    private getBirthDateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private getBirthDateResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new getBirthDateResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private getBirthDateResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (date_ != null) {
-                subBuilder = date_.toBuilder();
-              }
-              date_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              project_ = input.readMessage(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(date_);
-                date_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
               break;
             }
             default: {
@@ -17151,38 +26504,57 @@ public final class CompanyOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getBirthDateResponse_descriptor;
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setStatusProject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getBirthDateResponse_fieldAccessorTable
+      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setStatusProject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.Builder.class);
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.Builder.class);
     }
 
-    public static final int DATE_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp date_;
+    public static final int PROJECT_FIELD_NUMBER = 1;
+    private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project project_;
     /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return Whether the date field is set.
+     * <code>.Project project = 1;</code>
+     * @return Whether the project field is set.
      */
-    public boolean hasDate() {
-      return date_ != null;
+    public boolean hasProject() {
+      return project_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return The date.
+     * <code>.Project project = 1;</code>
+     * @return The project.
      */
-    public com.google.protobuf.Timestamp getDate() {
-      return date_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : date_;
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject() {
+      return project_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
     }
     /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
+     * <code>.Project project = 1;</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDateOrBuilder() {
-      return getDate();
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private int status_;
+    /**
+     * <code>.StatusProject status = 2;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.StatusProject status = 2;</code>
+     * @return The status.
+     */
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+      @SuppressWarnings("deprecation")
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+      return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -17199,8 +26571,11 @@ public final class CompanyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (date_ != null) {
-        output.writeMessage(1, getDate());
+      if (project_ != null) {
+        output.writeMessage(1, getProject());
+      }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        output.writeEnum(2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -17211,9 +26586,13 @@ public final class CompanyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (date_ != null) {
+      if (project_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDate());
+          .computeMessageSize(1, getProject());
+      }
+      if (status_ != grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.START.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17225,16 +26604,17 @@ public final class CompanyOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse)) {
+      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject)) {
         return super.equals(obj);
       }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse) obj;
+      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject) obj;
 
-      if (hasDate() != other.hasDate()) return false;
-      if (hasDate()) {
-        if (!getDate()
-            .equals(other.getDate())) return false;
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
       }
+      if (status_ != other.status_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17246,78 +26626,80 @@ public final class CompanyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDate()) {
-        hash = (37 * hash) + DATE_FIELD_NUMBER;
-        hash = (53 * hash) + getDate().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(byte[] data)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(java.io.InputStream input)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseDelimitedFrom(java.io.InputStream input)
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseDelimitedFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parseFrom(
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17330,7 +26712,7 @@ public final class CompanyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse prototype) {
+    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -17346,26 +26728,56 @@ public final class CompanyOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code getBirthDateResponse}
+     * <pre>
+     *service DepartmentService {
+     *rpc start(Project) returns (Status);
+     *rpc Sell(Project) returns (Status);
+     *rpc finish(Project) returns (Status);
+     *}
+     *message getNameResponse{
+     *string name = 1;
+     *}
+     *message getBirthDateResponse {
+     *google.protobuf.Timestamp date = 1;
+     *}
+     *message getRegistryNumberResponse {
+     *string getRegistryNumberResponse = 1;
+     *}
+     *service EmployeeService {
+     *rpc getName(Vide) returns (getNameResponse);
+     *rpc getBirthDate(Vide) returns (getBirthDateResponse);
+     *rpc getRegistryNumber(Vide) returns (getRegistryNumberResponse);
+     *}
+     *message getDeadLineResponse {
+     *google.protobuf.Timestamp date = 1;
+     *}
+     *service ProjectService {
+     *rpc getName(Vide) returns (getNameResponse);
+     *rpc getDeadLine(Vide) returns (getDeadLineResponse);
+     *rpc isFinished(Vide) returns (Status);
+     *}
+     * </pre>
+     *
+     * Protobuf type {@code setStatusProject}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:getBirthDateResponse)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:setStatusProject)
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProjectOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getBirthDateResponse_descriptor;
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setStatusProject_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getBirthDateResponse_fieldAccessorTable
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setStatusProject_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.Builder.class);
+                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.Builder.class);
       }
 
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.newBuilder()
+      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -17383,29 +26795,31 @@ public final class CompanyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (dateBuilder_ == null) {
-          date_ = null;
+        if (projectBuilder_ == null) {
+          project_ = null;
         } else {
-          date_ = null;
-          dateBuilder_ = null;
+          project_ = null;
+          projectBuilder_ = null;
         }
+        status_ = 0;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getBirthDateResponse_descriptor;
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_setStatusProject_descriptor;
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.getDefaultInstance();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject getDefaultInstanceForType() {
+        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.getDefaultInstance();
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse result = buildPartial();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject build() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -17413,13 +26827,14 @@ public final class CompanyOuterClass {
       }
 
       @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse(this);
-        if (dateBuilder_ == null) {
-          result.date_ = date_;
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject buildPartial() {
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject(this);
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
         } else {
-          result.date_ = dateBuilder_.build();
+          result.project_ = projectBuilder_.build();
         }
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -17458,18 +26873,21 @@ public final class CompanyOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse)other);
+        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject) {
+          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse.getDefaultInstance()) return this;
-        if (other.hasDate()) {
-          mergeDate(other.getDate());
+      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject other) {
+        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject.getDefaultInstance()) return this;
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -17486,11 +26904,11 @@ public final class CompanyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse parsedMessage = null;
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse) e.getUnfinishedMessage();
+          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17500,687 +26918,173 @@ public final class CompanyOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp date_;
+      private grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project project_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateBuilder_;
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> projectBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       * @return Whether the date field is set.
+       * <code>.Project project = 1;</code>
+       * @return Whether the project field is set.
        */
-      public boolean hasDate() {
-        return dateBuilder_ != null || date_ != null;
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       * @return The date.
+       * <code>.Project project = 1;</code>
+       * @return The project.
        */
-      public com.google.protobuf.Timestamp getDate() {
-        if (dateBuilder_ == null) {
-          return date_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : date_;
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
         } else {
-          return dateBuilder_.getMessage();
+          return projectBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public Builder setDate(com.google.protobuf.Timestamp value) {
-        if (dateBuilder_ == null) {
+      public Builder setProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+        if (projectBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          date_ = value;
+          project_ = value;
           onChanged();
         } else {
-          dateBuilder_.setMessage(value);
+          projectBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public Builder setDate(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (dateBuilder_ == null) {
-          date_ = builderForValue.build();
+      public Builder setProject(
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
           onChanged();
         } else {
-          dateBuilder_.setMessage(builderForValue.build());
+          projectBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public Builder mergeDate(com.google.protobuf.Timestamp value) {
-        if (dateBuilder_ == null) {
-          if (date_ != null) {
-            date_ =
-              com.google.protobuf.Timestamp.newBuilder(date_).mergeFrom(value).buildPartial();
+      public Builder mergeProject(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
           } else {
-            date_ = value;
+            project_ = value;
           }
           onChanged();
         } else {
-          dateBuilder_.mergeFrom(value);
+          projectBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public Builder clearDate() {
-        if (dateBuilder_ == null) {
-          date_ = null;
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
           onChanged();
         } else {
-          date_ = null;
-          dateBuilder_ = null;
+          project_ = null;
+          projectBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getDateBuilder() {
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder getProjectBuilder() {
         
         onChanged();
-        return getDateFieldBuilder().getBuilder();
+        return getProjectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getDateOrBuilder() {
-        if (dateBuilder_ != null) {
-          return dateBuilder_.getMessageOrBuilder();
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
         } else {
-          return date_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : date_;
+          return project_ == null ?
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.getDefaultInstance() : project_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
+       * <code>.Project project = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getDateFieldBuilder() {
-        if (dateBuilder_ == null) {
-          dateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getDate(),
+          grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.Project.Builder, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.ProjectOrBuilder>(
+                  getProject(),
                   getParentForChildren(),
                   isClean());
-          date_ = null;
+          project_ = null;
         }
-        return dateBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return projectBuilder_;
       }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+      private int status_ = 0;
+      /**
+       * <code>.StatusProject status = 2;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      public int getStatusValue() {
+        return status_;
       }
-
-
-      // @@protoc_insertion_point(builder_scope:getBirthDateResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:getBirthDateResponse)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse();
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<getBirthDateResponse>
-        PARSER = new com.google.protobuf.AbstractParser<getBirthDateResponse>() {
-      @java.lang.Override
-      public getBirthDateResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getBirthDateResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<getBirthDateResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<getBirthDateResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getBirthDateResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface getRegistryNumberResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:getRegistryNumberResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string getRegistryNumberResponse = 1;</code>
-     * @return The getRegistryNumberResponse.
-     */
-    java.lang.String getGetRegistryNumberResponse();
-    /**
-     * <code>string getRegistryNumberResponse = 1;</code>
-     * @return The bytes for getRegistryNumberResponse.
-     */
-    com.google.protobuf.ByteString
-        getGetRegistryNumberResponseBytes();
-  }
-  /**
-   * Protobuf type {@code getRegistryNumberResponse}
-   */
-  public  static final class getRegistryNumberResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:getRegistryNumberResponse)
-      getRegistryNumberResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use getRegistryNumberResponse.newBuilder() to construct.
-    private getRegistryNumberResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private getRegistryNumberResponse() {
-      getRegistryNumberResponse_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new getRegistryNumberResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private getRegistryNumberResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              getRegistryNumberResponse_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getRegistryNumberResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getRegistryNumberResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.Builder.class);
-    }
-
-    public static final int GETREGISTRYNUMBERRESPONSE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object getRegistryNumberResponse_;
-    /**
-     * <code>string getRegistryNumberResponse = 1;</code>
-     * @return The getRegistryNumberResponse.
-     */
-    public java.lang.String getGetRegistryNumberResponse() {
-      java.lang.Object ref = getRegistryNumberResponse_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        getRegistryNumberResponse_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string getRegistryNumberResponse = 1;</code>
-     * @return The bytes for getRegistryNumberResponse.
-     */
-    public com.google.protobuf.ByteString
-        getGetRegistryNumberResponseBytes() {
-      java.lang.Object ref = getRegistryNumberResponse_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        getRegistryNumberResponse_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getGetRegistryNumberResponseBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, getRegistryNumberResponse_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getGetRegistryNumberResponseBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, getRegistryNumberResponse_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse)) {
-        return super.equals(obj);
-      }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse) obj;
-
-      if (!getGetRegistryNumberResponse()
-          .equals(other.getGetRegistryNumberResponse())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GETREGISTRYNUMBERRESPONSE_FIELD_NUMBER;
-      hash = (53 * hash) + getGetRegistryNumberResponse().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code getRegistryNumberResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:getRegistryNumberResponse)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getRegistryNumberResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getRegistryNumberResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.Builder.class);
-      }
-
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        getRegistryNumberResponse_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getRegistryNumberResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse(this);
-        result.getRegistryNumberResponse_ = getRegistryNumberResponse_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse.getDefaultInstance()) return this;
-        if (!other.getGetRegistryNumberResponse().isEmpty()) {
-          getRegistryNumberResponse_ = other.getRegistryNumberResponse_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
+      /**
+       * <code>.StatusProject status = 2;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
         onChanged();
         return this;
       }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object getRegistryNumberResponse_ = "";
       /**
-       * <code>string getRegistryNumberResponse = 1;</code>
-       * @return The getRegistryNumberResponse.
+       * <code>.StatusProject status = 2;</code>
+       * @return The status.
        */
-      public java.lang.String getGetRegistryNumberResponse() {
-        java.lang.Object ref = getRegistryNumberResponse_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          getRegistryNumberResponse_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject getStatus() {
+        @SuppressWarnings("deprecation")
+        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject result = grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.valueOf(status_);
+        return result == null ? grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject.UNRECOGNIZED : result;
       }
       /**
-       * <code>string getRegistryNumberResponse = 1;</code>
-       * @return The bytes for getRegistryNumberResponse.
-       */
-      public com.google.protobuf.ByteString
-          getGetRegistryNumberResponseBytes() {
-        java.lang.Object ref = getRegistryNumberResponse_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          getRegistryNumberResponse_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string getRegistryNumberResponse = 1;</code>
-       * @param value The getRegistryNumberResponse to set.
+       * <code>.StatusProject status = 2;</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setGetRegistryNumberResponse(
-          java.lang.String value) {
+      public Builder setStatus(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.StatusProject value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        getRegistryNumberResponse_ = value;
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>string getRegistryNumberResponse = 1;</code>
+       * <code>.StatusProject status = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGetRegistryNumberResponse() {
+      public Builder clearStatus() {
         
-        getRegistryNumberResponse_ = getDefaultInstance().getGetRegistryNumberResponse();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string getRegistryNumberResponse = 1;</code>
-       * @param value The bytes for getRegistryNumberResponse to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGetRegistryNumberResponseBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        getRegistryNumberResponse_ = value;
+        status_ = 0;
         onChanged();
         return this;
       }
@@ -18197,659 +27101,41 @@ public final class CompanyOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:getRegistryNumberResponse)
+      // @@protoc_insertion_point(builder_scope:setStatusProject)
     }
 
-    // @@protoc_insertion_point(class_scope:getRegistryNumberResponse)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:setStatusProject)
+    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse();
+      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject();
     }
 
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse getDefaultInstance() {
+    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<getRegistryNumberResponse>
-        PARSER = new com.google.protobuf.AbstractParser<getRegistryNumberResponse>() {
+    private static final com.google.protobuf.Parser<setStatusProject>
+        PARSER = new com.google.protobuf.AbstractParser<setStatusProject>() {
       @java.lang.Override
-      public getRegistryNumberResponse parsePartialFrom(
+      public setStatusProject parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getRegistryNumberResponse(input, extensionRegistry);
+        return new setStatusProject(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<getRegistryNumberResponse> parser() {
+    public static com.google.protobuf.Parser<setStatusProject> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<getRegistryNumberResponse> getParserForType() {
+    public com.google.protobuf.Parser<setStatusProject> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getRegistryNumberResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface getDeadLineResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:getDeadLineResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return Whether the date field is set.
-     */
-    boolean hasDate();
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return The date.
-     */
-    com.google.protobuf.Timestamp getDate();
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getDateOrBuilder();
-  }
-  /**
-   * Protobuf type {@code getDeadLineResponse}
-   */
-  public  static final class getDeadLineResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:getDeadLineResponse)
-      getDeadLineResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use getDeadLineResponse.newBuilder() to construct.
-    private getDeadLineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private getDeadLineResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new getDeadLineResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private getDeadLineResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (date_ != null) {
-                subBuilder = date_.toBuilder();
-              }
-              date_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(date_);
-                date_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDeadLineResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDeadLineResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.Builder.class);
-    }
-
-    public static final int DATE_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp date_;
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return Whether the date field is set.
-     */
-    public boolean hasDate() {
-      return date_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     * @return The date.
-     */
-    public com.google.protobuf.Timestamp getDate() {
-      return date_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : date_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp date = 1;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getDateOrBuilder() {
-      return getDate();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (date_ != null) {
-        output.writeMessage(1, getDate());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (date_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDate());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse)) {
-        return super.equals(obj);
-      }
-      grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse other = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse) obj;
-
-      if (hasDate() != other.hasDate()) return false;
-      if (hasDate()) {
-        if (!getDate()
-            .equals(other.getDate())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDate()) {
-        hash = (37 * hash) + DATE_FIELD_NUMBER;
-        hash = (53 * hash) + getDate().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code getDeadLineResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:getDeadLineResponse)
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDeadLineResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDeadLineResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.class, grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.Builder.class);
-      }
-
-      // Construct using grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (dateBuilder_ == null) {
-          date_ = null;
-        } else {
-          date_ = null;
-          dateBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.internal_static_getDeadLineResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse getDefaultInstanceForType() {
-        return grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse build() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse buildPartial() {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse result = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse(this);
-        if (dateBuilder_ == null) {
-          result.date_ = date_;
-        } else {
-          result.date_ = dateBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse) {
-          return mergeFrom((grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse other) {
-        if (other == grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse.getDefaultInstance()) return this;
-        if (other.hasDate()) {
-          mergeDate(other.getDate());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp date_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       * @return Whether the date field is set.
-       */
-      public boolean hasDate() {
-        return dateBuilder_ != null || date_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       * @return The date.
-       */
-      public com.google.protobuf.Timestamp getDate() {
-        if (dateBuilder_ == null) {
-          return date_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : date_;
-        } else {
-          return dateBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public Builder setDate(com.google.protobuf.Timestamp value) {
-        if (dateBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          date_ = value;
-          onChanged();
-        } else {
-          dateBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public Builder setDate(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (dateBuilder_ == null) {
-          date_ = builderForValue.build();
-          onChanged();
-        } else {
-          dateBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public Builder mergeDate(com.google.protobuf.Timestamp value) {
-        if (dateBuilder_ == null) {
-          if (date_ != null) {
-            date_ =
-              com.google.protobuf.Timestamp.newBuilder(date_).mergeFrom(value).buildPartial();
-          } else {
-            date_ = value;
-          }
-          onChanged();
-        } else {
-          dateBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public Builder clearDate() {
-        if (dateBuilder_ == null) {
-          date_ = null;
-          onChanged();
-        } else {
-          date_ = null;
-          dateBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getDateBuilder() {
-        
-        onChanged();
-        return getDateFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getDateOrBuilder() {
-        if (dateBuilder_ != null) {
-          return dateBuilder_.getMessageOrBuilder();
-        } else {
-          return date_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : date_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp date = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getDateFieldBuilder() {
-        if (dateBuilder_ == null) {
-          dateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getDate(),
-                  getParentForChildren(),
-                  isClean());
-          date_ = null;
-        }
-        return dateBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:getDeadLineResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:getDeadLineResponse)
-    private static final grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse();
-    }
-
-    public static grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<getDeadLineResponse>
-        PARSER = new com.google.protobuf.AbstractParser<getDeadLineResponse>() {
-      @java.lang.Override
-      public getDeadLineResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getDeadLineResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<getDeadLineResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<getDeadLineResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.getDeadLineResponse getDefaultInstanceForType() {
+    public grpc.project.companygrpcservice.gRPC.stub.CompanyOuterClass.setStatusProject getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18865,6 +27151,11 @@ public final class CompanyOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Department_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Date_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Date_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Person_descriptor;
   private static final 
@@ -18891,15 +27182,35 @@ public final class CompanyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Status_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_setCompanyAndProjectAndDepartment_descriptor;
+    internal_static_getEmployee_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_setCompanyAndProjectAndDepartment_fieldAccessorTable;
+      internal_static_getEmployee_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_allEmployees_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_allEmployees_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_setCompanyIdAndProjectAndDepartmentId_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_setCompanyId_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_setCompanyId_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_setEmployeeId_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_setEmployeeId_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_setCompanyIdAndDepartment_descriptor;
   private static final 
@@ -18916,6 +27227,21 @@ public final class CompanyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_setCompanyIdAndEmployeeId_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_getProject_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_getProject_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_getDepartment_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_getDepartment_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_allDepartments_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18925,11 +27251,6 @@ public final class CompanyOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_allProjects_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_allEmployees_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_allEmployees_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_setNameCompany_descriptor;
   private static final 
@@ -18941,30 +27262,20 @@ public final class CompanyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_setCompanyIdAndPerson_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_returnCompany_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_returnCompany_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Vide_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Vide_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_getNameResponse_descriptor;
+    internal_static_setStatusProject_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_getNameResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_getBirthDateResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_getBirthDateResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_getRegistryNumberResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_getRegistryNumberResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_getDeadLineResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_getDeadLineResponse_fieldAccessorTable;
+      internal_static_setStatusProject_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18982,79 +27293,90 @@ public final class CompanyOuterClass {
       "\t\022\022\n\nspeciality\030\003 \001(\t\022\034\n\temployees\030\004 \003(\013" +
       "2\t.Employee\022\032\n\007manager\030\005 \001(\0132\t.Employee\022" +
       "#\n\016subDepartments\030\006 \003(\0132\013.Department\022\032\n\010" +
-      "projects\030\007 \003(\0132\010.Project\"u\n\006Person\022\n\n\002id" +
-      "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\027\n" +
-      "\006gender\030\004 \001(\0162\007.Gender\022\'\n\003Dob\030\005 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\"p\n\010Employee\022\031\n\010e" +
-      "mployee\030\001 \001(\0132\007.Person\022 \n\013departments\030\002 " +
-      "\003(\0132\013.Department\022\032\n\010projects\030\003 \003(\0132\010.Pro" +
-      "ject\022\013\n\003Doj\030\004 \001(\003\"u\n\007Project\022\014\n\004name\030\001 \001" +
-      "(\t\022,\n\010deadLine\030\002 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022\020\n\010finished\030\003 \001(\010\022\034\n\temployees\030" +
-      "\004 \003(\0132\t.Employee\"-\n\rHumanResource\022\034\n\temp" +
-      "loyees\030\001 \003(\0132\t.Employee\"\030\n\006Status\022\016\n\006sta" +
-      "tus\030\001 \001(\010\"r\n!setCompanyAndProjectAndDepa" +
-      "rtment\022\021\n\tcompanyId\030\001 \001(\t\022\031\n\007project\030\002 \001" +
-      "(\0132\010.Project\022\037\n\ndepartment\030\003 \001(\0132\013.Depar" +
-      "tment\"!\n\014setCompanyId\022\021\n\tcompanyId\030\001 \001(\t" +
-      "\"O\n\031setCompanyIdAndDepartment\022\037\n\ndepartm" +
-      "ent\030\001 \001(\0132\013.Department\022\021\n\tcompanyId\030\002 \001(" +
-      "\t\"F\n\033setCompanyIdAndDepartmentId\022\024\n\014depa" +
-      "rtmentId\030\001 \001(\t\022\021\n\tcompanyId\030\002 \001(\t\"B\n\031set" +
-      "CompanyIdAndEmployeeId\022\022\n\nemployeeId\030\001 \001" +
-      "(\t\022\021\n\tcompanyId\030\002 \001(\t\"2\n\016allDepartments\022" +
-      " \n\013departments\030\001 \003(\0132\013.Department\")\n\013all" +
-      "Projects\022\032\n\010projects\030\001 \003(\0132\010.Project\",\n\014" +
-      "allEmployees\022\034\n\temployees\030\001 \003(\0132\t.Employ" +
-      "ee\"\036\n\016setNameCompany\022\014\n\004name\030\001 \001(\t\"C\n\025se" +
-      "tCompanyIdAndPerson\022\021\n\tcompanyId\030\001 \001(\t\022\027" +
-      "\n\006person\030\002 \001(\0132\007.Person\"\006\n\004Vide\"\037\n\017getNa" +
-      "meResponse\022\014\n\004name\030\001 \001(\t\"@\n\024getBirthDate" +
-      "Response\022(\n\004date\030\001 \001(\0132\032.google.protobuf" +
-      ".Timestamp\">\n\031getRegistryNumberResponse\022" +
-      "!\n\031getRegistryNumberResponse\030\001 \001(\t\"?\n\023ge" +
-      "tDeadLineResponse\022(\n\004date\030\001 \001(\0132\032.google" +
-      ".protobuf.Timestamp*\036\n\006Gender\022\010\n\004MALE\020\000\022" +
-      "\n\n\006FEMALE\020\0012\207\010\n\016CompanyService\022*\n\rcreate" +
-      "Company\022\017.setNameCompany\032\010.Company\022%\n\nge" +
-      "tCompany\022\r.setCompanyId\032\010.Company\0221\n\020get" +
-      "HumanResource\022\r.setCompanyId\032\016.HumanReso" +
-      "urce\0223\n\021getAllDepartments\022\r.setCompanyId" +
-      "\032\017.allDepartments\022H\n\032getAllProjectsOfDep" +
-      "artment\022\034.setCompanyIdAndDepartmentId\032\014." +
-      "allProjects\022J\n\033getAllEmployeesOfDepartme" +
-      "nt\022\034.setCompanyIdAndDepartmentId\032\r.allEm" +
-      "ployees\022>\n\026addDepartmentToCompany\022\032.setC" +
-      "ompanyIdAndDepartment\032\010.Company\022F\n\034delet" +
-      "eDepartmentsFromCompany\022\034.setCompanyIdAn" +
-      "dDepartmentId\032\010.Company\0221\n\014hireEmployee\022" +
-      "\026.setCompanyIdAndPerson\032\t.Employee\022H\n\032ad" +
-      "dEmployeeToHumanResource\022\032.setCompanyIdA" +
-      "ndEmployeeId\032\016.HumanResource\022B\n\027addEmplo" +
-      "yeeToDepartment\022\032.setCompanyIdAndEmploye" +
-      "eId\032\013.Department\022?\n\030dismissFromHumanReso" +
-      "urce\022\032.setCompanyIdAndEmployeeId\032\007.Statu" +
-      "s\022<\n\025dismissFromDepartment\022\032.setCompanyI" +
-      "dAndEmployeeId\032\007.Status\022%\n\017dismissEmploy" +
-      "ee\022\t.Employee\032\007.Status\022;\n\014startProject\022\"" +
-      ".setCompanyAndProjectAndDepartment\032\007.Sta" +
-      "tus\022:\n\013sellProject\022\".setCompanyAndProjec" +
-      "tAndDepartment\032\007.Status\022<\n\rfinishProject" +
-      "\022\".setCompanyAndProjectAndDepartment\032\007.S" +
-      "tatus2g\n\021DepartmentService\022\032\n\005start\022\010.Pr" +
-      "oject\032\007.Status\022\031\n\004Sell\022\010.Project\032\007.Statu" +
-      "s\022\033\n\006finish\022\010.Project\032\007.Status2\231\001\n\rPerso" +
-      "nService\022\"\n\007getName\022\005.Vide\032\020.getNameResp" +
-      "onse\022,\n\014getBirthDate\022\005.Vide\032\025.getBirthDa" +
-      "teResponse\0226\n\021getRegistryNumber\022\005.Vide\032\032" +
-      ".getRegistryNumberResponse2~\n\016ProjectSer" +
-      "vice\022\"\n\007getName\022\005.Vide\032\020.getNameResponse" +
-      "\022*\n\013getDeadLine\022\005.Vide\032\024.getDeadLineResp" +
-      "onse\022\034\n\nisFinished\022\005.Vide\032\007.Status2R\n\025Hu" +
-      "manResourcesService\022\032\n\004hire\022\007.Person\032\t.E" +
-      "mployee\022\035\n\007dismiss\022\t.Employee\032\007.StatusB+" +
-      "\n)grpc.project.companygrpcservice.gRPC.s" +
-      "tubb\006proto3"
+      "projects\030\007 \003(\0132\010.Project\"0\n\004Date\022\013\n\003day\030" +
+      "\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\014\n\004year\030\003 \001(\005\"`\n\006Pe" +
+      "rson\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007addres" +
+      "s\030\003 \001(\t\022\027\n\006gender\030\004 \001(\0162\007.Gender\022\022\n\003Dob\030" +
+      "\005 \001(\0132\005.Date\"w\n\010Employee\022\031\n\010employee\030\001 \001" +
+      "(\0132\007.Person\022 \n\013departments\030\002 \003(\0132\013.Depar" +
+      "tment\022\032\n\010projects\030\003 \003(\0132\010.Project\022\022\n\003Doj" +
+      "\030\004 \001(\0132\005.Date\"\214\001\n\007Project\022\014\n\004name\030\001 \001(\t\022" +
+      "\027\n\010deadLine\030\002 \001(\0132\005.Date\022\020\n\010finished\030\003 \001" +
+      "(\010\022\034\n\temployees\030\004 \003(\0132\t.Employee\022\036\n\006stat" +
+      "us\030\005 \001(\0162\016.StatusProject\022\n\n\002Id\030\006 \001(\t\"-\n\r" +
+      "HumanResource\022\034\n\temployees\030\001 \003(\0132\t.Emplo" +
+      "yee\"\030\n\006Status\022\016\n\006status\030\001 \001(\010\":\n\013getEmpl" +
+      "oyee\022\027\n\006person\030\001 \001(\0132\007.Person\022\022\n\003Doj\030\002 \001" +
+      "(\0132\005.Date\".\n\014allEmployees\022\036\n\010employee\030\001 " +
+      "\003(\0132\014.getEmployee\"k\n%setCompanyIdAndProj" +
+      "ectAndDepartmentId\022\021\n\tcompanyId\030\001 \001(\t\022\031\n" +
+      "\007project\030\002 \001(\0132\010.Project\022\024\n\014departmentId" +
+      "\030\003 \001(\t\"\215\001\n1setCompanyIdAndProjectAndDepa" +
+      "rtmentIdAndEmployees\022\021\n\tcompanyId\030\001 \001(\t\022" +
+      "\031\n\007project\030\002 \001(\0132\010.Project\022\024\n\014department" +
+      "Id\030\003 \001(\t\022\024\n\014employeesIds\030\004 \003(\t\"!\n\014setCom" +
+      "panyId\022\021\n\tcompanyId\030\001 \001(\t\"#\n\rsetEmployee" +
+      "Id\022\022\n\nEmployeeId\030\001 \001(\t\"P\n\031setCompanyIdAn" +
+      "dDepartment\022\014\n\004name\030\001 \001(\t\022\022\n\nspeciality\030" +
+      "\002 \001(\t\022\021\n\tcompanyId\030\003 \001(\t\"F\n\033setCompanyId" +
+      "AndDepartmentId\022\024\n\014departmentId\030\001 \001(\t\022\021\n" +
+      "\tcompanyId\030\002 \001(\t\"B\n\031setCompanyIdAndEmplo" +
+      "yeeId\022\022\n\nemployeeId\030\001 \001(\t\022\021\n\tcompanyId\030\002" +
+      " \001(\t\"g\n(setCompanyIdAndDepartmentIdAndEm" +
+      "ployeeId\022\022\n\nemployeeId\030\001 \001(\t\022\021\n\tcompanyI" +
+      "d\030\002 \001(\t\022\024\n\014departmentId\030\003 \001(\t\"\206\001\n\ngetPro" +
+      "ject\022\014\n\004name\030\001 \001(\t\022\027\n\010deadLine\030\002 \001(\0132\005.D" +
+      "ate\022\020\n\010finished\030\003 \001(\010\022\037\n\temployees\030\004 \003(\013" +
+      "2\014.getEmployee\022\036\n\006status\030\005 \001(\0162\016.StatusP" +
+      "roject\"\306\001\n\rgetDepartment\022\014\n\004D_no\030\001 \001(\t\022\014" +
+      "\n\004name\030\002 \001(\t\022\022\n\nspeciality\030\003 \001(\t\022\037\n\templ" +
+      "oyees\030\004 \003(\0132\014.getEmployee\022\035\n\007manager\030\005 \001" +
+      "(\0132\014.getEmployee\022&\n\016subDepartments\030\006 \003(\013" +
+      "2\016.getDepartment\022\035\n\010projects\030\007 \003(\0132\013.get" +
+      "Project\"5\n\016allDepartments\022#\n\013departments" +
+      "\030\001 \003(\0132\016.getDepartment\",\n\013allProjects\022\035\n" +
+      "\010projects\030\001 \003(\0132\013.getProject\"\036\n\016setNameC" +
+      "ompany\022\014\n\004name\030\001 \001(\t\"v\n\025setCompanyIdAndP" +
+      "erson\022\021\n\tcompanyId\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017" +
+      "\n\007address\030\003 \001(\t\022\027\n\006gender\030\004 \001(\0162\007.Gender" +
+      "\022\022\n\003Dob\030\005 \001(\0132\005.Date\"o\n\rreturnCompany\022\014\n" +
+      "\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022#\n\013departments\030\003" +
+      " \003(\0132\016.getDepartment\022\037\n\temployees\030\004 \003(\0132" +
+      "\014.getEmployee\"\006\n\004Vide\"M\n\020setStatusProjec" +
+      "t\022\031\n\007project\030\001 \001(\0132\010.Project\022\036\n\006status\030\002" +
+      " \001(\0162\016.StatusProject*\036\n\006Gender\022\010\n\004MALE\020\000" +
+      "\022\n\n\006FEMALE\020\001*0\n\rStatusProject\022\t\n\005START\020\000" +
+      "\022\010\n\004SELL\020\001\022\n\n\006FINISH\020\0022\205\t\n\016CompanyServic" +
+      "e\0220\n\rcreateCompany\022\017.setNameCompany\032\016.re" +
+      "turnCompany\022+\n\ngetCompany\022\r.setCompanyId" +
+      "\032\016.returnCompany\0220\n\020getHumanResource\022\r.s" +
+      "etCompanyId\032\r.allEmployees\0223\n\021getAllDepa" +
+      "rtments\022\r.setCompanyId\032\017.allDepartments\022" +
+      "H\n\032getAllProjectsOfDepartment\022\034.setCompa" +
+      "nyIdAndDepartmentId\032\014.allProjects\022J\n\033get" +
+      "AllEmployeesOfDepartment\022\034.setCompanyIdA" +
+      "ndDepartmentId\032\r.allEmployees\022D\n\026addDepa" +
+      "rtmentToCompany\022\032.setCompanyIdAndDepartm" +
+      "ent\032\016.getDepartment\022E\n\034deleteDepartments" +
+      "FromCompany\022\034.setCompanyIdAndDepartmentI" +
+      "d\032\007.Status\0224\n\014hireEmployee\022\026.setCompanyI" +
+      "dAndPerson\032\014.getEmployee\022G\n\032addEmployeeT" +
+      "oHumanResource\022\032.setCompanyIdAndEmployee" +
+      "Id\032\r.allEmployees\022T\n\027addEmployeeToDepart" +
+      "ment\022).setCompanyIdAndDepartmentIdAndEmp" +
+      "loyeeId\032\016.getDepartment\022E\n\030dismissFromHu" +
+      "manResource\022\032.setCompanyIdAndEmployeeId\032" +
+      "\r.allEmployees\022R\n\025dismissFromDepartment\022" +
+      ").setCompanyIdAndDepartmentIdAndEmployee" +
+      "Id\032\016.getDepartment\0226\n\017dismissEmployee\022\032." +
+      "setCompanyIdAndEmployeeId\032\007.Status\022R\n\014st" +
+      "artProject\0222.setCompanyIdAndProjectAndDe" +
+      "partmentIdAndEmployees\032\016.getDepartment\022E" +
+      "\n\013sellProject\022&.setCompanyIdAndProjectAn" +
+      "dDepartmentId\032\016.getDepartment\022G\n\rfinishP" +
+      "roject\022&.setCompanyIdAndProjectAndDepart" +
+      "mentId\032\016.getDepartmentB+\n)grpc.project.c" +
+      "ompanygrpcservice.gRPC.stubb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19073,126 +27395,156 @@ public final class CompanyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Department_descriptor,
         new java.lang.String[] { "DNo", "Name", "Speciality", "Employees", "Manager", "SubDepartments", "Projects", });
-    internal_static_Person_descriptor =
+    internal_static_Date_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_Date_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Date_descriptor,
+        new java.lang.String[] { "Day", "Month", "Year", });
+    internal_static_Person_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Person_descriptor,
         new java.lang.String[] { "Id", "Name", "Address", "Gender", "Dob", });
     internal_static_Employee_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_Employee_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Employee_descriptor,
         new java.lang.String[] { "Employee", "Departments", "Projects", "Doj", });
     internal_static_Project_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Project_descriptor,
-        new java.lang.String[] { "Name", "DeadLine", "Finished", "Employees", });
+        new java.lang.String[] { "Name", "DeadLine", "Finished", "Employees", "Status", "Id", });
     internal_static_HumanResource_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_HumanResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HumanResource_descriptor,
         new java.lang.String[] { "Employees", });
     internal_static_Status_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Status_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Status_descriptor,
         new java.lang.String[] { "Status", });
-    internal_static_setCompanyAndProjectAndDepartment_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_setCompanyAndProjectAndDepartment_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_setCompanyAndProjectAndDepartment_descriptor,
-        new java.lang.String[] { "CompanyId", "Project", "Department", });
-    internal_static_setCompanyId_descriptor =
+    internal_static_getEmployee_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_getEmployee_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_getEmployee_descriptor,
+        new java.lang.String[] { "Person", "Doj", });
+    internal_static_allEmployees_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_allEmployees_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_allEmployees_descriptor,
+        new java.lang.String[] { "Employee", });
+    internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_setCompanyIdAndProjectAndDepartmentId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_setCompanyIdAndProjectAndDepartmentId_descriptor,
+        new java.lang.String[] { "CompanyId", "Project", "DepartmentId", });
+    internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_setCompanyIdAndProjectAndDepartmentIdAndEmployees_descriptor,
+        new java.lang.String[] { "CompanyId", "Project", "DepartmentId", "EmployeesIds", });
+    internal_static_setCompanyId_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_setCompanyId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setCompanyId_descriptor,
         new java.lang.String[] { "CompanyId", });
+    internal_static_setEmployeeId_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_setEmployeeId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_setEmployeeId_descriptor,
+        new java.lang.String[] { "EmployeeId", });
     internal_static_setCompanyIdAndDepartment_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_setCompanyIdAndDepartment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setCompanyIdAndDepartment_descriptor,
-        new java.lang.String[] { "Department", "CompanyId", });
+        new java.lang.String[] { "Name", "Speciality", "CompanyId", });
     internal_static_setCompanyIdAndDepartmentId_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_setCompanyIdAndDepartmentId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setCompanyIdAndDepartmentId_descriptor,
         new java.lang.String[] { "DepartmentId", "CompanyId", });
     internal_static_setCompanyIdAndEmployeeId_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_setCompanyIdAndEmployeeId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setCompanyIdAndEmployeeId_descriptor,
         new java.lang.String[] { "EmployeeId", "CompanyId", });
+    internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_setCompanyIdAndDepartmentIdAndEmployeeId_descriptor,
+        new java.lang.String[] { "EmployeeId", "CompanyId", "DepartmentId", });
+    internal_static_getProject_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_getProject_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_getProject_descriptor,
+        new java.lang.String[] { "Name", "DeadLine", "Finished", "Employees", "Status", });
+    internal_static_getDepartment_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_getDepartment_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_getDepartment_descriptor,
+        new java.lang.String[] { "DNo", "Name", "Speciality", "Employees", "Manager", "SubDepartments", "Projects", });
     internal_static_allDepartments_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_allDepartments_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_allDepartments_descriptor,
         new java.lang.String[] { "Departments", });
     internal_static_allProjects_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_allProjects_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_allProjects_descriptor,
         new java.lang.String[] { "Projects", });
-    internal_static_allEmployees_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_allEmployees_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_allEmployees_descriptor,
-        new java.lang.String[] { "Employees", });
     internal_static_setNameCompany_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_setNameCompany_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setNameCompany_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_setCompanyIdAndPerson_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_setCompanyIdAndPerson_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_setCompanyIdAndPerson_descriptor,
-        new java.lang.String[] { "CompanyId", "Person", });
+        new java.lang.String[] { "CompanyId", "Name", "Address", "Gender", "Dob", });
+    internal_static_returnCompany_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_returnCompany_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_returnCompany_descriptor,
+        new java.lang.String[] { "Name", "Id", "Departments", "Employees", });
     internal_static_Vide_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_Vide_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vide_descriptor,
         new java.lang.String[] { });
-    internal_static_getNameResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
-    internal_static_getNameResponse_fieldAccessorTable = new
+    internal_static_setStatusProject_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_setStatusProject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_getNameResponse_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_getBirthDateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_getBirthDateResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_getBirthDateResponse_descriptor,
-        new java.lang.String[] { "Date", });
-    internal_static_getRegistryNumberResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
-    internal_static_getRegistryNumberResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_getRegistryNumberResponse_descriptor,
-        new java.lang.String[] { "GetRegistryNumberResponse", });
-    internal_static_getDeadLineResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
-    internal_static_getDeadLineResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_getDeadLineResponse_descriptor,
-        new java.lang.String[] { "Date", });
+        internal_static_setStatusProject_descriptor,
+        new java.lang.String[] { "Project", "Status", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
