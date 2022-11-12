@@ -1,0 +1,216 @@
+syntax = "proto3";
+// cette option pour spécifie l'emplacement de notre stub une fois nous compilons
+option csharp_namespace = "Employee_gRPC_service";
+
+/* Data structure */
+
+message Company {
+  string name = 1;
+  string id = 2;
+  repeated Department departments = 3;
+  HumanResource humanResource = 4;
+}
+
+message Department {
+  string D_no = 1;
+  string name = 2;
+  string speciality = 3;
+  repeated Employee employees = 4;
+  Employee manager = 5;
+  repeated Department subDepartments = 6;
+  repeated Project projects = 7;
+}
+
+message Date {
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}
+enum StatusProject {
+  START = 0;
+  SELL = 1;
+  FINISH = 2;
+}
+
+message Person {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  Gender gender = 4;
+  Date Dob = 5;
+}
+
+message Employee {
+  Person employee = 1;
+  repeated Department departments = 2;
+  repeated Project projects = 3;
+  Date Doj = 4;
+}
+
+message Project {
+  string name = 1;
+  Date deadLine = 2;
+  bool finished  = 3;
+  repeated Employee employees = 4;
+  StatusProject status = 5;
+  string Id = 6;
+}
+
+message HumanResource {
+  repeated Employee employees = 1;
+}
+
+
+/* Services */
+
+// service Company
+message Status {
+  bool status = 1;
+}
+message getEmployee {
+  Person person = 1;
+  Date Doj = 2;
+}
+message allEmployees {
+  repeated getEmployee employee = 1;
+}
+message setCompanyIdAndProjectAndDepartmentId {
+  string companyId = 1;
+  Project project = 2;
+  string departmentId = 3;
+}
+message setCompanyIdAndProjectAndDepartmentIdAndEmployees {
+  string companyId = 1;
+  Project project = 2;
+  string departmentId = 3;
+  repeated string employeesIds = 4;
+}
+message setCompanyId {
+  string companyId = 1;
+}
+message setEmployeeId {
+  string EmployeeId = 1;
+}
+message setCompanyIdAndDepartment {
+  string name = 1;
+  string speciality = 2;
+  string companyId = 3;
+}
+message setCompanyIdAndDepartmentId {
+  string departmentId = 1;
+  string companyId = 2;
+}
+message  setCompanyIdAndEmployeeId {
+  string employeeId = 1;
+  string companyId = 2;
+}
+message setCompanyIdAndDepartmentIdAndEmployeeId {
+  string employeeId = 1;
+  string companyId = 2;
+  string departmentId = 3;
+}
+message getProject {
+  string name = 1;
+  Date deadLine = 2;
+  bool finished  = 3;
+  repeated getEmployee employees = 4;
+  StatusProject status = 5;
+}
+message getDepartment {
+  string D_no = 1;
+  string name = 2;
+  string speciality = 3;
+  repeated getEmployee employees = 4;
+  getEmployee manager = 5;
+  repeated getDepartment subDepartments = 6;
+  repeated getProject projects = 7;
+}
+message allDepartments {
+  repeated getDepartment departments = 1;
+}
+message allProjects {
+  repeated getProject projects = 1;
+}
+message setNameCompany {
+  string name = 1;
+}
+message setCompanyIdAndPerson {
+  string companyId = 1;
+  string name = 2;
+  string address = 3;
+  Gender gender = 4;
+  Date Dob = 5;
+}
+message returnCompany {
+  string name = 1;
+  string id = 2;
+  repeated getDepartment departments = 3;
+  repeated getEmployee employees = 4;
+}
+message Vide {}
+
+
+service CompanyService {
+  rpc createCompany(setNameCompany) returns (returnCompany);
+  rpc getCompany(setCompanyId) returns (returnCompany);
+  rpc getHumanResource(setCompanyId) returns (allEmployees);
+  rpc getAllDepartments(setCompanyId) returns (allDepartments);
+  rpc getAllProjectsOfDepartment(setCompanyIdAndDepartmentId) returns (allProjects);
+  rpc getAllEmployeesOfDepartment(setCompanyIdAndDepartmentId) returns (allEmployees);
+  rpc addDepartmentToCompany(setCompanyIdAndDepartment) returns (getDepartment);
+  rpc deleteDepartmentsFromCompany(setCompanyIdAndDepartmentId) returns (Status);
+  rpc hireEmployee(setCompanyIdAndPerson) returns (getEmployee);
+  rpc addEmployeeToHumanResource(setCompanyIdAndEmployeeId) returns (allEmployees);
+  rpc addEmployeeToDepartment(setCompanyIdAndDepartmentIdAndEmployeeId) returns (getDepartment);
+  rpc dismissFromHumanResource(setCompanyIdAndEmployeeId) returns (allEmployees);
+  rpc dismissFromDepartment(setCompanyIdAndDepartmentIdAndEmployeeId) returns (getDepartment);
+  rpc dismissEmployee(setCompanyIdAndEmployeeId) returns (Status);
+  rpc startProject(setCompanyIdAndProjectAndDepartmentIdAndEmployees) returns (getDepartment);
+  rpc sellProject(setCompanyIdAndProjectAndDepartmentId) returns (getDepartment);
+  rpc finishProject(setCompanyIdAndProjectAndDepartmentId) returns (getDepartment);
+}
+
+/*service DepartmentService {
+  rpc start(Project) returns (Status);
+  rpc Sell(Project) returns (Status);
+  rpc finish(Project) returns (Status);
+}*/
+message getNameResponse{
+  string name = 1;
+}
+message getBirthDateResponse {
+  Date date = 1;
+}
+message getRegistryNumberResponse {
+    string getRegistryNumberResponse = 1;
+}
+
+// Service Employee 
+service EmployeeService {
+  rpc getName(setEmployeeId) returns (getNameResponse);
+  rpc getBirthDate(setEmployeeId) returns (getBirthDateResponse);
+  rpc getRegistryNumber(setEmployeeId) returns (getRegistryNumberResponse);
+}
+/*
+message getDeadLineResponse {
+  google.protobuf.Timestamp date = 1;
+}
+service ProjectService {
+  rpc getName(Vide) returns (getNameResponse);
+  rpc getDeadLine(Vide) returns (getDeadLineResponse);
+  rpc isFinished(Vide) returns (Status);
+}
+message setStatusProject {
+  Project project = 1;
+  StatusProject status = 2;
+}
+
+service HumanResourcesService {
+  rpc hire(Person) returns (Employee);
+  rpc dismiss(Employee) returns (Status);
+}*/

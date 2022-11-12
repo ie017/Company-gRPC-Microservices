@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MfATTGZLj6xNvlV5n6QvLmjgExwREqDvNXIKxDA9ucc=",
+  "Source": "Employee-gRPC-service",
+  "BasePath": "_content/Employee-gRPC-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
